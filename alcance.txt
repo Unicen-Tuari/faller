@@ -1,0 +1,29 @@
+Franco Aller (Condicional)
+Tema: Reclamos Laprida
+Google Maps de donde esta el problema
+
+1ra Entrega
+Rehacer lo que estaba con MVC+Bootstrap+Smarty (Funcionalidad Mínima)
+Usuario
+Crear Reclamo
+Ver Mis Reclamos
+
+Administrador
+Ver Reclamos de su area
+
+Ajax: Agregar petición.
+
+2da Entrega
+
+Administrador - Funcional 100%
+Pasar reclamo a otro área
+Comentar reclamo
+Cambiar estado al reclamo
+Cada cambio de estado envía un mail al usuario que creó el reclamo. Con link al reclamo.
+
+Usuario
+Administrar perfil.
+
+Registrasción
+Login
+
