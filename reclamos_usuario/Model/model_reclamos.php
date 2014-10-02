@@ -6,7 +6,7 @@ class model_ver_reclamos extends modelodb
 { 
 	
 
-	public function ver_reclamo_M($id_usuario){
+	public function ver_reclamo($id_usuario){
 			// 
 	//	print_r($id_usuario[0]['id_persona']);
 		$usuario=$id_usuario[0]['id_persona'];

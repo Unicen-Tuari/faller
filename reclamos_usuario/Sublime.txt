@@ -1,0 +1,103 @@
+http://www.bytelovers.com/blog/sublime-text-2/atajos-de-teclado-para-sublime-text-2
+
+
+leyenda de teclas
+
+⌘ = Comando (Solo Mac)
+⌥ = Alt (Solo Mac)
+⌫ = Borrar (Solo Mac)
+⇑ = Mayúsculas
+↵ = Tecla Intro / Enter
+Atajos generales
+
+Mac OS X	Windows/Linux	Descripción
+
+⌘ + P	Ctrl + P	Ir a
+⌘ + ⌃ + P	Ctrl + Win + P	Ir al proyecto
+⌘ + R	Ctrl + R	Ir al método/símbolo
+⌃ + G	Ctrl + G	Ir a la línea
+⌘ + K + B	Ctrl + K + B	Mostrar/Ocultar barra lateral
+⌘ + ⇑ + P	Ctrl + Shift + P	Paleta de comandos
+Ctrl + <	Ctrl + <	Mostrar consola
+⌘ + ⇑ + N	Ctrl + Shift + N	Nueva ventana (útil para nuevos proyectos)
+
+
+
+Atajos a la hora de editar
+Mac OS X	Windows/Linux	Descripción
+
+⌘ + L	Ctrl + L	Seleccionar la línea (repite la selección en las líneas siguientes)
+⌘ + D	Ctrl + D	Selecciona la palabra (repite la selección permitiendo edición múltiple)
+⌃ + ⇑ + M	Ctrl + Shift + M	Seleccionar contenido del actual paréntesis
+⌘ + ⇑ + ↵	Ctrl + Shift + ↵	Insertar línea antes de la actual
+⌘ + ↵	Ctrl + ↵	Insertar línea después de la actual
+⌃ ⇑ K	Ctrl + Shift + K	Eliminar la línea
+⌘ + K + K	Ctrl + K + K	Eliminar desde el cursor hasta el final de la linea
+⌘ + K + ⌫	Ctrl + K + ⌫	Eliminar desde el cursor hasta el principio de la línea
+⌘ + ⇑ + D	Ctrl + Shift + D	Duplicar línea/s
+⌘ + J	Ctrl + J	Unir líneas
+⌘ + K + U	Ctrl + K + U	Convertir a Mayúsculas
+⌘ + K + L	Ctrl + K + L	Convertir a Minúsculas
+⌘ + /	Ctrl + /	Commentario
+⌘ + ⌥ + /	Ctrl + Alt + /	Bloque de comentario
+⌘ + Y	Ctrl + Y	Deshacer o repetir
+⌘ + ⇑ + V	Ctrl + Shift + V	Pegar e identar
+⌃ + (espacio)	Ctrl + espacio	Autocompletar (repite hasta encontrar la próxima sugerencia)
+⌃ + M	Ctrl + M	Saltar al próximo paréntesis
+⌘ + U	Ctrl + U	Deshacer (paso a paso)
+⌘ + ⇑ + U	Ctrl + Shift + U	Rehacer (paso a paso)
+
+
+
+Atajos con ficheros XML / HTML exclusivamente
+Mac OS X	Windows/Linux	Descripción
+
+⌘ + ⇑ + A	Ctrl + Shift + A	Seleccionar contenido dentro de una etiqueta
+⌘ + ⌥ + .	Ctrl + Shift + .	Cerrar etiqueta
+
+
+Atajos para buscar y/o reemplazar
+Encontrar y Reemplazar - Sublime Text 2
+Mac OS X	Windows/Linux	Descripción
+⌘ + F	Ctrl + F	Encontrar
+⌘ + ⌥ + F	Ctrl + H	Reemplazar
+⌘ + ⇑ + F	Ctrl + Shift + F	Encontrar en archivos
+
+
+Atajos para pestañas y divisiones de pantalla
+Mac OS X	Windows/Linux	Descripción
+⌘ + ⌥ + 1	Alt + Shift + 1	Una sóla columna
+⌘ + ⌥ + 2	Alt + Shift + 2	Dos columnas
+⌘ + ⌥ + 3	Alt + Shift + 3	Tres columnas
+⌘ + ⌥ + 4	Alt + Shift + 4	Cuatro columnas
+⌘ + ⌥ + ⇑ + 2	Alt + Shift + 8	Dos filas
+⌘ + ⌥ + ⇑ + 3	Alt + Shift + 9	Tres filas
+⌘ + ⌥ + 5	Alt + Shift + 5	Grid (4 grupos: 2 filas por 2 columnas)
+⌃ + [1,2,3,4]	Ctrl + l[1,2,3,4]	Focus en el grupo
+⌃ + ⇑ + [1,2,3,4]	Ctrl+Shift[1,2,3,4]	Mover archivo en el grupo
+⌘[1,2,3,...]	Ctrl+[1,2,3,...]	Seleccionar pestaña
+
+
+Atajos para los favoritos
+Mac OS X	Windows/Linux	Descripción
+⌘ + F2	Ctrl + F2	Mostrar/Ocultar Favoritos
+F2	F2	Favorito siguiente
+⇑ + F2	Shift + F2	Favorito anterior
+⌘ + ⇑ + F2	Ctrl + Shift + F2	Eliminar favoritos
+
+
+Atajos de marcado
+Mac OS X	Windows/Linux	Descripción
+⌘ + K + (espacio)	Ctrl + K + spacio	Setea una marca
+⌘ + K + W	Ctrl + K + W	Eliminar desde el cursor hasta la marca
+⌘ + K + A	Ctrl+K + A	Seleccionar desde el cursor hasta la marca
+⌘ + K + G	Ctrl + K + G	Eliminar marca
+
+
+Leyenda de teclas
+
+⌘ = Comando (Solo Mac)
+⌥ = Alt (Solo Mac)
+⌫ = Borrar (Solo Mac)
+⇑ = Mayúsculas
+↵ = Tecla Intro / Enter

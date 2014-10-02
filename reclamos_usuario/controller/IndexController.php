@@ -12,12 +12,15 @@ ini_set("display_errors",1);
 			/*******Constructor Clase***********/
 			function __construct()
 			{
+			 	/********Archivos incluidos***********************/
 				include_once("./View/View_index.php");
+
+		        /*******Inicializo las variables con clases*******/
 				$this->view_inicio = new View_index();
 			}
 
-	       /*****acciones posibles en la pagina de inicio******/
-		    	
+
+			/*******Metodos***********/		    	
 
     	public function visualizar_inicio()
 		{

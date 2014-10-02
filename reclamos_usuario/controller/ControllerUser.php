@@ -8,38 +8,48 @@ ini_set("display_errors",1);
 
 class ControllerUser
 {			
-			//private $model_registrarse;
-			private $model_login;
-			private $view_home;
-			private $model;
-			private $controller_reclamos;
+
+	/*******Atributos***********/
+
+	//private $model_registrarse;
+	private $model_comprobar_existencia_usuario;
+	private $view_home;
+	private $model;
+	private $controller_reclamos;
+
+
+	/*******Metodos***********/
 
 	public function __construct()
 			{
+	         	/*************Archivos incluidos***********************/
+
 				include_once("./Model/Model_Registrarse.php");
 				include_once("./Model/model_reclamos.php");
 				include_once("./View/Home_view.php");
 			  	include_once("./controller/controller_reclamos.php");
-			  	include_once("./Model/Model_Login.php");	
-	
-				$this->model_login 				= 	new Login();
-			  	$this->model_registrarse	= 	new Registrarse();
-				$this->view_home 			= 	new view_Home();
-				$this->model				=	new model_ver_reclamos();//esta llamada tiene que ser a un controller
-				$this->controller_reclamos	= 	new reclamos();
+			  	include_once("./Model/Model_comprobar_existencia_de_usuario.php");	
+		        
+		        /*************Inicializo las variables con clases***********************/
+
+				$this->model_comprobar_existencia_usuario= 	new Model_comprobar_existencia_usuario();
+			  	$this->model_registrarse				= 	new Model_Registrarse();
+				$this->view_home 						= 	new View_Home();
+				$this->model							=	new model_ver_reclamos();//esta llamada tiene que ser a un controller
+				$this->controller_reclamos				= 	new Controller_reclamos();
 
 			}
 
-	public function comprobar_existencia_usuario($email,$pass)
+	private function comprobar_existencia_usuario($email,$pass)
 			{
 
-				return $this->model_login->verificar_usuario($email,$pass);
+				return $this->model_comprobar_existencia_usuario->verificar_usuario($email,$pass);
 			}
 						//le estoy pasando el id por referencia
-	public function Home($datos_home)//datos home es informacion de una consulta 
+	private function Home($datos_home)//datos home es informacion de una consulta 
 			{
-				$reclamos_usuario=$this->controller_reclamos->mostrar_reclmos($datos_home);
-			    $this->view_home->Home_v($reclamos_usuario);
+				$reclamos_usuario=$this->controller_reclamos->mostrar_reclamos($datos_home);
+			    $this->view_home->Home($reclamos_usuario);
 
 			}
 
@@ -53,15 +63,17 @@ class ControllerUser
 
 	public function login($email,$pass)
 			{ 
-	    	$login_ok = $this->comprobar_existencia_usuario($email,$pass);
-	    	if($login_ok)
-		    { 
-		    	  $this->Home($login_ok);//le pasa los datos a la funcion home definida en este controlador
-		   	}
-		   	else
-		   		{
-					$this->error504();
-		   		}
+
+		    	$login_ok = $this->comprobar_existencia_usuario($email,$pass);
+
+			    	if($login_ok)
+				    { 
+				    	$this->Home($login_ok);//le pasa los datos a la funcion home definida en este controlador
+				   	}
+				   		else
+					   		{
+								$this->error504();//Method own of this class
+					   		}
 
 
 			}

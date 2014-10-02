@@ -3,9 +3,9 @@
 include_once("view.php");
 
 
-class view_Home extends View
+class View_Home extends View
 {
-	public function Home_v($lista_de_reclamos)
+	public function Home($lista_de_reclamos)
 	{
 
 

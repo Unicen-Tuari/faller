@@ -2,7 +2,7 @@
 
 include_once( "modelodb.php");
 
-class Registrarse extends modelodb
+class Model_Registrarse extends modelodb
 {
 	public function registrar()
 	{

@@ -11,7 +11,7 @@
           </button>
           <a class="navbar-brand  page-scroll" href="index.php?action=Home">logueado</a>
               <a class="navbar-brand" href="#SOBRE_ESTA_APLICACION">Sobre esta aplicacion2</a>
-               <a class="navbar-brand" href="http://www.laprida.gob.ar/" > Enlase Pagina Municipal</a>
+               <a class="navbar-brand" href="http://www.laprida.gob.ar/" > Enlace Pagina Municipal</a>
 
 
         </div>
