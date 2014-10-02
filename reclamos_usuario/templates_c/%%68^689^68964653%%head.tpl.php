@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-09-29 22:17:48
+<?php /* Smarty version 2.6.27, created on 2014-10-02 16:49:24
          compiled from head.tpl */ ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +13,7 @@
         <!--clase del registrar y loguear del index-->
     <link href="css/Inicio_registrar_loguear.css" rel="stylesheet">
         <link href="css/Botoens_registrar.css" rel="stylesheet">
+
 
     
         <!--FIN clase del registrar y loguear del index-->

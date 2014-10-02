@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-09-30 21:45:46
+<?php /* Smarty version 2.6.27, created on 2014-10-02 16:49:30
          compiled from index.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -175,13 +175,13 @@ unset($_smarty_tpl_vars);
               <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">Nombre</label>
                   <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                    <input type="text" name="nombre_registrarse" class="form-control" id="inputEmail" placeholder="Email">
                   </div>
               </div>
               <div class="form-group">
                 <label for="name" class="col-lg-2 control-label">Apellido</label>
                 <div class="col-lg-10">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                  <input type="text" name="apellido_registrarse" class="form-control" id="inputEmail" placeholder="Email">
                 </div>
               </div>
               <div class="form-group">
@@ -193,7 +193,7 @@ unset($_smarty_tpl_vars);
               <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                     <div class="col-lg-10">
-                      <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                      <input type="text" name="email_registrarse" class="form-control" id="inputEmail" placeholder="Email">
                     </div>
               </div>
               <div class="form-group">
