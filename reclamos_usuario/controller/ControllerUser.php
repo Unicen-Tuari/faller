@@ -11,7 +11,7 @@ class ControllerUser
 
 	/*******Atributos***********/
 
-	//private $model_registrarse;
+	private $model_registrarse;
 	private $model_comprobar_existencia_usuario;
 	private $view_home;
 	private $model;
@@ -78,12 +78,12 @@ class ControllerUser
 
 			}
 
-	/*public function registrarse($nombre,$apellido,$email,$pass,$direccion,$ciudad,$edad,$sexo)
+	public function registrarse($arr_datos_registrarse)
 			{
-				$registro_ok= $this->model_registrarse($nombre,$apellido,$email,$pass,$direccion,$ciudad,$edad,$sexo);
+				$registro_ok= $this->model_registrarse($arr_datos_registrarse);
 				if($registro_ok==null)
 			    	{
-			    		$this->Home($sin_reclamos=null);//le pasa los datos a la funcion home definida en este controlador
+
 			   		}
 			   		else
 			   			{
@@ -92,7 +92,6 @@ class ControllerUser
 
 
 			}
-			*/
 }
 
 

@@ -10,17 +10,38 @@ ini_set("display_errors", 1);
   isset($a[action])
   $a(acction)==='index.php';
 */
-   	 if(isset($_POST['email_login']))
+if 	(isset($_POST['email_login']))
 	{
 		//if(array_key_exists('email_login',$_POST))
 		//{}
-			include "./controller/ControllerUser.php";
+			include_once("./controller/ControllerUser.php");
 			$email= $_POST['email_login'];
 			$pass=  $_POST['pass_login'];
 			$l= new ControllerUser();
 			$l->login($email,$pass);
 		//}
 	}
+
+else
+
+	if (isset($_POST['nombre_registrarse']))
+	{
+		include_once("./controller/ControllerUser.php");
+		$arr_registro=array();
+		$arr_registro['nombre']=$_POST['nombre_registrarse'];
+		$arr_registro['apellido']=$_POST['apellido_registrarse'];
+		$arr_registro['dni']=$_POST['dni_registrarse'];
+		$arr_registro['email']=$_POST['email_registrarse'];
+		$arr_registro['mujer']=$_POST['mujer_registrarse'];
+		$arr_registro['hombre']=$_POST['hombre_registrarse'];
+		$arr_registro['pass']=$_POST['pass_registrarse'];
+		$arr_registro['direccion']=$_POST['Direccion_registrarse'];
+		
+		$R= new ControllerUser();
+		$R->registrarse($arr_registro);
+
+	}
+
 else
 
 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index.tpl')

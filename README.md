@@ -31,3 +31,6 @@ Administrar perfil.
 
 Registrasción
 Login
+
+<h4>Issus</h4>
+git commit -m "Closes #1, closes #2, closes #3, closes #n; mensaje del commit .

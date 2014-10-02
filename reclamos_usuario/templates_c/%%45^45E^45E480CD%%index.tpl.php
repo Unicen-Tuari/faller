@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-02 18:15:13
+<?php /* Smarty version 2.6.27, created on 2014-10-02 19:08:52
          compiled from index.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -171,23 +171,23 @@ unset($_smarty_tpl_vars);
       <div class="modal-body">
        <form class="form-horizontal"  action="index.php" method="post">
         <fieldset>
-            <legend>Legend</legend>
+            <legend>Ingrese todo los datos requeridos.</legend>
               <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">Nombre</label>
                   <div class="col-lg-10">
-                    <input type="text" name="nombre_registrarse" class="form-control" id="inputEmail" placeholder="Email">
+                    <input type="text" name="nombre_registrarse" class="form-control" id="inputEmail" placeholder="Nombre">
                   </div>
               </div>
               <div class="form-group">
                 <label for="name" class="col-lg-2 control-label">Apellido</label>
                 <div class="col-lg-10">
-                  <input type="text" name="apellido_registrarse" class="form-control" id="inputEmail" placeholder="Email">
+                  <input type="text" name="apellido_registrarse" class="form-control" id="inputEmail" placeholder="Apellido">
                 </div>
               </div>
               <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">Documento</label>
                   <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                    <input type="text" name="dni_registrarse"  class="form-control" id="inputEmail" placeholder="Dni">
                   </div>
               </div>
               <div class="form-group">
@@ -199,14 +199,14 @@ unset($_smarty_tpl_vars);
               <div class="form-group">
                 <label for="inputPassword" class="col-lg-2 control-label">Password nuevo</label>
                 <div class="col-lg-10">
-                  <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                  <input type="password" name="pss_registrarse" class="form-control" id="inputPassword" placeholder="Password">
                   <div class="checkbox">
                     <label>
-                      <input type="checkbox">Mujer
+                      <input  type="checkbox"  name="mujer_registrarse" >Mujer
                     </label>
                    <div class="checkbox">
                     <label>
-                      <input type="checkbox">Hombre
+                      <input type="checkbox" name="hombre_registrarse" >Hombre
                     </label>
                   </div>
                   </div>
@@ -215,22 +215,19 @@ unset($_smarty_tpl_vars);
               <div class="form-group">
                 <label for="text" class="col-lg-2 control-label">Direccion</label>
                      <div class="col-lg-10">
-                         <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                         <input type="text" name="Direccion_registrarse"  class="form-control" id="inputEmail" placeholder="Direcion">
                     </div>
               </div>
               <div class="form-group">
                   <div class="col-lg-10 col-lg-offset-2">
-                        <button class="btn btn-default">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Registrarse</button>
                   </div>
               </div>
          </fieldset>  
       </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+
     </div>
   </div>
 </div>
