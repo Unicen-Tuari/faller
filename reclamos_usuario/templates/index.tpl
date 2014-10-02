@@ -169,13 +169,13 @@
               <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">Nombre</label>
                   <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                    <input type="text" name="nombre_registrarse" class="form-control" id="inputEmail" placeholder="Email">
                   </div>
               </div>
               <div class="form-group">
                 <label for="name" class="col-lg-2 control-label">Apellido</label>
                 <div class="col-lg-10">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                  <input type="text" name="apellido_registrarse" class="form-control" id="inputEmail" placeholder="Email">
                 </div>
               </div>
               <div class="form-group">
@@ -187,7 +187,7 @@
               <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                     <div class="col-lg-10">
-                      <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                      <input type="text" name="email_registrarse" class="form-control" id="inputEmail" placeholder="Email">
                     </div>
               </div>
               <div class="form-group">
