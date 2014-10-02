@@ -12,6 +12,7 @@
     <link href="css/Inicio_registrar_loguear.css" rel="stylesheet">
         <link href="css/Botoens_registrar.css" rel="stylesheet">
 
+
     
         <!--FIN clase del registrar y loguear del index-->
 
