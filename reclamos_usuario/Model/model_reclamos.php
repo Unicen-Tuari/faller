@@ -1,17 +1,18 @@
 <?php
 
-include( "modelodb.php");
+include_once( "modelodb.php");
 
 class model_ver_reclamos extends modelodb
 { 
-	private $id_usuario;
+	
 
 	public function ver_reclamo_M($id_usuario){
 			// 
-				return $this->query("
-					SELECT *
-					 FROM RECLAMO_REL
-					 where id='$id_usuario'");
+	//	print_r($id_usuario[0]['id_persona']);
+		$usuario=$id_usuario[0]['id_persona'];
+				return $this->query("SELECT *
+				 					FROM RECLAMO_REL
+				 					where id_persona='$usuario'" );
 				
 	}
 

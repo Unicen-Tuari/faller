@@ -1,7 +1,7 @@
 <?php
 
 
-include("view.php");
+include_once("view.php");
 
 
 class View_index extends View

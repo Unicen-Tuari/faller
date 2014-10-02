@@ -4,8 +4,8 @@ error_reporting(E_ALL);
 ini_set("display_errors",1);
 
 
-include("./Model/ver_reclamos.php");//DENTRO DE UN CONSTRUCTOR
-include("./View/home_view.php");
+include_once("./Model/ver_reclamos.php");//DENTRO DE UN CONSTRUCTOR
+include_once("./View/home_view.php");
 //include("./Model/ver_reclamos.php");
 
 	/*****controlador principal*****/

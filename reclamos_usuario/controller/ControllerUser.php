@@ -11,36 +11,41 @@ class ControllerUser
 			//private $model_registrarse;
 			private $model_login;
 			private $view_home;
-			private $model1;
+			private $model;
 			private $controller_reclamos;
 
 	public function __construct()
 			{
-				include("./Model/Model_Registrarse.php");
-				include("./Model/model_reclamos.php");
-				include("./View/Home_view.php");
-			  	include("./controller/controller_reclamos.php");
-
+				include_once("./Model/Model_Registrarse.php");
+				include_once("./Model/model_reclamos.php");
+				include_once("./View/Home_view.php");
+			  	include_once("./controller/controller_reclamos.php");
+			  	include_once("./Model/Model_Login.php");	
+	
+				$this->model_login 				= 	new Login();
 			  	$this->model_registrarse	= 	new Registrarse();
 				$this->view_home 			= 	new view_Home();
-				$this->model1				=	new model_ver_reclamos();//esta llamada tiene que ser a un controller
+				$this->model				=	new model_ver_reclamos();//esta llamada tiene que ser a un controller
 				$this->controller_reclamos	= 	new reclamos();
 
 			}
 
-	private function comprovar_existencia_usuario()
+	public function comprobar_existencia_usuario($email,$pass)
 			{
-				 $this->model_login->verificar_usuario($email,$pass);
-			}
 
-	public function Home($datos_home)
+				return $this->model_login->verificar_usuario($email,$pass);
+			}
+						//le estoy pasando el id por referencia
+	public function Home($datos_home)//datos home es informacion de una consulta 
 			{
-				$this->controller_reclamos->mostrar_reclmos($datos_home);
+				$reclamos_usuario=$this->controller_reclamos->mostrar_reclmos($datos_home);
+			    $this->view_home->Home_v($reclamos_usuario);
+
 			}
 
 	public function error504()
 			{
-				include("./View/View_error504.php");
+				include_once("./View/View_error504.php");
 				$error= new error_504();
 				$error->pagina_error();
 			}
@@ -48,24 +53,18 @@ class ControllerUser
 
 	public function login($email,$pass)
 			{ 
-
-			include("./Model/Model_Login.php");	
-			$model_login= 	new Login();
-				
-			$email=0;
-			$pass=0;
-	    	$login_ok = $this->model_login->verificar_usuario($email,$pass);
-	    	if($login_ok!=null)
-		    {
-		    		$this->Home($login_ok);//le pasa los datos a la funcion home definida en este controlador
+	    	$login_ok = $this->comprobar_existencia_usuario($email,$pass);
+	    	if($login_ok)
+		    { 
+		    	  $this->Home($login_ok);//le pasa los datos a la funcion home definida en este controlador
 		   	}
 		   	else
 		   		{
 					$this->error504();
 		   		}
 
-			}
 
+			}
 
 	/*public function registrarse($nombre,$apellido,$email,$pass,$direccion,$ciudad,$edad,$sexo)
 			{

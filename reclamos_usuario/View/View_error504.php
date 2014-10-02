@@ -1,6 +1,6 @@
 <?php
 
-include("view.php");
+include_once("view.php");
 
 
 class error_504 extends View

@@ -12,7 +12,7 @@ ini_set("display_errors",1);
 			/*******Constructor Clase***********/
 			function __construct()
 			{
-				include("./View/View_index.php");
+				include_once("./View/View_index.php");
 				$this->view_inicio = new View_index();
 			}
 

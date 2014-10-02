@@ -15,10 +15,12 @@
 	    public function __construct()
          {
          	//include("./Model/model_reclamos.php");
-         	include("./View/Home_view.php");
+         	include_once("./View/Home_view.php");
+         	include_once("./Model/model_reclamos.php");
 
          	//$this->model_agregar_reclamo= new model_crear_reclamo();
          	$this->vista_home=new view_Home();
+         	$this->model_ver_reclamos= new model_ver_reclamos();
          	$this->vista_consulta=null;
          }
 			/*******Constructor Clase***********/
@@ -34,7 +36,7 @@
 
 			public function mostrar_reclmos($usuario)
 			{
-				return $this->vista_home->Home_v($this->model_ver_reclamos->ver_reclamo_M($usuario));
+				return $this->model_ver_reclamos->ver_reclamo_M($usuario);
 
 			}
 			public function reclamos_solucionados()

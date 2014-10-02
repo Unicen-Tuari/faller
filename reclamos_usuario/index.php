@@ -10,6 +10,18 @@ ini_set("display_errors", 1);
   isset($a[action])
   $a(acction)==='index.php';
 */
+   	 if(isset($_POST['email_login']))
+	{
+		//if(array_key_exists('email_login',$_POST))
+		//{}
+			include "./controller/ControllerUser.php";
+			$email= $_POST['email_login'];
+			$pass=  $_POST['pass_login'];
+			$l= new ControllerUser();
+			$l->login($email,$pass);
+		//}
+	}
+else
 
 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index.tpl')
 	{
@@ -27,18 +39,6 @@ ini_set("display_errors", 1);
    }
 */
    	//if(array_key_exists('email_login',$_POST))
-   	if(isset($_POST['email_login']))
-	{
-		//if(array_key_exists('email_login',$_POST))
-		//{}
-			include "./controller/ControllerUser.php";
-			$email= $_POST['email_login'];
-			$pass=  $_POST['pass_login'];
-			$l= new ControllerUser();
-			$l->login($email,$pass);
-		//}
-	}
-
 	/*elseif(array_key_exists('registrarse',$_POST))
 	{	
 		if(isset($_POST['registrarse']))

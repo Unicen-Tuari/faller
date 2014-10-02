@@ -1,7 +1,7 @@
 <?php
 
-include("./index_model/ModeloBD.php");//DENTRO DE UN CONSTRUCTOR
-include("./index_view/index_view.php");
+include_once("./index_model/ModeloBD.php");//DENTRO DE UN CONSTRUCTOR
+include_once("./index_view/index_view.php");
 
 
 	/*****controlador principal*****/

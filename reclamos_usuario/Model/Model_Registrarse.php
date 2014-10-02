@@ -1,6 +1,6 @@
 <?php
 
-include( "modelodb.php");
+include_once( "modelodb.php");
 
 class Registrarse extends modelodb
 {
