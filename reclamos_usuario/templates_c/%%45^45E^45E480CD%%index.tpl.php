@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-02 19:08:52
+<?php /* Smarty version 2.6.27, created on 2014-10-02 23:55:26
          compiled from index.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -199,7 +199,7 @@ unset($_smarty_tpl_vars);
               <div class="form-group">
                 <label for="inputPassword" class="col-lg-2 control-label">Password nuevo</label>
                 <div class="col-lg-10">
-                  <input type="password" name="pss_registrarse" class="form-control" id="inputPassword" placeholder="Password">
+                  <input type="password" name="pass_registrarse" class="form-control" id="inputPassword" placeholder="Password">
                   <div class="checkbox">
                     <label>
                       <input  type="checkbox"  name="mujer_registrarse" >Mujer

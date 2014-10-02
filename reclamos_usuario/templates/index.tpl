@@ -193,7 +193,7 @@
               <div class="form-group">
                 <label for="inputPassword" class="col-lg-2 control-label">Password nuevo</label>
                 <div class="col-lg-10">
-                  <input type="password" name="pss_registrarse" class="form-control" id="inputPassword" placeholder="Password">
+                  <input type="password" name="pass_registrarse" class="form-control" id="inputPassword" placeholder="Password">
                   <div class="checkbox">
                     <label>
                       <input  type="checkbox"  name="mujer_registrarse" >Mujer

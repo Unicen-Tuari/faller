@@ -11,7 +11,7 @@ class View
 	public function __construct()
 	{
 		$this->smarty = new Smarty();
-		$this->smarty->debugging=true;
+		//$this->smarty->debugging=true;
 	}
 	
 }

@@ -1,5 +1,4 @@
 <?php
-		
 
 error_reporting(E_ALL);
 ini_set("display_errors",1);
@@ -40,7 +39,7 @@ class ControllerUser
 
 			}
 
-	private function comprobar_existencia_usuario($email,$pass)
+	public function comprobar_existencia_usuario($email,$pass)
 			{
 
 				return $this->model_comprobar_existencia_usuario->verificar_usuario($email,$pass);
@@ -61,14 +60,11 @@ class ControllerUser
 			}
 
 
-	public function login($email,$pass)
-			{ 
-
-		    	$login_ok = $this->comprobar_existencia_usuario($email,$pass);
-
-			    	if($login_ok)
+	public function login($usuario)
+	{
+			    	if($usuario)
 				    { 
-				    	$this->Home($login_ok);//le pasa los datos a la funcion home definida en este controlador
+				    	$this->Home($usuario);//le pasa los datos a la funcion home definida en este controlador
 				   	}
 				   		else
 					   		{
@@ -76,7 +72,7 @@ class ControllerUser
 					   		}
 
 
-			}
+	}
 
 	public function registrarse($arr_datos_registrarse)
 			{

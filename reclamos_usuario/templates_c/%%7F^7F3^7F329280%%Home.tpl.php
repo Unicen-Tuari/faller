@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-02 18:15:50
+<?php /* Smarty version 2.6.27, created on 2014-10-02 23:53:10
          compiled from Home.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -20,7 +20,7 @@ unset($_smarty_tpl_vars);
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Enlace Pagina Municipal</a></li>
-            <li><a href="#">Cerrar Sesion</a></li>
+            <li><a href="index.php?action=cerrar_sesion.tpl">Cerrar Sesion</a></li>
           </ul>
           <form class="navbar-form navbar-right">
           </form>

@@ -14,7 +14,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Enlace Pagina Municipal</a></li>
-            <li><a href="#">Cerrar Sesion</a></li>
+            <li><a href="index.php?action=cerrar_sesion.tpl">Cerrar Sesion</a></li>
           </ul>
           <form class="navbar-form navbar-right">
           </form>

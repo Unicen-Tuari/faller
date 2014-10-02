@@ -1,6 +1,9 @@
 <?php
+session_start();
+
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
+
 
 /********************RUTEADOR DE REQUERIMIENTOS*********************************/
 
@@ -14,13 +17,29 @@ if 	(isset($_POST['email_login']))
 	{
 		//if(array_key_exists('email_login',$_POST))
 		//{}
+		   //$_SESSION['sesionUsuario'] ;
 			include_once("./controller/ControllerUser.php");
 			$email= $_POST['email_login'];
 			$pass=  $_POST['pass_login'];
 			$l= new ControllerUser();
-			$l->login($email,$pass);
-		//}
+			$usuario=$l->comprobar_existencia_usuario($email,$pass);
+			if ($usuario)
+				{ 
+					$_SESSION['sesionUsuario'] =$usuario;
+					$id_usuario=$_SESSION['sesionUsuario'];
+					$l->login($id_usuario);
+				}
 	}
+else
+
+	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='cerrar_sesion.tpl')
+	{
+		session_destroy();
+		include "./controller/IndexController.php";
+	 	$inicio= new controlador_index();
+		$inicio->visualizar_inicio();
+
+	}	
 
 else
 
