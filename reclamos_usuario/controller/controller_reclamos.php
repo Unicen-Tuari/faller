@@ -17,6 +17,7 @@
          	//include("./Model/model_reclamos.php");
          	include_once("./View/Home_view.php");
          	include_once("./Model/model_reclamos.php");
+         	
 
          	//$this->model_agregar_reclamo= new model_crear_reclamo();
          	$this->vista_home=new view_Home();
