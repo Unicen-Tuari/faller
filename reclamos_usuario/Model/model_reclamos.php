@@ -110,17 +110,17 @@ class model_crear_reclamo extends modelodb
 			$preparado->execute(
 								array
 									(
-									 ':id_persona'=>$id_pers			,				
-					 				 ':id_sector'=>2					,
-					 				 ':dni_empleado'=>null				,
-					 				 ':sector_raiz'=>$Sector			,
-					 				 ':fecha'=>$fecha		     		, 
-					 				 ':resumen_sector'=>"ss"			,
-					 				 ':area_actual'=>2					,
-					 				 ':area_ya_paso'=>2					, 
-					 			   	 ':estado_reclamo'=>"No visto"		, 
-					 				 ':reclamo'=>$reclamo      			, 
-					 				 ':foto_reclamo'=>$foto_del_reclamo
+									 ':id_persona'				=>$id_pers			,				
+					 				 ':id_sector'				=>2					,
+					 				 ':dni_empleado'			=>null				,
+					 				 ':sector_raiz'				=>$Sector			,
+					 				 ':fecha'					=>$fecha		    , 
+					 				 ':resumen_sector'			=>"ss"				,
+					 				 ':area_actual'				=>2					,
+					 				 ':area_ya_paso'			=>2					, 
+					 			   	 ':estado_reclamo'			=>"No visto"		, 
+					 				 ':reclamo'					=>$reclamo      	, 
+					 				 ':foto_reclamo'			=>$foto_del_reclamo
 					 				 )
 								);
 
