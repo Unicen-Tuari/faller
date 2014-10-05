@@ -1,5 +1,11 @@
-{include file="head.tpl" }
-<body acction="home">
+<?php /* Smarty version 2.6.27, created on 2014-10-04 20:15:28
+         compiled from error404.tpl */ ?>
+<?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
+<body >
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -77,9 +83,9 @@
             </div>
   
                     <div class="intro-text text-left"   id="portfolio2">
-                        <span class="name">Error 504 </span>
+                        <span class="name">Error 404 "Not Found" </span>
                         <hr class="star-light">
-                        <span class="skills">La pagina requerida no esta disponible</span>
+                        <span class="skills">Los datos ingresados no son correctos</span>
                     </div>
                      <div class="col-lg-12">
                  </div>
@@ -295,4 +301,8 @@
     <script src="./js/Carrusel.js"></script>
 
 
-    {include file="footer.tpl" }
+    <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "footer.tpl", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>

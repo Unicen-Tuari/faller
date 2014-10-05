@@ -11,6 +11,7 @@ class View_Home extends View
 
 		if($lista_de_reclamos!= null)
 		{
+		
 			$this->smarty->assign("reclamos",$lista_de_reclamos);	
 		}
 		$this->smarty->display('Home.tpl');

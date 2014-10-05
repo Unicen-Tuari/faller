@@ -1,11 +1,11 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-02 23:55:26
+<?php /* Smarty version 2.6.27, created on 2014-10-05 01:06:44
          compiled from index.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-<body acction="home">
+<body acction="index.php?action=Home">
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -15,8 +15,7 @@ unset($_smarty_tpl_vars);
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand  page-scroll" href="index.php?action=Home">logueado</a>
-              <a class="navbar-brand" href="#SOBRE_ESTA_APLICACION">Sobre esta aplicacion2</a>
+              <a class="navbar-brand" href="#SOBRE_ESTA_APLICACION">Sobre esta aplicacion</a>
                <a class="navbar-brand" href="http://www.laprida.gob.ar/" > Enlace Pagina Municipal</a>
 
 
@@ -150,17 +149,7 @@ unset($_smarty_tpl_vars);
                                           <!-- Modal Registrarse -->
 
 
-<div class="container">
-      <div class="row">
-        <div class="col-sm-3 col-md-2">
 
-       <!-- Button to trigger modal -->
-
-<!-- Button trigger modal -->
-
-</button>
-
-<!-- Modal ingresar -->
 <div class="modal fade" id="Registratse" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -179,15 +168,21 @@ unset($_smarty_tpl_vars);
                   </div>
               </div>
               <div class="form-group">
-                <label for="name" class="col-lg-2 control-label">Apellido</label>
+                <label for="apellido" class="col-lg-2 control-label">Apellido</label>
                 <div class="col-lg-10">
-                  <input type="text" name="apellido_registrarse" class="form-control" id="inputEmail" placeholder="Apellido">
+                  <input type="text" name="apellido_registrarse" class="form-control" id="apellido" placeholder="Apellido">
                 </div>
               </div>
               <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Documento</label>
+                  <label for="inputDocumento" class="col-lg-2 control-label">Documento</label>
                   <div class="col-lg-10">
-                    <input type="text" name="dni_registrarse"  class="form-control" id="inputEmail" placeholder="Dni">
+                    <input type="text" name="dni_registrarse"  class="form-control" id="inputDocumento" placeholder="Dni">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="inputFechaNacimiento" class="col-lg-2 control-label">Fecha de Nacimientó</label>
+                  <div class="col-lg-10">
+                    <input type="text" name="FechaNacimiento"  class="form-control" id="inputFechaNacimiento" placeholder="dia/mes/años">
                   </div>
               </div>
               <div class="form-group">
@@ -197,30 +192,36 @@ unset($_smarty_tpl_vars);
                     </div>
               </div>
               <div class="form-group">
-                <label for="inputPassword" class="col-lg-2 control-label">Password nuevo</label>
-                <div class="col-lg-10">
-                  <input type="password" name="pass_registrarse" class="form-control" id="inputPassword" placeholder="Password">
-                  <div class="checkbox">
-                    <label>
-                      <input  type="checkbox"  name="mujer_registrarse" >Mujer
-                    </label>
-                   <div class="checkbox">
-                    <label>
-                      <input type="checkbox" name="hombre_registrarse" >Hombre
-                    </label>
-                  </div>
-                  </div>
-                </div>
-              </div>
+                    <label for="inputCelular" class="col-lg-2 control-label">Celular</label>
+                    <div class="col-lg-10">
+                      <input type="integer" name="Celular_registrarse" class="form-control" id="inputCelular" placeholder="Celular">
+                    </div>
+               </div>
+              <div class="form-group">
+                    <label for="inputTelefonoFijo" class="col-lg-2 control-label">Telefono fijo</label>
+                    <div class="col-lg-10">
+                      <input type="integer" name="Telefono_fijo_registrarse" class="form-control" id="inputTelefonoFijo" placeholder="Telefono fijo">
+                    </div>
+               </div>
+
               <div class="form-group">
                 <label for="text" class="col-lg-2 control-label">Direccion</label>
                      <div class="col-lg-10">
                          <input type="text" name="Direccion_registrarse"  class="form-control" id="inputEmail" placeholder="Direcion">
                     </div>
               </div>
+            <div class="form-group">
+                  <label for="inputPassword" class="col-lg-2 control-label">Password nuevo</label>
+                 <div class="col-lg-10">
+                        <input type="password" name="pass_registrarse" class="form-control" id="inputPassword" placeholder="Contraseña nueva, necesaria para esta aplicacion">
+         
+                </div>
+            </div>
+
+
               <div class="form-group">
                   <div class="col-lg-10 col-lg-offset-2">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Registrarse</button>
                   </div>
               </div>
@@ -243,42 +244,42 @@ unset($_smarty_tpl_vars);
 <div class="modal fade" id="Ingresar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">login
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title  text-center" id="myModalLabel">Ingresar</h4>
-      </div>
+            <div class="modal-header">login
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title  text-center" id="myModalLabel">Ingresar</h4>
+            </div>
+
       <div class="modal-body">
-
-<form class="form-horizontal"  action="index.php" method="post" >
-  <fieldset>
-    <legend>Datos de usuario</legend>
-        <div class="form-group">
-          <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-              <div class="col-lg-10">
-                <input type="text"  name="email_login"  class="form-control" id="inputEmail" placeholder="Email">
-              </div>
+            <form class="form-horizontal"  action="index.php" method="post" >
+              <fieldset>
+                <legend>Datos de usuario</legend>
+                    <div class="form-group">
+                      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                          <div class="col-lg-10">
+                            <input type="text"  name="email_login"  class="form-control" id="inputEmail" placeholder="Email">
+                          </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword"  class="col-lg-2 control-label">Password</label>
+                          <div class="col-lg-10">
+                            <input type="password" name="pass_login" class="form-control" id="inputPassword" placeholder="Password">
+                          </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-lg-10 col-lg-offset-2">
+                            <button class="btn btn-default">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                      </div>
+                    </div>
+                 </fieldset>
+            </form>
         </div>
-        <div class="form-group">
-          <label for="inputPassword"  class="col-lg-2 control-label">Password</label>
-              <div class="col-lg-10">
-                <input type="password" name="pass_login" class="form-control" id="inputPassword" placeholder="Password">
-              </div>
-        </div>
-        <div class="form-group">
-          <div class="col-lg-10 col-lg-offset-2">
-                <button class="btn btn-default">Cancelar</button>
-                <button type="submit" class="btn btn-primary">Ingresar</button>
-          </div>
-        </div>
-     </fieldset>
-</form>
-
-
-      </div>
 
     </div>
   </div>
-</div
+</div>
+
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

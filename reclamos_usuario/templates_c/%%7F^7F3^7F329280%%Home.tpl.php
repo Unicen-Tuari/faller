@@ -1,11 +1,11 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-02 23:53:10
+<?php /* Smarty version 2.6.27, created on 2014-10-05 03:56:01
          compiled from Home.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-<body acction="home">
+<body >
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -19,7 +19,7 @@ unset($_smarty_tpl_vars);
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Enlace Pagina Municipal</a></li>
+            <li><a href="http://www.laprida.gob.ar/">Enlace Pagina Municipal</a></li>
             <li><a href="index.php?action=cerrar_sesion.tpl">Cerrar Sesion</a></li>
           </ul>
           <form class="navbar-form navbar-right">
@@ -33,16 +33,15 @@ unset($_smarty_tpl_vars);
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#">Ver/crear reclamo</a></li>
-            <li><a href="#">Configurar perfil</a></li>
-            <li><a href="#">Galeria de fotos subidas</a></li>
+            <li>
+             <a  title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Modificar_perfil" >Configurar perfil</a>
+             </li>
+            <li><a >Galeria de fotos subidas</a></li>
             <li><a href="#">Mis Reclamos Pendientes</a></li>
             <li><a href="#">Contactos con secretaria</a></li>
-            <li><a href="#">Manejo del reclamo para cada area</a></li>
+            <li><a  title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Manejo_del_reclamo_por_cada_area">Manejo del reclamo para cada area</a></li>
            <li><a href="#">Informacion sobre la aplicacion</a></li>
-
-
           </ul>
-
          
         </div>
         <div class="panel panel-danger">
@@ -64,6 +63,7 @@ unset($_smarty_tpl_vars);
             </div>
 
       <div class="col-xs-6 col-sm-1 placeholder  offset3">   
+
       </div>
 <div class="col-xs-12 col-sm-3 placeholder  offset3">   
  <div class="col-xs-12 col-sm-11 placeholder  offset3">       
@@ -95,10 +95,11 @@ unset($_smarty_tpl_vars);
  <div class="col-xs-6 col-sm-1 placeholder  offset3">   
       
 </div> 
+
     <div class="col-xs-12 col-lg-6 placeholder">
-<form class="form-horizontal" name="crear_reclamo_texto" action="index.php" method="post" >
- <select class="form-control" name="agregar_reclamo_selector" id="selectorSectores">
-      <option value="sa"> Seleccione el area competente</option>
+<form class="form-horizontal"  action="index.php?action=reclamoNuevo" method="post">
+ <select class="form-control" name="reclamo_selector" id="selectorSectores">
+    <option value="sa"> Seleccione el area competente</option>
     <option value="O"   > Obras Publicas</option>
     <option value="i"   >Infraestructura</option>
     <option value="a" >Asfalto</option>
@@ -109,13 +110,13 @@ unset($_smarty_tpl_vars);
     <option value="gas" >Gas</option>
     <option value="basura" >Basura</option>
 </select>
-      <textarea class="form-control" rows="5" name="crear_reclamo_texto" ></textarea>
+      <textarea class="form-control" rows="5" name="reclamo_texto"  ></textarea>
          <div class="col-lg-5 col-lg-offset 0">
         <button class="btn btn-default">Borrar</button>
         <button type="submit" class="btn button-Mi-Estilo" >Enviar</button>
       </div>
       <div class="col-xs-3 col-lg-3">
-<input type="file" class="btn btn-primary button-Mi-Estilo" name="agregar_reclamo_foto" data-buttonName="btn-primary" >
+<input type="file" class="btn btn-primary button-Mi-Estilo" name="reclamo_foto" data-buttonName="btn-primary" >
 </div>
 </form>
 </div> 
@@ -133,11 +134,12 @@ unset($_smarty_tpl_vars);
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
-                  <th>Numero Peticion</th>
-                  <th>Fecha</th>
-                  <th>Sector Competente</th>
-                  <th>Estado de la misma</th>
-                  
+                  <th data-toggle="tooltip" data-placement="left" title="Numero de la peticion y/o reclamo">Numero P</th>
+                  <th data-toggle="tooltip" data-placement="left" title="Fecha en que se realizo el reclamo">Fecha</th>
+                  <th  data-toggle="tooltip" data-placement="left" title="Sector al que se le envio el reclamo">Sector Competente</th>
+                   <th data-toggle="tooltip" data-placement="left" title="El area en el que se encuentra el reclamo, 'cada reclamo pasa de area en area hasta que cuple su siclo y termina'">Area en la que se encuentra</th>
+                  <th data-toggle="tooltip" data-placement="left" title="informa entre otras cosas, si fue o no aceptado el reclamo y/o el estado del mismo">Estado de la misma</th>
+                  <th data-toggle="tooltip" data-placement="left" title="Puede ver todos los detalles faltantes precionando 'ver', o modificar el reclamo precionando 'modificar' ">Acciones</th>
                 </tr>
               </thead>
               <tbody>
@@ -152,9 +154,11 @@ unset($_smarty_tpl_vars);
 </td>
                   <td><?php echo $this->_tpl_vars['i']['sector_raiz']; ?>
 </td>
+                  <td><?php echo $this->_tpl_vars['i']['area_actual']; ?>
+</td>
                   <td><?php echo $this->_tpl_vars['i']['estado_reclamo']; ?>
 </td>
-                  <td><button type="submit" class="btn btn-primary col-lg button-Mi-Estilo">Ver / Modificar</button></td>
+                  <td><button type="submit" data-toggle="tooltip" data-placement="left" title="Todos los detalles sobre este reclamo / modificar el reclamo" class="btn btn-primary col-lg button-Mi-Estilo">Ver / Modificar</button></td>
                 </tr><?php endforeach; endif; unset($_from); ?>
 
               </tbody>
@@ -164,15 +168,115 @@ unset($_smarty_tpl_vars);
       </div>
     </div>
 
+
+<div class="container-fluid">
+<!-- Modal configurar perfil -->
+<div class="modal fade" id="Modificar_perfil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Configurar Mi Perfil</h4>
+      </div>
+      <div class="modal-body">
+       <form class="form-horizontal"  action="index.php" method="post" >
+              <fieldset>
+                <legend>Datos de usuario</legend>
+                    <div class="form-group">
+                      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                          <div class="col-lg-10">
+                            <input type="text"  name="email_login"  class="form-control" id="inputEmail" placeholder="Email">
+                          </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword"  class="col-lg-2 control-label">Password</label>
+                          <div class="col-lg-10">
+                            <input type="password" name="pass_login" class="form-control" id="inputPassword" placeholder="Password">
+                          </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-lg-10 col-lg-offset-2">
+                            <button class="btn btn-default">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                      </div>
+                    </div>
+                 </fieldset>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Modal configurar manejo del reclamo por cada area -->
+<div class="modal fade" id="Manejo_del_reclamo_por_cada_area" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button data-dismiss="alert" type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Aqui puedes los pasos a seguir que debe realizar cada area raiz</h4>
+      </div>
+      <div class="modal-body">
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="modal-footer">
+        <!--  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+        -->
+      </div>
+    </div>
+  </div>
+</div>
+</div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/docs.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/docs.min.js"></script>
     <script src="./js/inputFile.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="./js/ie10-viewport-bug-workaround.js"></script>
+    
+    <!-- Carrusel-->
+    <script src="./js/Carrusel.js"></script>
+    <!--index-->
+    <script src="./js/index.js"></script>
+
 
     <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "footer.tpl", 'smarty_include_vars' => array()));

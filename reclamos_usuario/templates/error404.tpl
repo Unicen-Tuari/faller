@@ -1,10 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-04 20:10:06
-         compiled from error504.tpl */ ?>
-<?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
-$this->_tpl_vars = $_smarty_tpl_vars;
-unset($_smarty_tpl_vars);
- ?>
+{include file="head.tpl" }
 <body >
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
@@ -301,8 +295,4 @@ unset($_smarty_tpl_vars);
     <script src="./js/Carrusel.js"></script>
 
 
-    <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "footer.tpl", 'smarty_include_vars' => array()));
-$this->_tpl_vars = $_smarty_tpl_vars;
-unset($_smarty_tpl_vars);
- ?>
+    {include file="footer.tpl" }
