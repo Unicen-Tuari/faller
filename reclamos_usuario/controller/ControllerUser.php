@@ -13,6 +13,7 @@ class ControllerUser
 	private $model_registrarse;
 	private $model_comprobar_existencia_usuario;
 	private $view_home;
+	private $view_registrado_exitoso;
 	private $model;
 	private $controller_reclamos;
 
@@ -22,7 +23,7 @@ class ControllerUser
 	public function __construct()
 			{
 	         	/*************Archivos incluidos***********************/
-
+	         	include_once("./View/view_registrado_exitoso.php");
 				include_once("./Model/model_reclamos.php");
 				include_once("./View/Home_view.php");
 			  	include_once("./controller/controller_reclamos.php");
@@ -32,6 +33,7 @@ class ControllerUser
 
 				$this->model_comprobar_existencia_usuario= 	new Model_comprobar_existencia_usuario();
 				$this->view_home 						= 	new View_Home();
+				$this->view_registrado_exitoso			= 	new view_registrado_exitoso();
 				$this->model_ver_reclamos				=	new model_ver_reclamos();//esta llamada tiene que ser a un controller
 				$this->model_crear_reclamo				=	new model_crear_reclamo();//esta llamada tiene que ser a un controller
 				$this->controller_reclamos				= 	new Controller_reclamos();
@@ -48,7 +50,7 @@ class ControllerUser
 			{
 				$reclamos_usuario=$this->controller_reclamos->mostrar_reclamos($datos_home);
 			    //$usuario=
-			    $this->view_home->Home($reclamos_usuario);
+			    $this-•>view_home->Home($reclamos_usuario);
 
 			}
 
@@ -69,10 +71,11 @@ class ControllerUser
 			   	}
 			}
 
+
 	public function registrarse($arr_datos_registrarse)
 			{
-				return $this->model_registrarse->registrar($arr_datos_registrarse);
-	
+				 $this->model_registrarse->registrar($arr_datos_registrarse);
+				 $this->view_registrado_exitoso->r_exitoso();
 			}
 
 	public function crear_reclamo($arr_datos_reclamo)
