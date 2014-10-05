@@ -11,9 +11,9 @@ class model_ver_reclamos extends modelodb
 				$usuario=$id_usuario[0]['id_persona'];
 						
 						return $this->query("SELECT *
-						 					FROM RECLAMO_REL rl JOIN PERSONA p 
-						 					ON(rl.id_persona=p.id_persona)
-						 					where p.id_persona='$usuario'" );
+						 					FROM RECLAMO_REL rl JOIN SECTOR s 
+						 					ON(rl.id_sector=s.id_sector)
+						 					where rl.id_persona='$usuario'" );
 
 
 			}
@@ -107,18 +107,19 @@ class model_crear_reclamo extends modelodb
 			$q=$this->connection(); 
 			$preparado=$q->prepare($sql);
 
-			$preparado->execute(array
+			$preparado->execute(
+								array
 									(
 									 ':id_persona'=>$id_pers			,				
-					 				 ':id_sector'=>2			,
-					 				 ':dni_empleado'=>null		,
-					 				 ':sector_raiz'=>$Sector		,
-					 				 ':fecha'=>$fecha		        , 
-					 				 ':resumen_sector'=>"ss"	,
-					 				 ':area_actual'=>2			,
-					 				 ':area_ya_paso'=>2			, 
-					 			   	 ':estado_reclamo'=>"kk"	, 
-					 				 ':reclamo'=>$reclamo      	, 
+					 				 ':id_sector'=>2					,
+					 				 ':dni_empleado'=>null				,
+					 				 ':sector_raiz'=>$Sector			,
+					 				 ':fecha'=>$fecha		     		, 
+					 				 ':resumen_sector'=>"ss"			,
+					 				 ':area_actual'=>2					,
+					 				 ':area_ya_paso'=>2					, 
+					 			   	 ':estado_reclamo'=>"No visto"		, 
+					 				 ':reclamo'=>$reclamo      			, 
 					 				 ':foto_reclamo'=>$foto_del_reclamo
 					 				 )
 								);
@@ -131,11 +132,11 @@ class model_registrarse extends modelodb
    {
 
 	/*******Atributos***********/
-	//public $sectorReclamo;
+	public $sectorReclamo;
 
 		/*****acciones posibles a realizar con un reclamo******/
 
-/*	   	public function registrar($Reclamo_ingresado)
+	   	public function registrar($Reclamo_ingresado)
 		{
 
 			$nombre			=$Reclamo_ingresado["nombre"];
@@ -143,36 +144,90 @@ class model_registrarse extends modelodb
 			$dni			=$Reclamo_ingresado["dni"];
 			$email			=$Reclamo_ingresado["email"];
 			$Celular		=$Reclamo_ingresado["Celular"];
-			$fecha_nacimiento=$Reclamo_ingresado["fecha_nacimiento"];
+			$fecha_nacimiento=date("y/m/d");//$Reclamo_ingresado["fecha_nacimiento"];
 			$Telefono_fijo	=$Reclamo_ingresado["Telefono_fijo"];
 			$pass			=$Reclamo_ingresado["pass"];
 			$direccion		=$Reclamo_ingresado["direccion"];
 			$fecha_registro	=date("y/m/d");
 
+
+
 			//insertar persona
-			
-			INSERT INTO PERSONA(id_persona, nombre, apellido, direccion, celular, email, password) 
-			VALUES(37198, 'fran', 'aller', '4abril', 228458, 'franco.e.aller@gmail.com', 'fran');
-			
+			/*		INSERT INTO PERSONA( nombre,
+					 apellido,
+					 dni_persona,
+					 fecha_nacimiento,
+					 direccion,
+					 celular,
+					 Telefono_fijo, 
+					 email, 
+					 password,
+					 fecha_registro
+					 )
+					VALUES( 'Franco',
+							 'Aller', 
+							 37198,
+							 '2001/07/22',
+			 				 '4 de Abril',
+			 				  2284588180,
+			 				  '',
+			 				  'franco.e.aller@gmail.com',
+			 				  'fran',
+			 				  '2020/07/22'
+			 			);
+	
+				*/
 
 			// El id_persona debe incrementarse solo
-	/*		$sql = "INSERT INTO PERSONA( nombre,
-					 apellido,dni_persona,fecha_nacimiento, direccion, celular,Telefono_fijo, email, password,fecha_registro)
-			 		VALUES(  :nombre, :apellido,:dni_persona,:fecha_nacimiento,
-			 				 :direccion, :celular,:Telefono_fijo, :email, :password,:fecha_registro
-			 				  )";
+			$sql = "INSERT INTO PERSONA(
+					 nombre				,
+					 apellido			,
+					 dni_persona		,
+					 fecha_nacimiento	,
+					 direccion			,
+					 celular			,
+					 Telefono_fijo		, 
+					 email				, 
+					 password			,
+					 fecha_registro
+					 )
+			VALUES( 
+					:nombre				, 
+					:apellido			,				
+					:dni_persona		,
+					:fecha_nacimiento	,
+			 		:direccion			, 
+			 		:celular			,
+			 		:Telefono_fijo		, 
+			 		:email				, 
+			 		:password			,
+			 		:fecha_registro
+			 	  )";
 
 
 			$q=$this->connection(); 
 			$preparado=$q->prepare($sql);
 
-			'=>$nombre, ':apellido'=>$apellido,':dni_persona'=>$dni,
-								':fecha_nacimiento'=>$fecha_nacimiento,':direccion'=>$direccion, 
-								':celular'=>$Celular,':Telefono_fijo'=>$Telefono_fijo, ':email'=>$email,
-								 ':password'=>$pass,':fecha_registro'=>$fecha_registro));
+			$preparado->execute(
+								array
+									(
+														
+										':nombre'				=>$nombre				, 
+										':apellido'				=>$apellido				,				
+										':dni_persona'			=>$dni					,
+										':fecha_nacimiento'		=>$fecha_nacimiento		,
+								 		':direccion'			=>$direccion			, 
+								 		':celular'				=>$Celular				,
+								 		':Telefono_fijo'		=>$Telefono_fijo		, 
+								 		':email'				=>$email				, 
+								 		':password'				=>$pass					,
+								 		':fecha_registro'		=>$fecha_registro
+					 				 )
+								);
+
 
 		}
-		*/
+		
 
 		
 }

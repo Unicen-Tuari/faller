@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-05 03:56:01
+<?php /* Smarty version 2.6.27, created on 2014-10-05 16:28:40
          compiled from Home.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -152,7 +152,7 @@ unset($_smarty_tpl_vars);
 </td>
                   <td><?php echo $this->_tpl_vars['i']['fecha']; ?>
 </td>
-                  <td><?php echo $this->_tpl_vars['i']['sector_raiz']; ?>
+                  <td><?php echo $this->_tpl_vars['i']['nombre_sector']; ?>
 </td>
                   <td><?php echo $this->_tpl_vars['i']['area_actual']; ?>
 </td>

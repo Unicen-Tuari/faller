@@ -142,7 +142,7 @@
                 {foreach from=$reclamos item=i}
                   <td>{$i.id_reclamo}</td>
                   <td>{$i.fecha}</td>
-                  <td>{$i.sector_raiz}</td>
+                  <td>{$i.nombre_sector}</td>
                   <td>{$i.area_actual}</td>
                   <td>{$i.estado_reclamo}</td>
                   <td><button type="submit" data-toggle="tooltip" data-placement="left" title="Todos los detalles sobre este reclamo / modificar el reclamo" class="btn btn-primary col-lg button-Mi-Estilo">Ver / Modificar</button></td>
