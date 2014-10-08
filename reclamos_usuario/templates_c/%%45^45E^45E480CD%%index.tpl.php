@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-05 01:06:44
+<?php /* Smarty version 2.6.27, created on 2014-10-07 17:31:10
          compiled from index.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -15,61 +15,22 @@ unset($_smarty_tpl_vars);
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-              <a class="navbar-brand" href="#SOBRE_ESTA_APLICACION">Sobre esta aplicacion</a>
-               <a class="navbar-brand" href="http://www.laprida.gob.ar/" > Enlace Pagina Municipal</a>
+              <a class="navbar-brand" href="#SOBRE_ESTA_APLICACION"><i class="fa fa-info-circle "></i> Sobre esta aplicacion</a>
+               <a class="navbar-brand" href="http://www.laprida.gob.ar/" > <i class="fa fa-external-link"></i>  Enlace Pagina Municipal</a>
 
 
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-           <li> <a href="#" title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Registratse">Registratse</a></li>
-            <li><a href="#"   data-toggle="modal" data-target="#Ingresar" title="Click para ingresar.Debe haberse registrado previamente">Ingresar</a></li>
+           <li> <a href="#" title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Registratse"><i class="fa fa-sign-in fa-1x"></i>  Registratse</a></li>
+            <li><a href="#"   data-toggle="modal" data-target="#Ingresar" title="Click para ingresar.Debe haberse registrado previamente"><i class="fa fa-user"></i>  Ingresar</a></li>
           </ul>
           <form class="navbar-form navbar-right">
           </form>
         </div>
       </div>
     </div>
-
-    <!-- Carousel
-    ================================================== -->
-   <!-- <div id="myCarousel" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="imagenes/obrasp1-337px.jpg" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <a class="btn btn-large btn-primary" href="#">Sign up today</a>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="../assets/img/examples/slide-02.jpg" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <a class="btn btn-large btn-primary" href="#">Learn more</a>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="../assets/img/examples/slide-03.jpg" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
-    </div><!-- /.carousel -->
-   
+ 
          <header>
 
             <div class="container">
@@ -84,7 +45,7 @@ unset($_smarty_tpl_vars);
                     <div class="intro-text"   id="portfolio">
                         <span class="name">Peticiones y Reclamos</span>
                         <hr class="star-light">
-                        <span class="skills">Bienvenido a la aplicacion para informar los problemas que te acojen</span>
+                        <span class="skills">Bienvenido a la aplicacion para informar o realizar una peticion/reclamo al municipio, sobre problemas relacionados con la infraetructura de la ciudad. </span>
                     </div>
                 </div>
             </div>
@@ -162,39 +123,39 @@ unset($_smarty_tpl_vars);
         <fieldset>
             <legend>Ingrese todo los datos requeridos.</legend>
               <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Nombre</label>
+                  <label for="inputEmail" class="col-lg-2 control-label" required>Nombre</label>
                   <div class="col-lg-10">
-                    <input type="text" name="nombre_registrarse" class="form-control" id="inputEmail" placeholder="Nombre">
+                    <input type="text" name="nombre_registrarse" class="form-control" id="inputEmail" placeholder="Nombre" required>
                   </div>
               </div>
               <div class="form-group">
-                <label for="apellido" class="col-lg-2 control-label">Apellido</label>
+                <label for="apellido" class="col-lg-2 control-label" required>Apellido</label>
                 <div class="col-lg-10">
-                  <input type="text" name="apellido_registrarse" class="form-control" id="apellido" placeholder="Apellido">
+                  <input type="text" name="apellido_registrarse" class="form-control" id="apellido" placeholder="Apellido" required>
                 </div>
               </div>
               <div class="form-group">
                   <label for="inputDocumento" class="col-lg-2 control-label">Documento</label>
                   <div class="col-lg-10">
-                    <input type="text" name="dni_registrarse"  class="form-control" id="inputDocumento" placeholder="Dni">
+                    <input type="text" name="dni_registrarse"  class="form-control" id="inputDocumento" placeholder="Dni" required>
                   </div>
               </div>
               <div class="form-group">
-                  <label for="inputFechaNacimiento" class="col-lg-2 control-label">Fecha de Nacimientó</label>
+                  <label for="inputFechaNacimiento" class="col-lg-2 control-label" >Fecha de Nacimientó</label>
                   <div class="col-lg-10">
-                    <input type="text" name="FechaNacimiento"  class="form-control" id="inputFechaNacimiento" placeholder="dia/mes/años">
+                    <input type="text" name="FechaNacimiento"  class="form-control" id="inputFechaNacimiento" placeholder="dia/mes/años" required>
                   </div>
               </div>
               <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                     <div class="col-lg-10">
-                      <input type="text" name="email_registrarse" class="form-control" id="inputEmail" placeholder="Email">
+                      <input type="text" name="email_registrarse" class="form-control" id="inputEmail" placeholder="Email" required>
                     </div>
               </div>
               <div class="form-group">
-                    <label for="inputCelular" class="col-lg-2 control-label">Celular</label>
+                    <label for="inputCelular" class="col-lg-2 control-label" >Celular</label>
                     <div class="col-lg-10">
-                      <input type="integer" name="Celular_registrarse" class="form-control" id="inputCelular" placeholder="Celular">
+                      <input type="integer" name="Celular_registrarse" class="form-control" id="inputCelular" placeholder="Celular" required>
                     </div>
                </div>
               <div class="form-group">
@@ -207,13 +168,13 @@ unset($_smarty_tpl_vars);
               <div class="form-group">
                 <label for="text" class="col-lg-2 control-label">Direccion</label>
                      <div class="col-lg-10">
-                         <input type="text" name="Direccion_registrarse"  class="form-control" id="inputEmail" placeholder="Direcion">
+                         <input type="text" name="Direccion_registrarse"  class="form-control" id="inputEmail" placeholder="Direcion" required>
                     </div>
               </div>
             <div class="form-group">
                   <label for="inputPassword" class="col-lg-2 control-label">Password nuevo</label>
                  <div class="col-lg-10">
-                        <input type="password" name="pass_registrarse" class="form-control" id="inputPassword" placeholder="Contraseña nueva, necesaria para esta aplicacion">
+                        <input type="password" name="pass_registrarse" class="form-control" id="inputPassword" placeholder="Contraseña nueva, necesaria para esta aplicacion" required >
          
                 </div>
             </div>
@@ -256,13 +217,13 @@ unset($_smarty_tpl_vars);
                     <div class="form-group">
                       <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                           <div class="col-lg-10">
-                            <input type="text"  name="email_login"  class="form-control" id="inputEmail" placeholder="Email">
+                            <input type="text"  name="email_login"  class="form-control" id="inputEmail" placeholder="Email" required>
                           </div>
                     </div>
                     <div class="form-group">
-                      <label for="inputPassword"  class="col-lg-2 control-label">Password</label>
+                      <label for="inputPassword"  class="col-lg-2 control-label" required>Password</label>
                           <div class="col-lg-10">
-                            <input type="password" name="pass_login" class="form-control" id="inputPassword" placeholder="Password">
+                            <input type="password" name="pass_login" class="form-control" id="inputPassword" placeholder="Password" required>
                           </div>
                     </div>
                     <div class="form-group">

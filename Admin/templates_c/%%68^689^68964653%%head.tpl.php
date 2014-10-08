@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-09-05 02:27:27
+<?php /* Smarty version 2.6.27, created on 2014-10-07 17:01:32
          compiled from head.tpl */ ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +25,13 @@
     <!-- Custom Fonts -->
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+
+        <!-- 4 Botones en forma de caja  -->
+
+     <link href="css/4Botones_menu.css" rel="stylesheet" type="text/css">
+
+    
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -33,5 +40,3 @@
     <![endif]-->
 
 </head>
-
-<body>

@@ -1,11 +1,12 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-03 01:23:18
-         compiled from index.tpl */ ?>
+<?php /* Smarty version 2.6.27, created on 2014-10-07 17:18:27
+         compiled from Lista_reclamos_sector.tpl */ ?>
 
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
+
  <div id="wrapper">
 
         <!-- Navigation -->
@@ -18,6 +19,7 @@ unset($_smarty_tpl_vars);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <a class="navbar-brand" href="index.html">SB Admin</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -102,7 +104,7 @@ unset($_smarty_tpl_vars);
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Nombre de usuario <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Franco Aller <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -124,16 +126,16 @@ unset($_smarty_tpl_vars);
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Configurar Perfil</a>
                     </li>
                     <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Chats entre areas</a>
                     </li>
                     <li>
-                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tareas </a>
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                        <a href="forms.html"><i class="fa fa-calendar"></i>f Calendario/Citas</a>
                     </li>
                     <li>
                         <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
@@ -165,14 +167,52 @@ unset($_smarty_tpl_vars);
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-
-
-
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Gestion de reclamos y/o peticiones <small>En un futuro tambien de legajos</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> Consejo: intenta llevar la aplicacion al dia .Si no usa las diferentes herramientas que te ayudaran a maximizar tu rendimiento.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
 
                 <div class="row">
-            
-<div class="col-lg-3 col-md-6">
-</div>
+                    <div class="col-lg-12">
+                        <div class="alert alert-info alert-dismissable">
+                          <p class="text-center"> Panel Reclamos </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tasks fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">26</div>
+                                        <div>Ya vistos</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Ya vistos</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="panel panel-green">
                             <div class="panel-heading">
@@ -182,36 +222,35 @@ unset($_smarty_tpl_vars);
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">12</div>
-                                        <div>Tareas llevandose a cabo</div>
+                                        <div>Reclamos Nuevos</div>
                                     </div>
                                 </div>
                             </div>
                             <a href="#">
                                 <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-left">Ver nuevos</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
                         </div>
                     </div>
-
                     <div class="col-lg-3 col-md-6">
                         <div class="panel panel-yellow">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-shopping-cart fa-5x"></i>
+                                         <i class="fa fa-comments fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">124</div>
-                                        <div>Pendientes</div>
+                                        <div>R Pendientes</div>
                                     </div>
                                 </div>
                             </div>
                             <a href="#">
                                 <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-left">Ver Chats</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -226,144 +265,86 @@ unset($_smarty_tpl_vars);
                                         <i class="fa fa-support fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">13</div>
-                                        <div>Vistas y sin responder</div>
+                                        <div class="huge">19</div>
+                                        <div>Reclam. Pendientes</div>
                                     </div>
                                 </div>
                             </div>
                             <a href="#">
                                 <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-left">Ver Pendientes</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
                         </div>
                     </div>
+  
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="alert alert-info alert-dismissable">
+                          <p class="text-center"> Lista Reclamos </p>
+                        </div>
+                    </div>
                 </div>
 
-<div class="row">
-   <div class="col-lg-12">
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</div>
-</div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> BABABAt</h3>
-                            </div>
-                          
-        <div class="col-lg-12">
+                    <div class="col-xs-12 col-lg-6 placeholder">
+                    <!--index.php?action=reclamoNuevo-->
+<form class="form-horizontal"  action="index.php" method="post">
+<input type="hidden" name="fitro" >
+ <select class="form-control" name="fitro_reclamo" id="selectorSectores">
+    <option value="sa">Filtrar Reclamos</option>
+    <option value="O" > Dni</option>
+    <option value="i" >Sector Raiz</option>
+    <option value="a" >Fecha</option>
 
-          <div class="table-responsive">
-            <table class="table table-striped table-hover">
-              <thead>
-                <tr>
-                  <th>Numero Peticion</th>
-                  <th>Fecha</th>
-                  <th>Sector Competente</th>
-                  <th>Estado de la misma</th>
-                   <th>Estado de la misma</th>
-
-                </tr>
-              </thead>
-              <tbody>
-
-                <tr>
-               
-                  <td>LALAL</td>
-                  <td>LALALA</td>
-                   <td>LALAL</td>
-                  <td>LALALA</td>
-            
-                  <td></td>
-                  <td><button type="submit" class="btn btn-primary col-lg">Ver / Modificar</button></td>
-                </tr>
-
-              </tbody>
-            </table>
-          </div>
-</div>
-                            <div class="panel-body">
-
-                                <div id="morris-donut-chart"></div>
-                                <div class="text-right">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-
-                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> LALALAL</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="col-lg-12">
-          <div class="table-responsive">
-            <table class="table table-striped table-hover">
-              <thead>
-                <tr>
-                  <th>Numero Peticion</th>
-                  <th>Fecha</th>
-                  <th>Sector Competente</th>
-                  <th>Estado de la misma</th>
-                   <th>Estado de la misma</th>
-
-                </tr>
-              </thead>
-              <tbody>
-
-                <tr>
-               
-                  <td>LALAL</td>
-                  <td>LALALA</td>
-                  <td>LALA</td>
-                  <td></td>
-                  <td><button type="submit" class="btn btn-primary col-lg">Ver / Modificar</button></td>
-                </tr>
-
-              </tbody>
-            </table>
-          </div>
-</div>
-      
-                              
-                            </div>
-                        </div>
-                    </div>
-                        <div class="col-xs-12 col-lg-6 placeholder">
-<form class="form-horizontal" action="index.php" method="post" >
- <select class="form-control" name="selector" id="selectorSectores">
-      <option value="sa"> Seleccione el area competente</option>
-    <option value="O"   > Obras Publicas</option>
-    <option value="i"   >Infraestructura</option>
-    <option value="a" >Asfalto</option>
-    <option value="ie"  >Intendente</option>
-    <option value="l"   >Luminaria</option>
-    <option value="ar"  >Arboleda</option>
-    <option value="clo" >Cloacas</option>
-    <option value="gas" >Gas</option>
-    <option value="basura" >Basura</option>
 </select>
-      <textarea class="form-control" rows="10" name="Texto" ></textarea>
-         <div class="col-lg-5 col-lg-offset 0">
-        <button class="btn btn-default">Borrar</button>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-      </div>
-      <div class="col-xs-3 col-lg-3">
-<input type="file" class="btn btn-primary" data-buttonName="btn-primary">
-</div>
+      
 </form>
 </div> 
+                     
 
-                    
+
+          <div class="table-responsive">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th data-toggle="tooltip" data-placement="left" title="Numero de la reclamo y/o peticion ">Numero R/P</th>
+                  <th data-toggle="tooltip" data-placement="left" title="Fecha en que se realizo el reclamo"><i class="fa fa-calendar"></i> Fecha</th>   <th data-toggle="tooltip" data-placement="left" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                   cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                   proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'">Estado del reclamo</th>
+                  <th  data-toggle="tooltip" data-placement="left" title="Sector raiz al que se le envio el reclamo"><i class="fa fa-users"></i> Sector Raiz</th>
+                
+                  <th data-toggle="tooltip" data-placement="left" title="id de la persona que realizo el reclamo."> <i class="fa fa-user"></i> id_persona</th>
+                  <th data-toggle="tooltip" data-placement="left" title="Puede ver todos los detalles faltantes precionando 'ver', o modificar el reclamo precionando 'modificar' ">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                <?php $_from = $this->_tpl_vars['reclamos']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['i']):
+?>
+                <td><?php echo $this->_tpl_vars['i']['id_reclamo']; ?>
+</td>
+                <td><?php echo $this->_tpl_vars['i']['fecha']; ?>
+</td>
+                <td><?php echo $this->_tpl_vars['i']['estado_reclamo']; ?>
+</td>
+                <td><?php echo $this->_tpl_vars['i']['sector_raiz']; ?>
+</td>
+                <td><?php echo $this->_tpl_vars['i']['id_persona']; ?>
+</td>
+                 <td><button type="submit" data-toggle="tooltip" data-placement="left" title="Todos los detalles sobre este reclamo / modificar el reclamo" class="btn btn-primary col-lg button-Mi-Estilo"><i class="fa fa-eye"></i> / <i class="fa fa-pencil"></i></button></td>
+                </tr><?php endforeach; endif; unset($_from); ?>
+
+              </tbody>
+            </table>
+          </div>
+                    </div>
                 </div>
                 <!-- /.row -->
 
@@ -374,7 +355,8 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <!-- /#page-wrapper -->
 
     </div>
-    <!-- /#wrapper -->
+  
+
 
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>

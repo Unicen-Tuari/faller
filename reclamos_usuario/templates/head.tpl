@@ -11,7 +11,10 @@
         <!--clase del registrar y loguear del index-->
     <link href="css/Inicio_registrar_loguear.css" rel="stylesheet">
         <link href="css/Botoens_registrar.css" rel="stylesheet">
-
+                        <!--CSS ICONOS-->
+          <link href="css/font-awesome.css" rel="stylesheet">
+          <link href="css/font-awesome.min.css" rel="stylesheet">
+                    <!--FIN CSS ICONOS-->
 
     
         <!--FIN clase del registrar y loguear del index-->
@@ -29,10 +32,10 @@
     <link href="css/Carrusel.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
-    <link href="css/MaquetadoP.min.css" rel="stylesheet">
+    <link href="css/MaquetadoDefault.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/MaquetadoP.css" rel="stylesheet">
+    <link href="css/MaquetadoBarraLateral.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -60,6 +63,6 @@
                       <script src="./js/ie-emulation-modes-warning.js" type="text/javascript"></script>
 
 
-
+                      
 
   </head>

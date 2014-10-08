@@ -50,7 +50,7 @@ class ControllerUser
 			{
 				$reclamos_usuario=$this->controller_reclamos->mostrar_reclamos($datos_home);
 			    //$usuario=
-			    $this-•>view_home->Home($reclamos_usuario);
+			    $this->view_home->Home($reclamos_usuario);
 
 			}
 

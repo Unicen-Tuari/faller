@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-04 20:15:28
+<?php /* Smarty version 2.6.27, created on 2014-10-07 16:47:50
          compiled from error404.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -15,7 +15,7 @@ unset($_smarty_tpl_vars);
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand  page-scroll" href="index.php?action=Home">logueado</a>
+         
               <a class="navbar-brand" href="#SOBRE_ESTA_APLICACION">Sobre esta aplicacion2</a>
                <a class="navbar-brand" href="http://www.laprida.gob.ar/" > Enlace Pagina Municipal</a>
 

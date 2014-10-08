@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-05 16:28:40
+<?php /* Smarty version 2.6.27, created on 2014-10-08 05:23:20
          compiled from Home.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -15,12 +15,12 @@ unset($_smarty_tpl_vars);
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Realizar reclamos</a>
+          <a class="navbar-brand" href="#"><i class="fa fa-home"></i>  Mis reclamos o peticiones</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="http://www.laprida.gob.ar/">Enlace Pagina Municipal</a></li>
-            <li><a href="index.php?action=cerrar_sesion.tpl">Cerrar Sesion</a></li>
+            <li><a href="http://www.laprida.gob.ar/"><i class="fa fa-external-link-square"></i>  Enlace Pagina Municipal</a></li>
+            <li><a href="index.php?action=cerrar_sesion.tpl"><i class="fa fa-unlock-alt"></i>  Cerrar Sesion</a></li>
           </ul>
           <form class="navbar-form navbar-right">
           </form>
@@ -34,71 +34,137 @@ unset($_smarty_tpl_vars);
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#">Ver/crear reclamo</a></li>
             <li>
-             <a  title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Modificar_perfil" >Configurar perfil</a>
+             <a  title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Modificar_perfil" ><i class="fa fa-cog"></i> Configurar perfil</a>
              </li>
-            <li><a >Galeria de fotos subidas</a></li>
+            <li><a ><i class="fa fa-picture-o"></i> Galeria de fotos subidas</a></li>
             <li><a href="#">Mis Reclamos Pendientes</a></li>
-            <li><a href="#">Contactos con secretaria</a></li>
-            <li><a  title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Manejo_del_reclamo_por_cada_area">Manejo del reclamo para cada area</a></li>
-           <li><a href="#">Informacion sobre la aplicacion</a></li>
+            <li><a href="#"><i class="fa fa-tty"></i> Contactos con secretaria</a></li>
+            <li><a  title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Manejo_del_reclamo_por_cada_area"> <i class="fa fa-code-fork"></i> Manejo del reclamo para cada area</a></li>
+           <li><a href="#"><i class="fa fa-info-circle"></i> Informacion sobre la aplicacion</a></li>
           </ul>
          
         </div>
         <div class="panel panel-danger">
  
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h4 class="page-header">Crear / ver mis reclamos</h4>
+        <div class="col-sm-2 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <!--  <div class="col-lg-12 col-md-6">
 
+         <div class="col-lg-12 col-md-6">
+        -->
+          <h4 class="page-header">Paneles informativos.</h4>
+         <!-- </div>
+            <div class="col-lg-2 col-md-6  fixed-top">
+            <p><i class="text-right fa fa-user fa-2x "></i> 
+               Franco</p>-->
+          <!--</div>
+
+          </div>
+          -->
           <div class="row placeholders" id="seccionFoto" >
+  
 
-            <div class="col-xs-12 col-lg-5 placeholder">
-                 <div class="col-lg-5">
-              <img src="./imagenes/SinImagen.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Bienvenido</h4>
-              <span class="text-muted">Franco Aller</span>
-              </div>
-              <p id="Parrafo">Usted puede crear un reclamo sobre un problema que le acoja, siempre y cuando le competa al municipio hacerse responsable. Aqui usted podra elegir el area al cual enviar el reclamo, para que este se agregue a la lista de problemas a resolver de cada area.
-              Para ir viendo la evolucion de su reclamo puede mirarlo con detalle, oprimiendo el boton ver / modificar que aparece mas abajo en la lista.
-              Sea paciente y en caso de que no vea la evolucion del mismo dentro del mes competente , puede mandarle un mail al area para preguntarle que es lo que susede con su reclamo.</p>
-            </div>
-
-      <div class="col-xs-6 col-sm-1 placeholder  offset3">   
-
-      </div>
-<div class="col-xs-12 col-sm-3 placeholder  offset3">   
- <div class="col-xs-12 col-sm-11 placeholder  offset3">       
-<div class="panel panel-info ">
-  <div class="panel-heading">
-    <h3 class="panel-title">Reclamos Solucinados</h3>
-  </div>
-  <div class="panel-body">
-    4
-  </div>
-</div>
-</div>
-</div>
-
-<div class="col-xs-12 col-sm-3 placeholder  offset3">   
- <div class="col-xs-12 col-sm-11 placeholder">       
-<div class="panel panel-danger ">
-  <div class="panel-heading">
-    <h3 class="panel-title">Reclamos Pendientes</h3>
-  </div>
-  <div class="panel-body">
-    2
-  </div>
-</div>
-
-</div>
-</div>
-
- <div class="col-xs-6 col-sm-1 placeholder  offset3">   
+  <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tasks fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">26</div>
+                                        <div>R.Modificados</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Ver R.Mod.</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                        <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                      <i class="fa fa-envelope fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">26</div>
+                                        <div>Mensajes</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Ver Menjsajes</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                       <i class="fa fa-gavel fa-5x"></i> 
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">19</div>
+                                        <div>Reclamos Finalizados</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Ver R.Finalizados</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                                       <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                      <i class="fa fa-exclamation-triangle  fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">19</div>
+                                        <div>Reclam. Pendientes</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Ver Pendientes</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+  <div class="row">
+                    <div class="col-lg-12 col-md-6">
+                 <h4 class="page-header text-left"> <i class="fa fa-pencil fa-1x"></i>  Crear Nuevo R/P</h4>
+                 </div>
+                 </div>
+ <div class="col-xs-7 col-sm-1 placeholder  offset3">   
       
 </div> 
 
-    <div class="col-xs-12 col-lg-6 placeholder">
-<form class="form-horizontal"  action="index.php?action=reclamoNuevo" method="post">
- <select class="form-control" name="reclamo_selector" id="selectorSectores">
+    <div class="col-xs-12 col-lg-12 placeholder">
+<form class="form-horizontal "  action="index.php?action=reclamoNuevo" method="post">
+
+ <select class="form-control"  name="reclamo_selector" id="selectorSectores">
     <option value="sa"> Seleccione el area competente</option>
     <option value="O"   > Obras Publicas</option>
     <option value="i"   >Infraestructura</option>
@@ -110,12 +176,15 @@ unset($_smarty_tpl_vars);
     <option value="gas" >Gas</option>
     <option value="basura" >Basura</option>
 </select>
-      <textarea class="form-control" rows="5" name="reclamo_texto"  ></textarea>
-         <div class="col-lg-5 col-lg-offset 0">
-        <button class="btn btn-default">Borrar</button>
-        <button type="submit" class="btn button-Mi-Estilo" >Enviar</button>
+
+      <textarea class="form-control" rows="8" colums="12" name="reclamo_texto"  ></textarea>
+
+
+         <div class="col-lg-3 col-lg-offset 0">
+        <button class="btn btn-default"><i class="fa fa-trash"></i> Borrar</button>
+        <button type="submit" class="btn button-Mi-Estilo" ><i class="fa fa-arrow-circle-right"></i> Enviar</button>
       </div>
-      <div class="col-xs-3 col-lg-3">
+      <div class="col-xs-9 col-lg-3">
 <input type="file" class="btn btn-primary button-Mi-Estilo" name="reclamo_foto" data-buttonName="btn-primary" >
 </div>
 </form>
@@ -134,9 +203,9 @@ unset($_smarty_tpl_vars);
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
-                  <th data-toggle="tooltip" data-placement="left" title="Numero de la peticion y/o reclamo">Numero P</th>
-                  <th data-toggle="tooltip" data-placement="left" title="Fecha en que se realizo el reclamo">Fecha</th>
-                  <th  data-toggle="tooltip" data-placement="left" title="Sector al que se le envio el reclamo">Sector Competente</th>
+                  <th data-toggle="tooltip" data-placement="left" title="Numero de la peticion y/o reclamo"><i class="fa fa-key"></i>Numero P</th>
+                  <th data-toggle="tooltip" data-placement="left" title="Fecha en que se realizo el reclamo"><i class="fa fa-calendar"></i>Fecha</th>
+                  <th  data-toggle="tooltip" data-placement="left" title="Sector al que se le envio el reclamo"><i class="fa fa-users"></i>Sector Competente</th>
                    <th data-toggle="tooltip" data-placement="left" title="El area en el que se encuentra el reclamo, 'cada reclamo pasa de area en area hasta que cuple su siclo y termina'">Area en la que se encuentra</th>
                   <th data-toggle="tooltip" data-placement="left" title="informa entre otras cosas, si fue o no aceptado el reclamo y/o el estado del mismo">Estado de la misma</th>
                   <th data-toggle="tooltip" data-placement="left" title="Puede ver todos los detalles faltantes precionando 'ver', o modificar el reclamo precionando 'modificar' ">Acciones</th>
@@ -158,7 +227,7 @@ unset($_smarty_tpl_vars);
 </td>
                   <td><?php echo $this->_tpl_vars['i']['estado_reclamo']; ?>
 </td>
-                  <td><button type="submit" data-toggle="tooltip" data-placement="left" title="Todos los detalles sobre este reclamo / modificar el reclamo" class="btn btn-primary col-lg button-Mi-Estilo">Ver / Modificar</button></td>
+                  <td><button type="submit" data-toggle="tooltip" data-placement="left" title="Todos los detalles sobre este reclamo / modificar el reclamo" class="btn btn-primary col-lg button-Mi-Estilo"><i class="fa fa-eye"></i> Ver / Modificar  <i class="fa fa-pencil"></i></button></td>
                 </tr><?php endforeach; endif; unset($_from); ?>
 
               </tbody>
@@ -171,6 +240,7 @@ unset($_smarty_tpl_vars);
 
 <div class="container-fluid">
 <!-- Modal configurar perfil -->
+
 <div class="modal fade" id="Modificar_perfil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -179,18 +249,30 @@ unset($_smarty_tpl_vars);
         <h4 class="modal-title" id="myModalLabel">Configurar Mi Perfil</h4>
       </div>
       <div class="modal-body">
+      <!--trabajador.png-->
+  <div class="row">
+    <div class="col-lg-2">
+      <img src="./imagenes/trabajador.png" alt="..." class="img-circle">
+   </div>
+      </div>
+
        <form class="form-horizontal"  action="index.php" method="post" >
               <fieldset>
                 <legend>Datos de usuario</legend>
                     <div class="form-group">
-                      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                          <div class="col-lg-10">
+                    <div class="col-lg-6">
+                      <p>Mail: <span>franco_h_62@gmail.com</span></p>
+                       </div>
+                          <div class="col-lg-6">
                             <input type="text"  name="email_login"  class="form-control" id="inputEmail" placeholder="Email">
                           </div>
                     </div>
                     <div class="form-group">
-                      <label for="inputPassword"  class="col-lg-2 control-label">Password</label>
-                          <div class="col-lg-10">
+                    <div class="col-lg-">
+                      <p>Contraseña: <span></span></p>
+                    </div>
+                      <label for="inputPassword"  class="col-lg-3 control-label">Contra.Nueva</label>
+                          <div class="col-lg-6">
                             <input type="password" name="pass_login" class="form-control" id="inputPassword" placeholder="Password">
                           </div>
                     </div>

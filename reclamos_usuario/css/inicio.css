@@ -10,7 +10,8 @@
 header {
     text-align: center;
     color: #fff;
-    background: #18bc9c;
+    background-color:#327c9c; /*18bc9c*/
+
 }
 
 header .container {
