@@ -1,11 +1,5 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-11 23:01:37
-         compiled from index.tpl */ ?>
-<?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
-$this->_tpl_vars = $_smarty_tpl_vars;
-unset($_smarty_tpl_vars);
- ?>
-<body acction="index.php?action=Home">
+{include file="head.tpl" }
+<body acction="index.php?action=index.php">
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -38,18 +32,19 @@ unset($_smarty_tpl_vars);
                 <div class="col-lg-4">
                  </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-12">
                     <img class="img-responsive" src="imagenes/trabajador.png" alt="">
             </div>
   
                     <div class="intro-text"   id="portfolio">
-                        <span class="name">Peticiones y Reclamos</span>
+                        <span class="name">Gestion de reclamos</span>
                         <hr class="star-light">
-                        <span class="skills">Bienvenido a la aplicación para informar o realizar una petición/reclamo al municipio, sobre problemas relacionados con la infraestructura o servicios públicos de la ciudad. </span>
+                        <span class="skills">Bienvenido a la aplicacion para administrar los reclamos publicos. </span>
                     </div>
+
                 </div>
             </div>
-        </div>
+     
 
 
 
@@ -104,97 +99,6 @@ unset($_smarty_tpl_vars);
 
 
 
-<!--*************************************************************************************-->
-<!--*************************************************************************************-->
-
-                                          <!-- Modal Registrarse -->
-
-
-
-<div class="modal fade" id="Registratse" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title text-center" id="myModalLabel">Registratse</h4>
-      </div>
-      <div class="modal-body">
-       <form class="form-horizontal"  action="index.php" method="post">
-        <fieldset>
-            <legend>Ingrese todo los datos requeridos.</legend>
-              <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label" required>Nombre</label>
-                  <div class="col-lg-10">
-                    <input type="text" name="nombre_registrarse" class="form-control" id="inputEmail" placeholder="Nombre" required>
-                  </div>
-              </div>
-              <div class="form-group">
-                <label for="apellido" class="col-lg-2 control-label" required>Apellido</label>
-                <div class="col-lg-10">
-                  <input type="text" name="apellido_registrarse" class="form-control" id="apellido" placeholder="Apellido" required>
-                </div>
-              </div>
-              <div class="form-group">
-                  <label for="inputDocumento" class="col-lg-2 control-label">Documento</label>
-                  <div class="col-lg-10">
-                    <input type="text" name="dni_registrarse"  class="form-control" id="inputDocumento" placeholder="Dni" required>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="inputFechaNacimiento" class="col-lg-2 control-label" >Fecha de Nacimientó</label>
-                  <div class="col-lg-10">
-                    <input type="text" name="FechaNacimiento"  class="form-control" id="inputFechaNacimiento" placeholder="dia/mes/años" required>
-                  </div>
-              </div>
-              <div class="form-group">
-                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                    <div class="col-lg-10">
-                      <input type="text" name="email_registrarse" class="form-control" id="inputEmail" placeholder="Email" required>
-                    </div>
-              </div>
-              <div class="form-group">
-                    <label for="inputCelular" class="col-lg-2 control-label" >Celular</label>
-                    <div class="col-lg-10">
-                      <input type="integer" name="Celular_registrarse" class="form-control" id="inputCelular" placeholder="Celular" required>
-                    </div>
-               </div>
-              <div class="form-group">
-                    <label for="inputTelefonoFijo" class="col-lg-2 control-label">Telefono fijo</label>
-                    <div class="col-lg-10">
-                      <input type="integer" name="Telefono_fijo_registrarse" class="form-control" id="inputTelefonoFijo" placeholder="Telefono fijo">
-                    </div>
-               </div>
-
-              <div class="form-group">
-                <label for="text" class="col-lg-2 control-label">Direccion</label>
-                     <div class="col-lg-10">
-                         <input type="text" name="Direccion_registrarse"  class="form-control" id="inputEmail" placeholder="Direcion" required>
-                    </div>
-              </div>
-            <div class="form-group">
-                  <label for="inputPassword" class="col-lg-2 control-label">Password nuevo</label>
-                 <div class="col-lg-10">
-                        <input type="password" name="pass_registrarse" class="form-control" id="inputPassword" placeholder="Contraseña nueva, necesaria para esta aplicacion" required >
-         
-                </div>
-            </div>
-
-
-              <div class="form-group">
-                  <div class="col-lg-10 col-lg-offset-2">
-                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Registrarse</button>
-                  </div>
-              </div>
-         </fieldset>  
-      </form>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
 
 <!--*************************************************************************************-->
 <!--*************************************************************************************-->
@@ -213,17 +117,35 @@ unset($_smarty_tpl_vars);
       <div class="modal-body">
             <form class="form-horizontal"  action="index.php" method="post" >
               <fieldset>
-                <legend>Datos de usuario.</legend>
+                <legend>Datos de usuario</legend>
+              <div class="form-group">
+              <label for="inputSelector" class="col-lg-2 control-label">Sector</label>
+                    <div class="col-lg-10">
+                         <select class="form-control" id="inputSelector" name="sector_login" id="selectorSectores">
+                                  <option value="sa"> Seleccione el área correspondiente</option>
+                                  <option value="O"   > Obras Públicas</option>
+                                  <option value="i"   >Infraestructura</option>
+                                  <option value="a" >Asfalto</option>
+                                  <option value="ie"  >Intendente</option>
+                                  <option value="l"   >Luminaria</option>
+                                  <option value="ar"  >Arboleda</option>
+                                  <option value="clo" >Cloacas</option>
+                                  <option value="gas" >Gas</option>
+                                  <option value="basura" >Basura</option>
+             
+                         </select>
+                   </div>
+            </div>
                     <div class="form-group">
-                      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                      <label for="inputNombre" class="col-lg-2 control-label">Nombre</label>
                           <div class="col-lg-10">
-                            <input type="text"  name="email_login"  class="form-control" id="inputEmail" placeholder="Email" required>
+                            <input type="name"  name="Nombre_login"  class="form-control" id="inputNombre" placeholder="Nombre" required>
                           </div>
                     </div>
                     <div class="form-group">
                       <label for="inputPassword"  class="col-lg-2 control-label" required>Contraseña</label>
                           <div class="col-lg-10">
-                            <input type="password" name="pass_login" class="form-control" id="inputPassword" placeholder="Password" required>
+                            <input type="password" name="pass_login" class="form-control" id="inputPassword" placeholder="Contraseña" required>
                           </div>
                     </div>
                     <div class="form-group">
@@ -259,8 +181,4 @@ unset($_smarty_tpl_vars);
 
 
 
-    <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "footer.tpl", 'smarty_include_vars' => array()));
-$this->_tpl_vars = $_smarty_tpl_vars;
-unset($_smarty_tpl_vars);
- ?>
+    {include file="footer.tpl" }

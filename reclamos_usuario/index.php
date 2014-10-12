@@ -26,10 +26,7 @@ if 	(isset($_POST['email_login']))
 					$id_usuario=$_SESSION['sesionUsuario'];
 					$l->login($id_usuario);
 				}else
-				     { $l->error404();
-				     	
-				     }
-
+				     { $l->error404();}
 	}
 else
 	if (isset($_POST['nombre_registrarse']))

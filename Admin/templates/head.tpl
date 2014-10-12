@@ -12,21 +12,27 @@
     <title>SB Admin - Bootstrap Admin Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="./css/sb-admin.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="css/morris.css" rel="stylesheet">
+    <link href="./css/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
         <!-- 4 Botones en forma de caja  -->
 
-     <link href="css/4Botones_menu.css" rel="stylesheet" type="text/css">
+     <link href="./css/4Botones_menu.css" rel="stylesheet" type="text/css">
+
+                            <!--Inicio -->
+     <link href="./css/inicio.css" rel="stylesheet" type="text/css">
+
+
+
 
     
 

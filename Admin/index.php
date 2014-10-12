@@ -13,11 +13,18 @@ ini_set("display_errors", 1);
   isset($a[action])
   $a(acction)==='index.php';
 */
-	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='Home.tpl')
+if 	(isset($_POST['email_login']))
 	{
-		include_once("./Controller/ControllerUser.php");
-	 	$inicio= new controllerUser();
-		$inicio->Home();
+			include_once("./controller/ControllerUser.php");
+			$ingresar= new controllerUser();
+			$ingresar->$login();
+	}
+
+	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index.tpl')
+	{
+		include_once("./Controller/ControllerIndex.php");
+	 	$inicio= new controlador_index();
+		$inicio->visualizar_inicio();
 	}	
 
 else

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-08 05:23:20
+<?php /* Smarty version 2.6.27, created on 2014-10-11 16:54:29
          compiled from Home.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -36,11 +36,11 @@ unset($_smarty_tpl_vars);
             <li>
              <a  title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Modificar_perfil" ><i class="fa fa-cog"></i> Configurar perfil</a>
              </li>
-            <li><a ><i class="fa fa-picture-o"></i> Galeria de fotos subidas</a></li>
+            <li><a ><i class="fa fa-picture-o"></i> Galería de fotos subidas</a></li>
             <li><a href="#">Mis Reclamos Pendientes</a></li>
-            <li><a href="#"><i class="fa fa-tty"></i> Contactos con secretaria</a></li>
+            <li><a href="#"><i class="fa fa-tty"></i> Contactos con Secretaría</a></li>
             <li><a  title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Manejo_del_reclamo_por_cada_area"> <i class="fa fa-code-fork"></i> Manejo del reclamo para cada area</a></li>
-           <li><a href="#"><i class="fa fa-info-circle"></i> Informacion sobre la aplicacion</a></li>
+           <li><a href="#"><i class="fa fa-info-circle"></i> Información sobre la aplicación</a></li>
           </ul>
          
         </div>
@@ -101,7 +101,7 @@ unset($_smarty_tpl_vars);
                             </div>
                             <a href="#">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Ver Menjsajes</span>
+                                    <span class="pull-left">Ver Mensajes</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -165,8 +165,8 @@ unset($_smarty_tpl_vars);
 <form class="form-horizontal "  action="index.php?action=reclamoNuevo" method="post">
 
  <select class="form-control"  name="reclamo_selector" id="selectorSectores">
-    <option value="sa"> Seleccione el area competente</option>
-    <option value="O"   > Obras Publicas</option>
+    <option value="sa"> Seleccione el área correspondiente</option>
+    <option value="O"   > Obras Públicas</option>
     <option value="i"   >Infraestructura</option>
     <option value="a" >Asfalto</option>
     <option value="ie"  >Intendente</option>
@@ -203,10 +203,10 @@ unset($_smarty_tpl_vars);
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
-                  <th data-toggle="tooltip" data-placement="left" title="Numero de la peticion y/o reclamo"><i class="fa fa-key"></i>Numero P</th>
+                  <th data-toggle="tooltip" data-placement="left" title="Numero de la peticion y/o reclamo"><i class="fa fa-key"></i>Número P</th>
                   <th data-toggle="tooltip" data-placement="left" title="Fecha en que se realizo el reclamo"><i class="fa fa-calendar"></i>Fecha</th>
-                  <th  data-toggle="tooltip" data-placement="left" title="Sector al que se le envio el reclamo"><i class="fa fa-users"></i>Sector Competente</th>
-                   <th data-toggle="tooltip" data-placement="left" title="El area en el que se encuentra el reclamo, 'cada reclamo pasa de area en area hasta que cuple su siclo y termina'">Area en la que se encuentra</th>
+                  <th  data-toggle="tooltip" data-placement="left" title="Sector al que se le envio el reclamo"><i class="fa fa-users"></i>Sector Correspondiente</th>
+                   <th data-toggle="tooltip" data-placement="left" title="El area en el que se encuentra el reclamo, 'cada reclamo pasa de area en area hasta que cuple su siclo y termina'">Área en la que se encuentra</th>
                   <th data-toggle="tooltip" data-placement="left" title="informa entre otras cosas, si fue o no aceptado el reclamo y/o el estado del mismo">Estado de la misma</th>
                   <th data-toggle="tooltip" data-placement="left" title="Puede ver todos los detalles faltantes precionando 'ver', o modificar el reclamo precionando 'modificar' ">Acciones</th>
                 </tr>

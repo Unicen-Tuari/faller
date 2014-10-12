@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-07 17:01:32
+<?php /* Smarty version 2.6.27, created on 2014-10-11 18:31:19
          compiled from head.tpl */ ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,21 +14,27 @@
     <title>SB Admin - Bootstrap Admin Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="./css/sb-admin.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="css/morris.css" rel="stylesheet">
+    <link href="./css/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
         <!-- 4 Botones en forma de caja  -->
 
-     <link href="css/4Botones_menu.css" rel="stylesheet" type="text/css">
+     <link href="./css/4Botones_menu.css" rel="stylesheet" type="text/css">
+
+                            <!--Inicio -->
+     <link href="./css/inicio.css" rel="stylesheet" type="text/css">
+
+
+
 
     
 

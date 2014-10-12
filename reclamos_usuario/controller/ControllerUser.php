@@ -67,6 +67,7 @@ class ControllerUser
 			{
 		    	if($usuario)
 			    { 
+			    	
 			    	$this->Home($usuario);//le pasa los datos a la funcion home definida en este controlador
 			   	}
 			}
