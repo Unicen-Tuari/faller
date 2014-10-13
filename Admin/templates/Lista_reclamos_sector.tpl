@@ -50,6 +50,7 @@
                                 </div>
                             </a>
                         </li>
+                        
                         <li class="message-preview">
                             <a href="#">
                                 <div class="media">
