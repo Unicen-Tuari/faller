@@ -11,13 +11,20 @@ class model_ver_reclamos extends modelodb
 				$usuario=$id_usuario[0]['id_persona'];
 						
 						return $this->query("SELECT *
+						 					FROM RECLAMO 
+						 					where id_persona='$usuario'" );
+
+
+			}
+
+/*
+"SELECT *
 						 					FROM RECLAMO_REL rl JOIN SECTOR s 
 						 					ON(rl.id_sector=s.id_sector)
 						 					where rl.id_persona='$usuario'" );
 
 
-			}
-
+*/
 
 	public function reclamo_finalizados($id_usuario)
 			{
@@ -51,15 +58,19 @@ class model_crear_reclamo extends modelodb
 
 	   	public function crear_reclamo($Reclamo_ingresado)
 		{
-
-		
-			$arraySelect= array('O'=>'Obras Publicas','i'=>'Infraestructura',
-								'a'=>'Asfalto','ie'=>'Intendente','l'=>'Luminaria',
-								'ar'=>'Arboleda','clo'=>'Cloacas','gas'=>'Gas',
-								'basura'=>'Basura');
+			$sectores_raiz = array(	1 	=> "Obras Publicas",
+									2	=> "Infraestructura",
+									3	=> "Asfalto",
+									4	=> "Intendente",
+									5	=> "Luminaria",
+									6	=> "Arboleda",
+									7	=> "Cloacas",
+									8	=> "Gas",
+									9	=> "Basura",
+									 );
+			$sector_raiz= $sectores_raiz[ $Reclamo_ingresado["reclamo_selector"]];
 
 			$sector_seleccionado = $Reclamo_ingresado["reclamo_selector"];
-			$Sector=$arraySelect[$sector_seleccionado];
 
 			$id_pers = $Reclamo_ingresado["reclamo_id"];
 
@@ -71,20 +82,20 @@ class model_crear_reclamo extends modelodb
 			$reclamo=$Reclamo_ingresado['reclamo_texto'];
 			//Consulta - Parametros Posicionales
 			/*
-			INSERT INTO RECLAMO_REL (id_reclamo, id_persona, id_sector, dni_empleado, sector_raiz, fecha, resumen_sector, area_actual, area_ya_paso, estado_reclamo, reclamo,foto_reclamo) 
+			INSERT INTO RECLAMO_REL (id_reclamo, id_persona, id_sector, id_empleado, sector_raiz, fecha, resumen_sector, area_actual, area_ya_paso, estado_reclamo, reclamo,foto_reclamo) 
 			VALUES(2, 37198, 2, 37198533, '','2009/12/12-','SDSD',2,2,'en tramite','hola pololla','lala');
 			*/
 
 
-			$sql = "INSERT INTO RECLAMO_REL 
-						(	id_persona				,
+			$sql = "INSERT INTO RECLAMO 
+						(	 id_persona				,
 							 id_sector 				,
-							 dni_empleado			,
+							 id_empleado			,
 							 sector_raiz			,
 							 fecha					, 
 							 resumen_sector			,
 							 area_actual			,
-							 area_ya_paso			,
+							 areas_que_ya_ha_pasado	,
 							 estado_reclamo			,
 							 reclamo				,				 
 							 foto_reclamo
@@ -92,12 +103,12 @@ class model_crear_reclamo extends modelodb
 				VALUES(
 							 :id_persona			,				
 			 				 :id_sector				,
-			 				 :dni_empleado			,
+			 				 :id_empleado			,
 			 				 :sector_raiz			,
 			 				 :fecha					, 
 			 				 :resumen_sector		,
 			 				 :area_actual			,
-			 				 :area_ya_paso			, 
+			 				 :areas_que_ya_ha_pasado, 
 			 				 :estado_reclamo		, 
 			 				 :reclamo				, 
 			 				 :foto_reclamo
@@ -111,13 +122,13 @@ class model_crear_reclamo extends modelodb
 								array
 									(
 									 ':id_persona'				=>$id_pers			,				
-					 				 ':id_sector'				=>2					,
-					 				 ':dni_empleado'			=>null				,
-					 				 ':sector_raiz'				=>$Sector			,
+					 				 ':id_sector'				=>$sector_seleccionado,
+					 				 ':id_empleado'				=>null				,
+					 				 ':sector_raiz'				=>$sector_raiz		,
 					 				 ':fecha'					=>$fecha		    , 
 					 				 ':resumen_sector'			=>"ss"				,
 					 				 ':area_actual'				=>2					,
-					 				 ':area_ya_paso'			=>2					, 
+					 				 ':areas_que_ya_ha_pasado'	=>2					, 
 					 			   	 ':estado_reclamo'			=>"No visto"		, 
 					 				 ':reclamo'					=>$reclamo      	, 
 					 				 ':foto_reclamo'			=>$foto_del_reclamo

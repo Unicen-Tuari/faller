@@ -10,9 +10,9 @@ class model_ver_reclamos extends modelodb
 			{
 						
 						return $this->query("SELECT *
-						 					FROM RECLAMO_REL rl JOIN SECTOR s  
-						 					ON(rl.id_sector=s.id_sector)
-						 					WHERE s.id_sector=2" );
+						 					FROM RECLAMO
+						 					WHERE id_sector='$sector'
+						 					" );
 
 
 			}
@@ -21,9 +21,9 @@ class model_ver_reclamos extends modelodb
 						if($filtro==="sector_raiz")
 						{
 							return $this->query("SELECT *
-											FROM RECLAMO_REL rl
+											FROM RECLAMO r
 											JOIN SECTOR s  
-											ON(rl.id_sector=s.id_sector)
+											ON(r.id_sector=s.id_sector)
 											WHERE s.id_sector=2
 											ORDER BY   s.sector_raiz DESC ");
 						}
@@ -56,91 +56,6 @@ class model_ver_reclamos extends modelodb
 	
 }
 
-class model_crear_reclamo extends modelodb
-   {
-
-	/*******Atributos***********/
-	public $sectorReclamo;
-
-		/*****acciones posibles a realizar con un reclamo******/
-
-	   	public function crear_reclamo($Reclamo_ingresado)
-		{
-
-		
-			$arraySelect= array('O'=>'Obras Publicas','i'=>'Infraestructura',
-								'a'=>'Asfalto','ie'=>'Intendente','l'=>'Luminaria',
-								'ar'=>'Arboleda','clo'=>'Cloacas','gas'=>'Gas',
-								'basura'=>'Basura');
-
-			$sector_seleccionado = $Reclamo_ingresado["reclamo_selector"];
-			$Sector=$arraySelect[$sector_seleccionado];
-
-			$id_pers = $Reclamo_ingresado["reclamo_id"];
-
-
-			$foto_del_reclamo =$Reclamo_ingresado["reclamo_foto"];
-
-			$fecha=date("y/m/d");
-
-			$reclamo=$Reclamo_ingresado['reclamo_texto'];
-			//Consulta - Parametros Posicionales
-			/*
-			INSERT INTO RECLAMO_REL (id_reclamo, id_persona, id_sector, dni_empleado, sector_raiz, fecha, resumen_sector, area_actual, area_ya_paso, estado_reclamo, reclamo,foto_reclamo) 
-			VALUES(2, 37198, 2, 37198533, '','2009/12/12-','SDSD',2,2,'en tramite','hola pololla','lala');
-			*/
-
-
-			$sql = "INSERT INTO RECLAMO_REL 
-						(	id_persona				,
-							 id_sector 				,
-							 dni_empleado			,
-							 sector_raiz			,
-							 fecha					, 
-							 resumen_sector			,
-							 area_actual			,
-							 area_ya_paso			,
-							 estado_reclamo			,
-							 reclamo				,				 
-							 foto_reclamo
-						)
-				VALUES(
-							 :id_persona			,				
-			 				 :id_sector				,
-			 				 :dni_empleado			,
-			 				 :sector_raiz			,
-			 				 :fecha					, 
-			 				 :resumen_sector		,
-			 				 :area_actual			,
-			 				 :area_ya_paso			, 
-			 				 :estado_reclamo		, 
-			 				 :reclamo				, 
-			 				 :foto_reclamo
-			 			)";
-
-
-			$q=$this->connection(); 
-			$preparado=$q->prepare($sql);
-
-			$preparado->execute(
-								array
-									(
-									 ':id_persona'				=>$id_pers			,				
-					 				 ':id_sector'				=>2					,
-					 				 ':dni_empleado'			=>null				,
-					 				 ':sector_raiz'				=>$Sector			,
-					 				 ':fecha'					=>$fecha		    , 
-					 				 ':resumen_sector'			=>"ss"				,
-					 				 ':area_actual'				=>2					,
-					 				 ':area_ya_paso'			=>2					, 
-					 			   	 ':estado_reclamo'			=>"No visto"		, 
-					 				 ':reclamo'					=>$reclamo      	, 
-					 				 ':foto_reclamo'			=>$foto_del_reclamo
-					 				 )
-								);
-
-		}
-}
 
 
 class model_registrarse extends modelodb

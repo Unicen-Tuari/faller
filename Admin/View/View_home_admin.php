@@ -5,14 +5,14 @@ include_once("View.php");
 
 class View_Home_Admin extends View
 {
-	public function Home()
+	public function Home($datos_home,$usuario)
 	{
 
-		$lista_de_reclamos=null;
-		if($lista_de_reclamos!= null)
+	
+		if($datos_home!= null)
 		{
-		
-			$this->smarty->assign("reclamos",$lista_de_reclamos);	
+			$this->smarty->assign("usuario",$usuario);
+			$this->smarty->assign("reclamos",$datos_home);	
 		}
 		$this->smarty->display('Home.tpl');
 	}

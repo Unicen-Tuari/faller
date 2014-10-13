@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-07 17:18:27
+<?php /* Smarty version 2.6.27, created on 2014-10-13 20:01:46
          compiled from Lista_reclamos_sector.tpl */ ?>
 
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
@@ -104,7 +104,8 @@ unset($_smarty_tpl_vars);
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Franco Aller <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $this->_tpl_vars['usuario']; ?>
+ <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -117,7 +118,7 @@ unset($_smarty_tpl_vars);
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="cerrar_sesion.tpl"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -244,7 +245,7 @@ unset($_smarty_tpl_vars);
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">124</div>
-                                        <div>R Pendientes</div>
+                                        <div>Chats Pendientes</div>
                                     </div>
                                 </div>
                             </div>

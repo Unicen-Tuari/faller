@@ -82,7 +82,7 @@ else
 //	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='reclamoNuevo')
 	//{
 else
-	if(($_POST['reclamo_texto']!=null)and($_POST['reclamo_selector']!='sa'))
+	if(($_POST['reclamo_texto']!=null)and($_POST['reclamo_selector']!='0'))
 		{
 			unset($arr_datos_reclamo);
 				Include_once("./controller/ControllerUser.php");
@@ -98,9 +98,9 @@ else
 					}
 
 
-				$arr_datos_reclamo["reclamo_texto"]=$_POST["reclamo_texto"];
-				$arr_datos_reclamo["reclamo_selector"]=$_POST["reclamo_selector"];
-				$arr_datos_reclamo["reclamo_id"]=$id_usuario[0]['id_persona'];
+				$arr_datos_reclamo["reclamo_texto"] 		=$_POST["reclamo_texto"];
+				$arr_datos_reclamo["reclamo_selector"] 		=$_POST["reclamo_selector"];
+				$arr_datos_reclamo["reclamo_id"] 			=$id_usuario[0]['id_persona'];
 
 				//print_r($arr_datos_reclamo["reclamo_id"]);
 				$reclamo->crear_reclamo($arr_datos_reclamo);

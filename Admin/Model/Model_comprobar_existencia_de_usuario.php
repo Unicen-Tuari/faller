@@ -11,11 +11,11 @@ Class Model_comprobar_existencia_usuario extends modelodb
 	{
 
 		return $this->query(
-							"SELECT id_persona  
+							"SELECT dni_empleado
 							 FROM 	EMPLEADO
-							 WHERE 	id_sector	='$sector' 
-							 AND 	clave 		='$pass' 
-							 AND 	 $nombre	='$nombre'
+							 WHERE 	id_sector	= '$sector' 
+							 AND 	clave 		='$clave' 
+							 AND 	nombre	    ='$nombre'
 							");	//campo selec indicar las filas que necesito la del mail y del pss		
 	}
 

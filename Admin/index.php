@@ -13,16 +13,26 @@ ini_set("display_errors", 1);
   isset($a[action])
   $a(acction)==='index.php';
 */
-if 	(isset($_POST['email_login']))
+ 
+  
+if 	(isset($_POST['Nombre_login']))
 	{
-			include_once("./controller/ControllerUser.php");
-			$ingresar= new controllerUser();
-			$ingresar->$login();
+			include_once("./Controller/ControllerUser.php");
+			$ingresar = new controllerUser();
+			$ingresar->login();
 	}
 
-	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index.tpl')
+else if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index.tpl')
 	{
 		include_once("./Controller/ControllerIndex.php");
+	 	$inicio= new controlador_index();
+		$inicio->visualizar_inicio();
+	}	
+else
+	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='cerrar_sesion.tpl')
+	{
+		session_destroy();
+		include "./Controller/ControllerIndex.php";
 	 	$inicio= new controlador_index();
 		$inicio->visualizar_inicio();
 	}	
@@ -33,8 +43,8 @@ else
 
 		include_once("./Controller/ControllerUser.php");
 	 	$reclamo= new controllerUser();
-	 	$id_area=1;
-		$reclamo->ver_reclamos($id_area);
+	 
+		$reclamo->ver_reclamos();
 	}	
 else
 	if (isset($_POST['fitro'])) //tine que haber un input oculto con este nombre

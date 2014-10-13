@@ -159,16 +159,16 @@
 <form class="form-horizontal "  action="index.php?action=reclamoNuevo" method="post">
 
  <select class="form-control"  name="reclamo_selector" id="selectorSectores">
-    <option value="sa"> Seleccione el área correspondiente</option>
-    <option value="O"   > Obras Públicas</option>
-    <option value="i"   >Infraestructura</option>
-    <option value="a" >Asfalto</option>
-    <option value="ie"  >Intendente</option>
-    <option value="l"   >Luminaria</option>
-    <option value="ar"  >Arboleda</option>
-    <option value="clo" >Cloacas</option>
-    <option value="gas" >Gas</option>
-    <option value="basura" >Basura</option>
+    <option value="0"> Seleccione el área correspondiente</option>
+    <option value="1"   > Obras Públicas</option>
+    <option value="2"   >Infraestructura</option>
+    <option value="3" >Asfalto</option>
+    <option value="4"  >Intendente</option>
+    <option value="5"   >Luminaria</option>
+    <option value="6"  >Arboleda</option>
+    <option value="7" >Cloacas</option>
+    <option value="8" >Gas</option>
+    <option value="9" >Basura</option>
 </select>
 
       <textarea class="form-control" rows="8" colums="12" name="reclamo_texto"  ></textarea>
@@ -211,7 +211,7 @@
                 {foreach from=$reclamos item=i}
                   <td>{$i.id_reclamo}</td>
                   <td>{$i.fecha}</td>
-                  <td>{$i.nombre_sector}</td>
+                  <td>{$i.sector_raiz}</td>
                   <td>{$i.area_actual}</td>
                   <td>{$i.estado_reclamo}</td>
                   <td><button type="submit" data-toggle="tooltip" data-placement="left" title="Todos los detalles sobre este reclamo / modificar el reclamo" class="btn btn-primary col-lg button-Mi-Estilo"><i class="fa fa-eye"></i> Ver / Modificar  <i class="fa fa-pencil"></i></button></td>

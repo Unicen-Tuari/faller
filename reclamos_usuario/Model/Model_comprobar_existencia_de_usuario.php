@@ -16,7 +16,7 @@ Class Model_comprobar_existencia_usuario extends modelodb
 	{
 
 		return $this->query("SELECT id_persona  
-							 FROM PERSONA
+							 FROM USUARIO
 							 WHERE email='$email' 
 							 AND password='$password'");	//campo selec indicar las filas que necesito la del mail y del pss		
 	}

@@ -1,11 +1,11 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-11 23:24:48
+<?php /* Smarty version 2.6.27, created on 2014-10-13 20:03:57
          compiled from index.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-<body acction="index.php?action=index.php">
+<body >
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -121,23 +121,23 @@ unset($_smarty_tpl_vars);
             </div>
 
       <div class="modal-body">
-            <form class="form-horizontal"  action="index.php" method="post" >
+            <form class="form-horizontal" method="post" acction="index.php?action=index.php">
               <fieldset>
                 <legend>Datos de usuario</legend>
               <div class="form-group">
               <label for="inputSelector" class="col-lg-2 control-label">Sector</label>
                     <div class="col-lg-10">
-                         <select class="form-control" id="inputSelector" name="sector_login" id="selectorSectores">
-                                  <option value="sa"> Seleccione el área correspondiente</option>
-                                  <option value="O"   > Obras Públicas</option>
-                                  <option value="i"   >Infraestructura</option>
-                                  <option value="a" >Asfalto</option>
-                                  <option value="ie"  >Intendente</option>
-                                  <option value="l"   >Luminaria</option>
-                                  <option value="ar"  >Arboleda</option>
-                                  <option value="clo" >Cloacas</option>
-                                  <option value="gas" >Gas</option>
-                                  <option value="basura" >Basura</option>
+                         <select class="form-control" id="inputSelector" name="sector_login" >
+                                  <option value="0"> Seleccione el área correspondiente</option>
+                                  <option value="1"   > Obras Públicas</option>
+                                  <option value="2"   >Infraestructura</option>
+                                  <option value="3" >Asfalto</option>
+                                  <option value="4"  >Intendente</option>
+                                  <option value="5"   >Luminaria</option>
+                                  <option value="6"  >Arboleda</option>
+                                  <option value="7" >Cloacas</option>
+                                  <option value="8" >Gas</option>
+                                  <option value="9" >Basura</option>
              
                          </select>
                    </div>

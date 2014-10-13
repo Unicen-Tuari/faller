@@ -98,7 +98,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Franco Aller <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {$usuario}<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -111,7 +111,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="index.php?action=cerrar_sesion.tpl"><i class="fa fa-fw fa-power-off"></i> Salir</a>
                         </li>
                     </ul>
                 </li>
@@ -403,7 +403,7 @@
                     <td>9/10/2014</td>
                     <td><button type="submit" data-toggle="tooltip" data-placement="left" title="Todos los detalles sobre este reclamo / modificar el reclamo" class="btn btn-primary col-lg button-Mi-Estilo"><i class="fa fa-eye"></i> Ver / Modificar  <i class="fa fa-pencil"></i></button></td>
                 </tr>
-                </tr>
+               
               </tbody>
 
             </table>

@@ -7,7 +7,9 @@ class controllerUser
 	private $vista_home;
 	private $vista_reclamos;
 	private $model_ver_reclamos;
+	private $model_comprobar_existencia_usuario;
 	private $controlador;
+	private $usuario;
 
 	/************Constructor************************/
 	function __construct()
@@ -20,7 +22,7 @@ class controllerUser
 			 $this->vista_home			= new View_Home_Admin();
 			 $this->vista_reclamos		= new View_Reclamos_Sector();
 			 $this->model_ver_reclamos  = new model_ver_reclamos();
-			 $this->comprobar_usuario 	= new Model_comprobar_existencia_usuario();
+			 $this->model_comprobar_existencia_usuario 	= new Model_comprobar_existencia_usuario();
 			//$model			= new ();
 			 //$controlador	= new ();
 
@@ -30,14 +32,14 @@ class controllerUser
 
 		public function comprobar_existencia_usuario($sector,$nombre,$pass)
 			{
-
 				return $this->model_comprobar_existencia_usuario->verificar_usuario($sector,$nombre,$pass);
 			}
 						//le estoy pasando el id por referencia
-	public function Home($datos_home)
+	public function Home($id_usuario,$sector)
 				{
-				$reclamos_usuario=$this->controller_reclamos->mostrar_reclamos($datos_home);
-				$this->vista_home->Home();
+				$reclamos_area=$this->obtener_reclamos($sector);//se le puede pasar el id del empleado				
+				$usuario=$_SESSION['nombre'] ;
+				$this->vista_home->Home($reclamos_area,$usuario);
 				}
 
 	public function registrar()
@@ -46,50 +48,64 @@ class controllerUser
 				}
 
 
-	public function error404()
+	/*public function error404()
 			{
 				//https://es.wikipedia.org/wiki/Error_404
-				include_once("./View/View_error404.php");
+				//include_once("./View/View_error404.php");
 				$error= new error_404();
 				$error->pagina_error();
 			}
-
-
+*/
 	public function login()
 			{
 
-  			$sector=$_POST['sector_login'];
-			$nombre= $_POST['Nombre_login'];
-			$pass=  $_POST['pass_login'];
+	  			$sector	=$_POST['sector_login'];
+				$nombre	=$_POST['Nombre_login'];
+				$pass	= $_POST['pass_login'];
 
-			$login_ok= $this->comprobar_existencia_usuario($sector,$nombre,$pass);
-			
-			if ($login_ok)
-				{ 
-					$id_usuario=$login_ok;
-					$_SESSION['id'] 	=$id_usuario;
-					$_SESSION['nombre'] 	=$nombre;
-					$_SESSION['Sector'] 	=$sector;
-					Home($id_usuario);
-				}else
-				     {
-				      $login->error404();
-				  }
+				if(isset($nombre) AND isset($pass) AND isset($sector) AND ($sector!=0)) 
+				{
+					$login_ok= $this->comprobar_existencia_usuario($sector,$nombre,$pass);
+					
+						if ($login_ok)
+						{ 
+								$id_usuario=$login_ok;
+								$_SESSION['id'] 		=$id_usuario;
+								$_SESSION['nombre'] 	=$nombre;
+								$_SESSION['Sector'] 	=$sector;
+
+								$this->Home($id_usuario,$sector);
+						}else
+							{
+								print_r("error");
+							  //   $this->error404();
+							}
+				}
+				
 
 			}
+	public function ver_reclamos()
+			{
+				$usuario=$_SESSION['nombre'];
+				$reclamos= $this->obtener_reclamos($_SESSION['Sector']);
+				$this->vista_reclamos->Reclamos($reclamos,$usuario);
+			}	
 
-	public function ver_reclamos($area)
+	public function obtener_reclamos($sector)
 				{
-					$Query_reclamos_area= $this->model_ver_reclamos->ver_reclamo_sector($area);
-					//print_r($Query_reclamos_area);
-					$this->vista_reclamos->reclamos($Query_reclamos_area);
+					return $Query_reclamos_area= $this->model_ver_reclamos->ver_reclamo_sector($sector);
 				}
 
 	public function cambiar_area()
 				{
 
 				
-}
+				}
+	public function panel_informativo_reclamos()
+				{
+
+				}
+   
 
 
 }

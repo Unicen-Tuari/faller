@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-11 18:31:19
+<?php /* Smarty version 2.6.27, created on 2014-10-13 05:36:39
          compiled from head.tpl */ ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,6 +32,7 @@
 
                             <!--Inicio -->
      <link href="./css/inicio.css" rel="stylesheet" type="text/css">
+
 
 
 

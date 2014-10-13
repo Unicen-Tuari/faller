@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-11 16:54:29
+<?php /* Smarty version 2.6.27, created on 2014-10-13 21:13:55
          compiled from Home.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -165,16 +165,16 @@ unset($_smarty_tpl_vars);
 <form class="form-horizontal "  action="index.php?action=reclamoNuevo" method="post">
 
  <select class="form-control"  name="reclamo_selector" id="selectorSectores">
-    <option value="sa"> Seleccione el área correspondiente</option>
-    <option value="O"   > Obras Públicas</option>
-    <option value="i"   >Infraestructura</option>
-    <option value="a" >Asfalto</option>
-    <option value="ie"  >Intendente</option>
-    <option value="l"   >Luminaria</option>
-    <option value="ar"  >Arboleda</option>
-    <option value="clo" >Cloacas</option>
-    <option value="gas" >Gas</option>
-    <option value="basura" >Basura</option>
+    <option value="0"> Seleccione el área correspondiente</option>
+    <option value="1"   > Obras Públicas</option>
+    <option value="2"   >Infraestructura</option>
+    <option value="3" >Asfalto</option>
+    <option value="4"  >Intendente</option>
+    <option value="5"   >Luminaria</option>
+    <option value="6"  >Arboleda</option>
+    <option value="7" >Cloacas</option>
+    <option value="8" >Gas</option>
+    <option value="9" >Basura</option>
 </select>
 
       <textarea class="form-control" rows="8" colums="12" name="reclamo_texto"  ></textarea>
@@ -221,7 +221,7 @@ unset($_smarty_tpl_vars);
 </td>
                   <td><?php echo $this->_tpl_vars['i']['fecha']; ?>
 </td>
-                  <td><?php echo $this->_tpl_vars['i']['nombre_sector']; ?>
+                  <td><?php echo $this->_tpl_vars['i']['sector_raiz']; ?>
 </td>
                   <td><?php echo $this->_tpl_vars['i']['area_actual']; ?>
 </td>
