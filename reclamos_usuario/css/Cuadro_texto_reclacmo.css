@@ -1,4 +1,4 @@
-#cuadro_del_reclamo
+.cuadro_del_reclamo
 {
  background-color:white;
  border-radius:.5em;
@@ -17,5 +17,12 @@
   margin-left:1em;
  margin-top:1em;
  width:22%;
+
+}
+
+#cuadro_respuesta_sector
+{
+
+ width:98%;
 
 }
