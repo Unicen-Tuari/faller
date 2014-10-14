@@ -71,6 +71,31 @@ id_foto
 id_reclamo
 );
 */
+/*
+
+ALTER TABLE ACCIONES_RECLAMO
+	ADD CONSTRAINT Fk_ACCIONES_RECLAMO_RECLAMO
+	  FOREIGN KEY (id_reclamo,id_empleado)
+	    REFERENCES RECLAMO(id_reclamo,id_empleado)
+	      ON UPDATE cascade
+            ON DELETE SET NULL
+
+;
+
+
+CREATE TABLE ACCIONES_RECLAMO(
+id_accion           	 integer 		not null auto_increment,	
+id_reclamo     			 integer		not null,
+id_empleado				 integer		not null,
+fecha_pasado_a_otra_area date        	null,
+ultima_vez_visto		 date      		null,
+CONSTRAINT			pk_ACCIONES_RECLAMO
+PRIMARY KEY         (id_accion,id_reclamo,id_empleado)     	
+)
+
+
+
+*/
 
 
 

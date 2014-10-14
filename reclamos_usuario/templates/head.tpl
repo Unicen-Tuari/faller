@@ -16,6 +16,8 @@
           <link href="css/font-awesome.min.css" rel="stylesheet">
                     <!--FIN CSS ICONOS-->
 
+   <link href="css/Cuadro_texto_reclacmo.css" rel="stylesheet">
+
     
         <!--FIN clase del registrar y loguear del index-->
 

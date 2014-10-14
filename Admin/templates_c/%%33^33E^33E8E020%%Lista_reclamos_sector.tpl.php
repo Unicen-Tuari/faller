@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-13 20:01:46
+<?php /* Smarty version 2.6.27, created on 2014-10-14 14:11:29
          compiled from Lista_reclamos_sector.tpl */ ?>
 
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
@@ -56,6 +56,7 @@ unset($_smarty_tpl_vars);
                                 </div>
                             </a>
                         </li>
+                        
                         <li class="message-preview">
                             <a href="#">
                                 <div class="media">

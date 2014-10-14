@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-07 03:02:27
+<?php /* Smarty version 2.6.27, created on 2014-10-14 06:09:04
          compiled from head.tpl */ ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +17,8 @@
           <link href="css/font-awesome.css" rel="stylesheet">
           <link href="css/font-awesome.min.css" rel="stylesheet">
                     <!--FIN CSS ICONOS-->
+
+   <link href="css/Cuadro_texto_reclacmo.css" rel="stylesheet">
 
     
         <!--FIN clase del registrar y loguear del index-->

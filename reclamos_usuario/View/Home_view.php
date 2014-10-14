@@ -14,7 +14,7 @@ class View_Home extends View
 		
 			$this->smarty->assign("reclamos",$lista_de_reclamos);	
 		}
-		$this->smarty->display('Home.tpl');
+		$this->smarty->display('ver_o_modificar_reclamo.tpl');
 	}
 
 }
