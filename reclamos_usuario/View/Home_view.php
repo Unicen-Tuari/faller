@@ -3,6 +3,8 @@
 include_once("view.php");
 
 
+
+
 class View_Home extends View
 {
 	public function Home($lista_de_reclamos)

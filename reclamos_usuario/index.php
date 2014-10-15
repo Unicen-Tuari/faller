@@ -115,7 +115,7 @@ else
 				Include_once("./controller/ControllerUser.php");
 				$ver_modificar_reclamo= new ControllerUser();
 				$id_usuario=$_SESSION['sesionUsuario'];
-				$ver_modificar_reclamo->ver_reclamo_espesifico($id_usuario);
+				$ver_modificar_reclamo->ver_reclamo_espesifico($id_usuario[0);
 		}		
 
 else
