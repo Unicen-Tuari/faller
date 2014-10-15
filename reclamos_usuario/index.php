@@ -81,8 +81,8 @@ else
 	*/
 //	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='reclamoNuevo')
 	//{
-else
-	if(($_POST['reclamo_texto']!=null)and($_POST['reclamo_selector']!='0'))
+else  //	if(($_POST['reclamo_texto']!=null)and($_POST['reclamo_selector']!='0'))
+	 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='reclamoNuevo.tpl')
 		{
 			unset($arr_datos_reclamo);
 				Include_once("./controller/ControllerUser.php");
@@ -109,6 +109,14 @@ else
 
 
 		}
+else 	
+	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='ver_o_modificar.tpl')
+		{			
+				Include_once("./controller/ControllerUser.php");
+				$ver_modificar_reclamo= new ControllerUser();
+				$id_usuario=$_SESSION['sesionUsuario'];
+				$ver_modificar_reclamo->ver_reclamo_espesifico($id_usuario);
+		}		
 
 else
 
@@ -121,7 +129,7 @@ else
 else
 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='home.tpl')
 	{
-				$id_usuario=$_SESSION['sesionUsuario'];
+			$id_usuario=$_SESSION['sesionUsuario'];
 			$reclmo->Home($id_usuario);
 	}
 

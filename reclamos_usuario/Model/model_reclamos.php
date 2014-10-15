@@ -9,13 +9,27 @@ class model_ver_reclamos extends modelodb
 	public function ver_reclamo($id_usuario)
 			{
 				$usuario=$id_usuario[0]['id_persona'];
-						
+						print_r($usuario);
 						return $this->query("SELECT *
 						 					FROM RECLAMO 
-						 					where id_persona='$usuario'" );
+						 					where id_persona='$usuario'"
+						 					 );
 
 
 			}
+	public function reclamo_espesifico($id_usuario,$id_reclamo)
+			{
+				$usuario=$id_usuario[0]['id_persona'];
+						
+						return $this->query("SELECT *
+						 					FROM RECLAMO 
+						 					where id_persona='$usuario'
+						 					AND   id_reclamo='$id_reclamo'	
+						 					" );
+
+
+			}
+
 
 /*
 "SELECT *

@@ -156,7 +156,7 @@
 </div> 
 
     <div class="col-xs-12 col-lg-12 placeholder">
-<form class="form-horizontal "  action="index.php?action=reclamoNuevo" method="post">
+<form class="form-horizontal "  action="index.php?action=reclamoNuevo.tpl" method="post">
 
  <select class="form-control"  name="reclamo_selector" id="selectorSectores">
     <option value="0"> Seleccione el área correspondiente</option>
@@ -214,8 +214,13 @@
                   <td>{$i.sector_raiz}</td>
                   <td>{$i.area_actual}</td>
                   <td>{$i.estado_reclamo}</td>
-                  <td><button type="submit" data-toggle="tooltip" data-placement="left" title="Todos los detalles sobre este reclamo / modificar el reclamo" class="btn btn-primary col-lg button-Mi-Estilo"><i class="fa fa-eye"></i> Ver / Modificar  <i class="fa fa-pencil"></i></button></td>
-                </tr>{/foreach}
+                  <td>
+                      <form  action="index.php?action=ver_o_modificar.tpl" method="post">
+                      <input type="hidden" name="id_reclamo" value='{$i.id_reclamo}'>
+                      <button  type="submit"  data-toggle="tooltip" data-placement="left" title="Todos los detalles sobre este reclamo / modificar el reclamo" class="btn btn-primary col-lg button-Mi-Estilo"><i class="fa fa-eye"></i> Ver / Modificar  <i class="fa fa-pencil"></i></button ></td>
+                      </form>
+                </tr>
+                {/foreach}
 
               </tbody>
             </table>

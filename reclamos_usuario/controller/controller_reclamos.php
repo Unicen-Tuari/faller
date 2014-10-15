@@ -39,7 +39,7 @@
 			public function mostrar_reclamos($usuario)
 			{
 				$arr_datos_reclamos=array();
-				$datos_reclamos=$datos_del_reclamo		=$this->model_ver_reclamos->ver_reclamo($usuario);
+				$datos_reclamos=$this->model_ver_reclamos->ver_reclamo($usuario);
 				//$arr_datos_reclamos['datos'][]		=$datos_del_reclamo		=$this	->model_ver_reclamos	->ver_reclamo($usuario);
 				/*$arr_datos_reclamos['finalizados'][]	=$reclamos_finalizados	=$this	->model_ver_reclamos	->reclamo_finalizados($usuario);
 				$arr_datos_reclamos['pendientes'][]	=$reclamos_pendientes	=$this	->model_ver_reclamos	->reclamo_pendientes($usuario);
@@ -55,6 +55,14 @@
 				*/
 				return $datos_reclamos;
 			}
+
+
+	public function reclamo_espesifico($usuario,$id_reclamo)
+					{
+						return $datos_reclamos=$this->model_ver_reclamos->reclamo_espesifico($usuario,$id_reclamo);
+					}
+
+
 			public function reclamos_solucionados()
 			{
 

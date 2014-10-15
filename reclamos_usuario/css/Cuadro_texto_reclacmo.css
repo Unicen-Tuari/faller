@@ -19,6 +19,15 @@
  width:22%;
 
 }
+#foto_reclamo img
+{
+	 background-image: url('../imagenes/no-img.jpg');
+	height:15em;
+	width: 100%;
+	border-radius: 0;/*para pizzar el efecto de la foto del index*/
+}
+
+
 
 #cuadro_respuesta_sector
 {

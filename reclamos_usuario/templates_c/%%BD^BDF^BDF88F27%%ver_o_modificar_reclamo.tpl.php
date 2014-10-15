@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-14 20:48:35
+<?php /* Smarty version 2.6.27, created on 2014-10-15 15:27:28
          compiled from ver_o_modificar_reclamo.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -119,17 +119,17 @@ unset($_smarty_tpl_vars);
         <div class="tab-content">
               <div class="tab-pane active" id="profile">
                     <h4><i class="glyphicon glyphicon-user"></i></h4>
-                    Lorem profile dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-                    <p>Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-                      dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-                      Aliquam in felis sit amet augue.</p>
+                    <p><?php echo $this->_tpl_vars['dato_del_reclamo']; ?>
+</p>
               </div>
         </div>  
    </div>
  </div>
 
 
-    <div class="col-lg-3 col-sm-1 placeholder offset3"  id="foto_reclamo">                        <h4 class="text-center"> Foto Reclamo </h4>
+    <div class="col-lg-3 col-sm-1 placeholder offset3"  id="foto_reclamo">                        
+            <img  class=" thumbnail col-lg-12" src='./imagenes/<?php echo $this->_tpl_vars['foto_reclamo']; ?>
+'>
     </div> 
 
     <div class="row">

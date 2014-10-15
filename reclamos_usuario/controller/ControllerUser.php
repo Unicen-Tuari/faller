@@ -14,7 +14,9 @@ class ControllerUser
 	private $model_comprobar_existencia_usuario;
 	private $view_home;
 	private $view_registrado_exitoso;
+	private $ver_modificar ;
 	private $model;
+	private $model_ver_reclamos	;
 	private $controller_reclamos;
 
 
@@ -23,16 +25,20 @@ class ControllerUser
 	public function __construct()
 			{
 	         	/*************Archivos incluidos***********************/
-	         	include_once("./View/view_registrado_exitoso.php");
-				include_once("./Model/model_reclamos.php");
+	         	include_once("./View/view_registrado_exitoso.php");				
 				include_once("./View/Home_view.php");
+				include_once("./View/View_ver_modificar.php");
+
 			  	include_once("./controller/controller_reclamos.php");
+
+			  	include_once("./Model/model_reclamos.php");
 			  	include_once("./Model/Model_comprobar_existencia_de_usuario.php");	
 		        
 		        /*************Inicializo las variables con clases***********************/
 
 				$this->model_comprobar_existencia_usuario= 	new Model_comprobar_existencia_usuario();
 				$this->view_home 						= 	new View_Home();
+				$this->ver_modificar 					= 	new view_ver_modificar();
 				$this->view_registrado_exitoso			= 	new view_registrado_exitoso();
 				$this->model_ver_reclamos				=	new model_ver_reclamos();//esta llamada tiene que ser a un controller
 				$this->model_crear_reclamo				=	new model_crear_reclamo();//esta llamada tiene que ser a un controller
@@ -85,6 +91,14 @@ class ControllerUser
 				$this->model_crear_reclamo->crear_reclamo($arr_datos_reclamo);
 
 			}
+	public  function ver_reclamo_espesifico($id_usuario)
+				{
+					$id_reclamo=$_POST["id_reclamo"];
+					$datos_reclamo= $this->model_ver_reclamos->reclamo_espesifico($id_usuario,$id_reclamo);
+					$r=$datos_reclamo[0]["reclamo"];
+					$foto=$datos_reclamo[0]["foto_reclamo"];
+					$this->ver_modificar->ver_modificar($r,$foto);
+				}
 }
 
 

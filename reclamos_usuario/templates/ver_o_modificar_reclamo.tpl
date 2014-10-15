@@ -113,17 +113,15 @@
         <div class="tab-content">
               <div class="tab-pane active" id="profile">
                     <h4><i class="glyphicon glyphicon-user"></i></h4>
-                    Lorem profile dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-                    <p>Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-                      dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-                      Aliquam in felis sit amet augue.</p>
+                    <p>{$dato_del_reclamo}</p>
               </div>
         </div>  
    </div>
  </div>
 
 
-    <div class="col-lg-3 col-sm-1 placeholder offset3"  id="foto_reclamo">                        <h4 class="text-center"> Foto Reclamo </h4>
+    <div class="col-lg-3 col-sm-1 placeholder offset3"  id="foto_reclamo">                        
+            <img  class=" thumbnail col-lg-12" src='./imagenes/{$foto_reclamo}'>
     </div> 
 
     <div class="row">

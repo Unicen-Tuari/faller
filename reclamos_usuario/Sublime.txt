@@ -1,5 +1,8 @@
 http://www.bytelovers.com/blog/sublime-text-2/atajos-de-teclado-para-sublime-text-2
 
+control + u= codigo fuente; -> en el navegador
+
+
 
 leyenda de teclas
 
