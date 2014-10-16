@@ -66,7 +66,7 @@ class model_crear_reclamo extends modelodb
    {
 
 	/*******Atributos***********/
-	public $sectorReclamo;
+	
 
 		/*****acciones posibles a realizar con un reclamo******/
 
@@ -82,7 +82,9 @@ class model_crear_reclamo extends modelodb
 									8	=> "Gas",
 									9	=> "Basura",
 									 );
-			$sector_raiz= $sectores_raiz[ $Reclamo_ingresado["reclamo_selector"]];
+
+			
+			$sector_raiz= $sectores_raiz[$Reclamo_ingresado["reclamo_selector"]];
 
 			$sector_seleccionado = $Reclamo_ingresado["reclamo_selector"];
 

@@ -95,6 +95,7 @@ class ControllerUser
 				{
 					$id_reclamo=$_POST["id_reclamo"];
 					$datos_reclamo= $this->model_ver_reclamos->reclamo_espesifico($id_usuario,$id_reclamo);
+					//print_r($datos_reclamo);
 					$r=$datos_reclamo[0]["reclamo"];
 					$foto=$datos_reclamo[0]["foto_reclamo"];
 					$this->ver_modificar->ver_modificar($r,$foto);
