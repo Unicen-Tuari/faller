@@ -29,7 +29,8 @@ class ControllerUser
 	         	include_once("./View/view_registrado_exitoso.php");				
 				include_once("./View/Home_view.php");
 				include_once("./View/View_ver_modificar.php");
-				include_once("./View/view_tabla_peticiones.php");
+				include_once("./View/View_tabla_peticiones.php");
+
 
 			  	include_once("./controller/controller_reclamos.php");
 
@@ -59,7 +60,6 @@ class ControllerUser
 	public function Home($datos_home)//datos home es informacion de una consulta 
 			{
 				$reclamos_usuario=$this->controller_reclamos->mostrar_reclamos($datos_home);
-			    //$usuario=
 			    $this->view_home->Home($reclamos_usuario);
 
 			}
@@ -89,20 +89,16 @@ class ControllerUser
 				 $this->view_registrado_exitoso->r_exitoso();
 			}
 
-	public function crear_reclamo($datosReclamo)
+	public function crear_reclamo($Rec,$Selec)
 			{
-
-			$id=$_SESSION['sesionUsuario'];
-			$Fot=$datosReclamo['valorF'];
-			$Rec=$datosReclamo['valorR'];
-			$Selec=$datosReclamo['valorS'];
-
+				$Fot="nada";
+				$id=$_SESSION['sesionUsuario'];
 			
-				$this->model_crear_reclamo->crear_reclamo($Rec,$Fot,$Selec,$id);
+				$this->model_crear_reclamo->crear_reclamo($Rec,$Selec,$Fot,$id);
 
 				$reclamos_usuario=$this->controller_reclamos->mostrar_reclamos($id);
 
-				$this->view_tabla_peticiones->tabla_peticiones($reclamos_usuario);
+				$this->view_tabla_reclamos->tabla_peticiones($reclamos_usuario);
 			}
 
 

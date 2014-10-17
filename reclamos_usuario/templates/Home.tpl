@@ -156,9 +156,9 @@
 </div> 
 
     <div class="col-xs-12 col-lg-12 placeholder">
-<form class="form-horizontal "   method="post">
+<form class="form-horizontal "   method="POST" id="crear_r">
 
- <select class="form-control"  name="reclamo_selector" id="selectorSectores">
+ <select class="form-control"  name="reclamo_selector" >
     <option value="0"> Seleccione el área correspondiente</option>
     <option value="1"> Obras Públicas                     </option>
     <option value="2">Infraestructura                     </option>
@@ -176,10 +176,10 @@
 
          <div class="col-lg-3 col-lg-offset 0">
         <button class="btn btn-default"><i class="fa fa-trash"></i> Borrar</button>
-        <button type="submit" class="btn button-Mi-Estilo" onclick="crear_reclamo()" ><i class="fa fa-arrow-circle-right"></i> Enviar</button>
+        <button type="submit" class="btn button-Mi-Estilo"  ><i class="fa fa-arrow-circle-right"></i> Enviar</button>
       </div>
       <div class="col-xs-9 col-lg-3">
-<input type="file" class="btn btn-primary button-Mi-Estilo" name="reclamo_foto" id="reclamo_foto" data-buttonName="btn-primary" >
+<input type="file" class="btn btn-primary button-Mi-Estilo" name="reclamo_foto" data-buttonName="btn-primary" >
 </div>
 </form>
 </div> 

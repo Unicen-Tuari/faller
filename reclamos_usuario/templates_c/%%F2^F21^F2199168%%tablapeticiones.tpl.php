@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-17 15:22:59
+<?php /* Smarty version 2.6.27, created on 2014-10-17 20:28:26
          compiled from tablapeticiones.tpl */ ?>
           <div class="table-responsive">
             <table class="table table-striped table-hover">

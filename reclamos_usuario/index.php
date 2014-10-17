@@ -28,8 +28,7 @@ if 	(isset($_POST['email_login']))
 				}else
 				     { $l->error404();}
 	}
-else
-	if (isset($_POST['nombre_registrarse']))
+else 	if (isset($_POST['nombre_registrarse']))
 	{
 		include_once("./controller/ControllerUser.php");
 		
@@ -44,14 +43,13 @@ else
 		$arr_registro['pass']			= $_POST['pass_registrarse'];
 		$arr_registro['direccion']		= $_POST['Direccion_registrarse'];
 
-
 		$R= new ControllerUser();
 		$R->registrarse($arr_registro);
 
 	}
 
-else
-	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='cerrar_sesion.tpl')
+
+else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='cerrar_sesion.tpl')
 	{
 		session_destroy();
 		include "./controller/IndexController.php";
@@ -60,24 +58,8 @@ else
 	}	
 
 
-else  //	if(($_POST['reclamo_texto']!=null)and($_POST['reclamo_selector']!='0'))
-	 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='reclamoNuevo')
-		{
 
-		Include_once("./controller/ControllerUser.php");
-
-		$datosReclamo = array(
-				'valorF' => $_REQUEST['foto'],
-				'valorR' => $_REQUEST['reclamo'],
-				'valorS' => $_REQUEST['selector'],
-				);
-		
-				$reclamo= new ControllerUser();
-				$reclamo->crear_reclamo($datosReclamo);
-
-		}
-else 	
-	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='ver_o_modificar.tpl')
+else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='ver_o_modificar.tpl')
 		{			
 				Include_once("./controller/ControllerUser.php");
 				$ver_modificar_reclamo= new ControllerUser();
@@ -86,20 +68,24 @@ else
 				$ver_modificar_reclamo->ver_reclamo_espesifico($id_usuario);
 		}		
 
-else
-
-	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index.tpl')
+else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index.tpl')
 	{
 		include "./controller/IndexController.php";
 	 	$inicio= new controlador_index();
 		$inicio->visualizar_inicio();	
 	}
-else
-	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='home.tpl')
+else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='home.tpl')
 	{
 			$id_usuario=$_SESSION['sesionUsuario'];
 			$reclmo->Home($id_usuario);
 	}
+else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='reclamoNuevo')
+		{
+		Include_once("./controller/ControllerUser.php");
+		$reclamo= new ControllerUser();
+		$reclamo->crear_reclamo($_POST['reclamo_texto'],$_POST['reclamo_selector']);
+
+		}
 
 
 ?>

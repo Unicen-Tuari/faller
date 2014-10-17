@@ -69,7 +69,7 @@ class model_crear_reclamo extends modelodb
 
 		/*****acciones posibles a realizar con un reclamo******/
 
-	   	public function crear_reclamo($Rec,$Fot,$Selec,$id)
+	   	public function crear_reclamo($Rec,$Selec,$Fot,$id)
 		{
 			$sectores_raiz = array(	1 	=> "Obras Publicas",
 									2	=> "Infraestructura",
@@ -83,7 +83,7 @@ class model_crear_reclamo extends modelodb
 									 );
 
 			
-			$sector_raiz= $sectores_raiz[$Selec];
+			$sector_raiz= "Obras Publicas";//$sectores_raiz[$Selec];
 
 			$sector_seleccionado = $Selec;
 

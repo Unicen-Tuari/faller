@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-17 16:20:26
+<?php /* Smarty version 2.6.27, created on 2014-10-17 22:13:15
          compiled from Home.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -162,9 +162,9 @@ unset($_smarty_tpl_vars);
 </div> 
 
     <div class="col-xs-12 col-lg-12 placeholder">
-<form class="form-horizontal "   method="post">
+<form class="form-horizontal "   method="POST" id="crear_r">
 
- <select class="form-control"  name="reclamo_selector" id="selectorSectores">
+ <select class="form-control"  name="reclamo_selector" >
     <option value="0"> Seleccione el área correspondiente</option>
     <option value="1"> Obras Públicas                     </option>
     <option value="2">Infraestructura                     </option>
@@ -182,10 +182,10 @@ unset($_smarty_tpl_vars);
 
          <div class="col-lg-3 col-lg-offset 0">
         <button class="btn btn-default"><i class="fa fa-trash"></i> Borrar</button>
-        <button type="submit" class="btn button-Mi-Estilo" onclick="crear_reclamo()" ><i class="fa fa-arrow-circle-right"></i> Enviar</button>
+        <button type="submit" class="btn button-Mi-Estilo"  ><i class="fa fa-arrow-circle-right"></i> Enviar</button>
       </div>
       <div class="col-xs-9 col-lg-3">
-<input type="file" class="btn btn-primary button-Mi-Estilo" name="reclamo_foto" id="reclamo_foto" data-buttonName="btn-primary" >
+<input type="file" class="btn btn-primary button-Mi-Estilo" name="reclamo_foto" data-buttonName="btn-primary" >
 </div>
 </form>
 </div> 
