@@ -7,22 +7,18 @@ Class Model_comprobar_existencia_usuario extends modelodb
 
 	/*******Atributos***********/
 
-	private $email;
-	private $password;
-
 	/*******Metodos***********************************/		    	
 
 	public function verificar_usuario($email,$password)
 	{
 
-		return $this->query("SELECT id_persona  
+		$datos=$this->query("SELECT id_persona  
 							 FROM USUARIO
 							 WHERE email='$email' 
 							 AND password='$password'");	//campo selec indicar las filas que necesito la del mail y del pss		
+	
+        return $datos[0]["id_persona"];
 	}
-
-
-
 
 
 }

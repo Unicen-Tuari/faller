@@ -14,6 +14,7 @@ class ControllerUser
 	private $model_comprobar_existencia_usuario;
 	private $view_home;
 	private $view_registrado_exitoso;
+	private $view_tabla_reclamos;
 	private $ver_modificar ;
 	private $model;
 	private $model_ver_reclamos	;
@@ -28,6 +29,7 @@ class ControllerUser
 	         	include_once("./View/view_registrado_exitoso.php");				
 				include_once("./View/Home_view.php");
 				include_once("./View/View_ver_modificar.php");
+				include_once("./View/view_tabla_peticiones.php");
 
 			  	include_once("./controller/controller_reclamos.php");
 
@@ -40,6 +42,8 @@ class ControllerUser
 				$this->view_home 						= 	new View_Home();
 				$this->ver_modificar 					= 	new view_ver_modificar();
 				$this->view_registrado_exitoso			= 	new view_registrado_exitoso();
+				$this->view_tabla_reclamos				= 	new view_tabla_peticiones();
+
 				$this->model_ver_reclamos				=	new model_ver_reclamos();//esta llamada tiene que ser a un controller
 				$this->model_crear_reclamo				=	new model_crear_reclamo();//esta llamada tiene que ser a un controller
 				$this->controller_reclamos				= 	new Controller_reclamos();
@@ -85,12 +89,23 @@ class ControllerUser
 				 $this->view_registrado_exitoso->r_exitoso();
 			}
 
-	public function crear_reclamo($arr_datos_reclamo)
+	public function crear_reclamo($datosReclamo)
 			{
-				//print_r($datos_reclamo);
-				$this->model_crear_reclamo->crear_reclamo($arr_datos_reclamo);
 
+			$id=$_SESSION['sesionUsuario'];
+			$Fot=$datosReclamo['valorF'];
+			$Rec=$datosReclamo['valorR'];
+			$Selec=$datosReclamo['valorS'];
+
+			
+				$this->model_crear_reclamo->crear_reclamo($Rec,$Fot,$Selec,$id);
+
+				$reclamos_usuario=$this->controller_reclamos->mostrar_reclamos($id);
+
+				$this->view_tabla_peticiones->tabla_peticiones($reclamos_usuario);
 			}
+
+
 	public  function ver_reclamo_espesifico($id_usuario)
 				{
 					$id_reclamo=$_POST["id_reclamo"];

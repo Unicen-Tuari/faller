@@ -6,13 +6,12 @@ class model_ver_reclamos extends modelodb
 { 
 	
 
-	public function ver_reclamo($id_usuario)
+	public function ver_reclamo($id_usuario)//tendria que llamarse buscar reclamos ya q hace una consulta ,PENDIENTE A CAMBIAR
 			{
-				$usuario=$id_usuario[0]['id_persona'];
-						print_r($usuario);
+
 						return $this->query("SELECT *
 						 					FROM RECLAMO 
-						 					where id_persona='$usuario'"
+						 					where id_persona=1"
 						 					 );
 
 
@@ -70,7 +69,7 @@ class model_crear_reclamo extends modelodb
 
 		/*****acciones posibles a realizar con un reclamo******/
 
-	   	public function crear_reclamo($Reclamo_ingresado)
+	   	public function crear_reclamo($Rec,$Fot,$Selec,$id)
 		{
 			$sectores_raiz = array(	1 	=> "Obras Publicas",
 									2	=> "Infraestructura",
@@ -84,18 +83,18 @@ class model_crear_reclamo extends modelodb
 									 );
 
 			
-			$sector_raiz= $sectores_raiz[$Reclamo_ingresado["reclamo_selector"]];
+			$sector_raiz= $sectores_raiz[$Selec];
 
-			$sector_seleccionado = $Reclamo_ingresado["reclamo_selector"];
+			$sector_seleccionado = $Selec;
 
-			$id_pers = $Reclamo_ingresado["reclamo_id"];
+			$id_pers = $id;
 
 
-			$foto_del_reclamo =$Reclamo_ingresado["reclamo_foto"];
+			$foto_del_reclamo =$Fot;
 
 			$fecha=date("y/m/d");
 
-			$reclamo=$Reclamo_ingresado['reclamo_texto'];
+			$reclamo=$Rec;
 			//Consulta - Parametros Posicionales
 			/*
 			INSERT INTO RECLAMO_REL (id_reclamo, id_persona, id_sector, id_empleado, sector_raiz, fecha, resumen_sector, area_actual, area_ya_paso, estado_reclamo, reclamo,foto_reclamo) 
