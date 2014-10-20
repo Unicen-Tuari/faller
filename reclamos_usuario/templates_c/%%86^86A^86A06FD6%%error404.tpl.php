@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-07 16:47:50
+<?php /* Smarty version 2.6.27, created on 2014-10-18 20:19:51
          compiled from error404.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -247,45 +247,47 @@ unset($_smarty_tpl_vars);
                                           <!-- Modal login -->
 
 
+                                          <!-- Modal login -->
+
+
 <div class="modal fade" id="Ingresar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">login
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title  text-center" id="myModalLabel">Ingresar</h4>
-      </div>
+            <div class="modal-header">login
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title  text-center" id="myModalLabel">Ingresar</h4>
+            </div>
+
       <div class="modal-body">
-
-<form class="form-horizontal"  action="index.php" method="post" >
-  <fieldset>
-    <legend>Datos de usuario</legend>
-        <div class="form-group">
-          <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-              <div class="col-lg-10">
-                <input type="text"  name="email_login"  class="form-control" id="inputEmail" placeholder="Email">
-              </div>
+            <form class="form-horizontal"  action="index.php" method="post" >
+              <fieldset>
+                <legend>Datos de usuario.</legend>
+                    <div class="form-group">
+                      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                          <div class="col-lg-10">
+                            <input type="email"  name="email_login"  class="form-control" id="inputEmail"  placeholder="E.G: Minombre@gmail.com tu email" required>
+                          </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword"  class="col-lg-2 control-label" required>Contraseña</label>
+                          <div class="col-lg-10">
+                            <input type="password" name="pass_login" class="form-control" id="inputPassword" placeholder="Password"  placeholder="contraseña para esta aplicacion" required>
+                          </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-lg-10 col-lg-offset-2">
+                            <button class="btn btn-default">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                            
+                      </div>
+                    </div>
+                 </fieldset>
+            </form>
         </div>
-        <div class="form-group">
-          <label for="inputPassword" name="pass_login" class="col-lg-2 control-label">Password</label>
-              <div class="col-lg-10">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-              </div>
-        </div>
-        <div class="form-group">
-          <div class="col-lg-10 col-lg-offset-2">
-                <button class="btn btn-default">Cancelar</button>
-                <button type="submit" class="btn btn-primary">Ingresar</button>
-          </div>
-        </div>
-     </fieldset>
-</form>
-
-
-      </div>
 
     </div>
   </div>
-</div
+</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

@@ -1,0 +1,7 @@
+.table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th {
+
+/*el color original es   #428bcf   */
+  background-color:  #18bc9c;
+ 
+  color:#eeeeee;
+}

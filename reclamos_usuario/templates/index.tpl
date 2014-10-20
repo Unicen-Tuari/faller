@@ -143,7 +143,7 @@
               <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                     <div class="col-lg-10">
-                      <input type="text" name="email_registrarse" class="form-control" id="inputEmail" placeholder="Email" required>
+                      <input type="email" name="email_registrarse" class="form-control" id="inputEmail"  placeholder="E.G: Minombre@gmail.com" required required>
                     </div>
               </div>
               <div class="form-group">
@@ -205,31 +205,34 @@
             </div>
 
       <div class="modal-body">
+
             <form class="form-horizontal"  action="index.php" method="post" >
               <fieldset>
                 <legend>Datos de usuario.</legend>
                     <div class="form-group">
                       <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                           <div class="col-lg-10">
-                            <input type="text"  name="email_login"  class="form-control" id="inputEmail" placeholder="Email" required>
+                            <input type="email"  name="email_login"  class="form-control" id="inputEmail"  placeholder="E.G: Minombre@gmail.com tu email" required >
                           </div>
                     </div>
                     <div class="form-group">
                       <label for="inputPassword"  class="col-lg-2 control-label" required>Contraseña</label>
                           <div class="col-lg-10">
-                            <input type="password" name="pass_login" class="form-control" id="inputPassword" placeholder="Password" required>
+                            <input type="password" name="pass_login" class="form-control" id="inputPassword" placeholder="Password"  placeholder="contraseña para esta aplicacion" required>
                           </div>
                     </div>
                     <div class="form-group">
                       <div class="col-lg-10 col-lg-offset-2">
                             <button class="btn btn-default">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                            <button type="submit" id="iniciar" class="btn btn-primary">Ingresar</button>
                       </div>
                     </div>
                  </fieldset>
+                           <!--Login-->
+                    <script src="./js/login.js"></script>
             </form>
         </div>
-
+   
     </div>
   </div>
 </div>
@@ -245,12 +248,12 @@
     <script src="./js/inputFile.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./js/ie10-viewport-bug-workaround.js"></script>
-    
-    <!-- Carrusel-->
-    <script src="./js/Carrusel.js"></script>
+
     <!--index-->
     <script src="./js/index.js"></script>
 
+
+ 
 
 
     {include file="footer.tpl" }

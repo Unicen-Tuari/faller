@@ -1,0 +1,37 @@
+.cuadro_del_reclamo
+{
+ background-color:white;
+ border-radius:.5em;
+  height: 15em;
+ margin-top:1em;
+
+
+
+}
+
+#foto_reclamo
+{
+ background-color:white;
+ border-radius:.5em;
+  height: 15em;
+  margin-left:1em;
+ margin-top:1em;
+ width:22%;
+
+}
+#foto_reclamo img
+{
+	 background-image: url('../imagenes/no-img.jpg');
+	height:15em;
+	width: 100%;
+	border-radius: 0;/*para pizzar el efecto de la foto del index*/
+}
+
+
+
+#cuadro_respuesta_sector
+{
+
+ width:98%;
+
+}

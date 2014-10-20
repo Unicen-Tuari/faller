@@ -27,7 +27,11 @@ $("#crear_r").submit(function()
     type: "POST",
     data:$("#crear_r").serialize(), 
    success: function(data) {
-      $('#div_tabla_peticiones').html(data);
+    $("#reclamo_texto").val('');
+    $("#reclamo_selector").val('0');
+    $("#reclamo_foto").val('');
+    $('#div_tabla_peticiones').html(data);
+      
     }
 
   });

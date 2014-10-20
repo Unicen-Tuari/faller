@@ -18,11 +18,10 @@ class model_ver_reclamos extends modelodb
 			}
 	public function reclamo_espesifico($id_usuario,$id_reclamo)
 			{
-				$usuario=$id_usuario[0]['id_persona'];
 						
 						return $this->query("SELECT *
 						 					FROM RECLAMO 
-						 					where id_persona='$usuario'
+						 					where id_persona='$id_usuario'
 						 					AND   id_reclamo='$id_reclamo'	
 						 					" );
 
@@ -83,7 +82,7 @@ class model_crear_reclamo extends modelodb
 									 );
 
 			
-			$sector_raiz= "Obras Publicas";//$sectores_raiz[$Selec];
+			$sector_raiz=$sectores_raiz[$Selec];
 
 			$sector_seleccionado = $Selec;
 

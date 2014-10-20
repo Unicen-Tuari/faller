@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +10,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>Administrador de la pagina de reclamo.</title>
 
     <!-- Bootstrap Core CSS -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
     <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.css.map" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
 
     <!-- Custom CSS -->
     <link href="./css/sb-admin.css" rel="stylesheet">
@@ -21,7 +27,6 @@
     <link href="./css/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
         <!-- 4 Botones en forma de caja  -->
@@ -32,6 +37,7 @@
      <link href="./css/inicio.css" rel="stylesheet" type="text/css">
 
 
+     <link href="./css/Reclamo_espesifico-recuadro_reclamo_texto.css" rel="stylesheet" type="text/css">
 
 
 

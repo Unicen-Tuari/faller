@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-17 20:57:59
+<?php /* Smarty version 2.6.27, created on 2014-10-18 20:31:44
          compiled from index.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -149,7 +149,7 @@ unset($_smarty_tpl_vars);
               <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                     <div class="col-lg-10">
-                      <input type="text" name="email_registrarse" class="form-control" id="inputEmail" placeholder="Email" required>
+                      <input type="email" name="email_registrarse" class="form-control" id="inputEmail"  placeholder="E.G: Minombre@gmail.com" required required>
                     </div>
               </div>
               <div class="form-group">
@@ -211,31 +211,34 @@ unset($_smarty_tpl_vars);
             </div>
 
       <div class="modal-body">
+
             <form class="form-horizontal"  action="index.php" method="post" >
               <fieldset>
                 <legend>Datos de usuario.</legend>
                     <div class="form-group">
                       <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                           <div class="col-lg-10">
-                            <input type="text"  name="email_login"  class="form-control" id="inputEmail" placeholder="Email" required>
+                            <input type="email"  name="email_login"  class="form-control" id="inputEmail"  placeholder="E.G: Minombre@gmail.com tu email" required >
                           </div>
                     </div>
                     <div class="form-group">
                       <label for="inputPassword"  class="col-lg-2 control-label" required>Contraseña</label>
                           <div class="col-lg-10">
-                            <input type="password" name="pass_login" class="form-control" id="inputPassword" placeholder="Password" required>
+                            <input type="password" name="pass_login" class="form-control" id="inputPassword" placeholder="Password"  placeholder="contraseña para esta aplicacion" required>
                           </div>
                     </div>
                     <div class="form-group">
                       <div class="col-lg-10 col-lg-offset-2">
                             <button class="btn btn-default">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                            <button type="submit" id="iniciar" class="btn btn-primary">Ingresar</button>
                       </div>
                     </div>
                  </fieldset>
+                           <!--Login-->
+                    <script src="./js/login.js"></script>
             </form>
         </div>
-
+   
     </div>
   </div>
 </div>
@@ -251,12 +254,12 @@ unset($_smarty_tpl_vars);
     <script src="./js/inputFile.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./js/ie10-viewport-bug-workaround.js"></script>
-    
-    <!-- Carrusel-->
-    <script src="./js/Carrusel.js"></script>
+
     <!--index-->
     <script src="./js/index.js"></script>
 
+
+ 
 
 
     <?php $_smarty_tpl_vars = $this->_tpl_vars;

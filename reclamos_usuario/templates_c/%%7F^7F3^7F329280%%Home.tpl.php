@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-17 22:13:15
+<?php /* Smarty version 2.6.27, created on 2014-10-20 04:50:16
          compiled from Home.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -158,45 +158,44 @@ unset($_smarty_tpl_vars);
                  </div>
                  </div>
  <div class="col-xs-7 col-sm-1 placeholder  offset3">   
-      
 </div> 
 
-    <div class="col-xs-12 col-lg-12 placeholder">
+<div class="col-xs-12 col-lg-12 placeholder">
 <form class="form-horizontal "   method="POST" id="crear_r">
 
- <select class="form-control"  name="reclamo_selector" >
-    <option value="0"> Seleccione el área correspondiente</option>
-    <option value="1"> Obras Públicas                     </option>
-    <option value="2">Infraestructura                     </option>
-    <option value="3">Asfalto                              </option>
-    <option value="4">Intendente                           </option>
-    <option value="5">Luminaria                            </option>
-    <option value="6">Arboleda                             </option>
-    <option value="7">Cloacas                              </option>
-    <option value="8">Gas                                  </option>
-    <option value="9">Basura                               </option>
-</select>
+     <select class="form-control"  name="reclamo_selector" id="reclamo_selector">
+        <option value="0"> Seleccione el área correspondiente</option>
+        <option value="1"> Obras Públicas                     </option>
+        <option value="2">Infraestructura                     </option>
+        <option value="3">Asfalto                              </option>
+        <option value="4">Intendente                           </option>
+        <option value="5">Luminaria                            </option>
+        <option value="6">Arboleda                             </option>
+        <option value="7">Cloacas                              </option>
+        <option value="8">Gas                                  </option>
+        <option value="9">Basura                               </option>
+     </select>
 
-      <textarea class="form-control" rows="8" colums="12" name="reclamo_texto" id="reclamo_texto" ></textarea>
+    <textarea class="form-control" rows="8" colums="12" name="reclamo_texto" id="reclamo_texto" ></textarea>
 
+    <div class="col-lg-3 col-lg-offset 0">
 
-         <div class="col-lg-3 col-lg-offset 0">
-        <button class="btn btn-default"><i class="fa fa-trash"></i> Borrar</button>
-        <button type="submit" class="btn button-Mi-Estilo"  ><i class="fa fa-arrow-circle-right"></i> Enviar</button>
-      </div>
-      <div class="col-xs-9 col-lg-3">
-<input type="file" class="btn btn-primary button-Mi-Estilo" name="reclamo_foto" data-buttonName="btn-primary" >
-</div>
+        <p class="btn btn-default" id="b-borrar_txt"><i class="fa fa-trash" ></i> Borrar</p>
+       <button type="submit" class="btn button-Mi-Estilo"  ><i class="fa fa-arrow-circle-right"></i> Enviar</button>
+
+   </div>
+
+   <div class="col-xs-9 col-lg-3">
+      <input type="file" class="btn btn-primary button-Mi-Estilo" name="reclamo_foto" id="reclamo_foto" data-buttonName="btn-primary" >
+    </div>
 </form>
+
+</div> 
+ <div class="col-xs-6 col-sm-3 placeholder">
 </div> 
 
- <div class="col-xs-6 col-sm-3 placeholder">
 
-
-  </div> 
-
-
-          </div>
+</div>
     <!--******************TABLA RECLAMOS*********************************** -->
           <h3 class="sub-header">Mis peticiones</h3>
           <div id="div_tabla_peticiones">
@@ -336,6 +335,8 @@ unset($_smarty_tpl_vars);
     <!-- Carrusel-->
     <!--index-->
     <script src="./js/index.js"></script>
+
+    <script src="./js/AccionDeBotones.js"></script>
 
 
     <?php $_smarty_tpl_vars = $this->_tpl_vars;
