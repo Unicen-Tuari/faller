@@ -21,28 +21,34 @@
 */
 
 
-$(document).ready(function(){
-$("#b-submit").click(function() 
-{
-  $( "#reclamo_texto" ).animate({
-    opacity: 0.25,
-    height: "toggle"
-  }, 1000, function() {
-    // Animation complete.
-  }); $( "#reclamo_texto" ).animate({
-    opacity: 1,
-    height: "toggle"
-  }, 1000, function() {
-    // Animation complete.
-  });
-
-});
-});
-
-$( "#clickme" ).click(function() {
-
-});
-
+/*
+$('#formciudad').submit( function(e) {
+  $.ajax( {
+    url: "AM_ciudad.php",
+    type: "POST",
+    data: new FormData( this ),
+    processData: false,
+    contentType: false
+  } );
+  success: function(data){
+  $(":text").val('');
+  swal("Hecho!", "La ciudad se creo exitosamente!", "success")
+  e.preventDefault(); 
+  }
+} );
+*/
+/*$( '#my-form' )
+  .submit( function( e ) {
+    $.ajax( {
+      url: 'http://host.com/action/',
+      type: 'POST',
+      data: new FormData( this ),
+      processData: false,
+      contentType: false
+    } );
+    e.preventDefault();
+  } );
+*/
 
 $("#crear_r").submit(function() 
 {

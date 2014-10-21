@@ -22,7 +22,7 @@ $("#reclamo_foto").click(function() {
      $("#div_f").css( "display", "" ); //vizualiza el div que contiene la foto y el detalle de foto
     $("#reclamo_texto").css( "float", "right" );//mueve el div hacia la derecha que automaticamente se encaja al lado del text-area que se achico anteriormente
      $("#b-borrar_img").css( "display", "" ); // vizualizo el boton borrar imagen
- 
+  
 
 });
 });
@@ -60,7 +60,7 @@ document.getElementById('reclamo_foto').addEventListener('change', archivo, fals
 /********Boton que borra imagen y reestablese los valores del text-area************/
 $(document).ready(function(){
 $("#b-borrar_img").click(function() {
-    $("#foto_ingresada").toggle(2000).fadeOut(2010, function(){
+    $("#foto_ingresada").toggle(2000).fadeOut(6000, function(){
      $("#reclamo_texto").css( "width", "")
      $("#div_f").css( "display", "none" ); 
      $("#reclamo_texto").css( "-webkit-transition", "width 2s");
@@ -98,3 +98,26 @@ $("#b-borrar_img").click(function() {
 });
 /********************FIN DE funcion que muestra un detalle de la foto****************************/
 
+
+/********************EFECTO AL MANDAR EL RECLAMO, sobe el text area****************************/
+
+$(document).ready(function(){
+$("#b-submit").click(function() 
+{
+  $( "#reclamo_texto" ).animate({
+    opacity: 0.25,
+    height: "toggle"
+  }, 1000, function() {
+    // Animation complete.
+  }); $( "#reclamo_texto" ).animate({
+    opacity: 1,
+    height: "toggle"
+  }, 1000, function() {
+    // Animation complete.
+  });
+
+});
+});
+
+
+/********************FIN DE EFECTO AL MANDAR EL RECLAMO, sobe el text area****************************/
