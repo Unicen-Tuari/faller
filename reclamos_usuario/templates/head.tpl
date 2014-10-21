@@ -55,13 +55,19 @@
     <!--estilo de las tablas-->
     <link href="./css/tablas.css" rel="stylesheet">
 
-      <script src="js/inputFile.js"></script>
+
+    <!--RECLAMO INGRESADO-->
+        <link href="./css/ContenedoresdatosReclamos.css" rel="stylesheet">
+    <!--FIN RECLAMO INGRESADO-->
+
+
 
 
       <script src="./js/bootstrap.js" type="text/javascript"></script>
 
 
                 <script src="./js/Jquery.js" type="text/javascript"></script>
+                
                       <script src="./js/ie-emulation-modes-warning.js" type="text/javascript"></script>
 
 

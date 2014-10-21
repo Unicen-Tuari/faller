@@ -1,17 +1,45 @@
-<div class="panel panel-danger">
-  <div class="panel-heading">
-    <h3 class="panel-title">Panel danger</h3>
-  </div>
-  <div class="panel-body">
-    Panel content
-  </div>
-</div>
 
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h3 class="panel-title">Panel info</h3>
-  </div>
-  <div class="panel-body">
-    Panel content
-  </div>
-</div>
+
+
+/*FOTO INGRESADA EN UN RECLAMO */
+
+.item {
+      position: relative;
+      width: 180px;
+      overflow: hidden;
+}
+ 
+.item {
+      height: 172px;
+}
+                                           
+.item a {
+      text-decoration: none;
+      color: #000;
+}
+                   
+.item-billboard, .item-detail {
+      height: 172px;
+}
+                   
+.item-billboard {
+      margin-top: 0;
+      background:#18bc9c;
+}
+ 
+.item-billboard h3 {
+      font-size: 13px;
+      font-weight: bold;
+      color: #262626;
+      font-family: 'Open Sans',arial,sans-serif;
+      text-align:right;
+      color:blue;
+      margin-top:10px;
+}
+                   
+.item-detail {
+      height:172px;
+      background: #18bc9c;
+      font-family:verdana;
+}
+

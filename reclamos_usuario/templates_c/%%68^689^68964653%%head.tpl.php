@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-17 20:28:48
+<?php /* Smarty version 2.6.27, created on 2014-10-21 05:41:14
          compiled from head.tpl */ ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,13 +57,19 @@
     <!--estilo de las tablas-->
     <link href="./css/tablas.css" rel="stylesheet">
 
-      <script src="js/inputFile.js"></script>
+
+    <!--RECLAMO INGRESADO-->
+        <link href="./css/ContenedoresdatosReclamos.css" rel="stylesheet">
+    <!--FIN RECLAMO INGRESADO-->
+
+
 
 
       <script src="./js/bootstrap.js" type="text/javascript"></script>
 
 
                 <script src="./js/Jquery.js" type="text/javascript"></script>
+                
                       <script src="./js/ie-emulation-modes-warning.js" type="text/javascript"></script>
 
 

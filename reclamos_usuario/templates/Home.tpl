@@ -173,22 +173,18 @@
   
     <textarea class="form-control" rows="8" colums="10" name="reclamo_texto" id="reclamo_texto" ></textarea>
   
- <!-- 
-<div class="item itemJQuery">
-      <a href="http://blog.reaccionestudio.com/" target="_blank" title="Visita nuestro blog">
+ 
+<div style="display:none" id="div_f" class="item itemJQuery">
             <div style="margin-top: 0px;" class="item-billboard" id="div_foto_ingresada">
-                  <img src="http://m.reaccionestudio.com/img/logo.png" alt="imagen ejemplo" title="Reaccion Estudio">
-                  <h3>DEMO</h3>
+                  <img src="" alt="imagen ejemplo" title="Reaccion Estudio">   
             </div>
-            <div class="item-detail">
-                  <p>¡Visita nuestro Blog para aprender m&aacute;s sobre Desarrollo web!</p>
+            <div class="item-detail" data-toggle="modal" data-target="#M_Foto_Del_reclamo">
+                  <H1>zoom</H1>
+                  <i class="fa fa-arrows-alt fa-5x"></i>
             </div>
-      </a>
 </div>
--->
-  
-  <div class="img-thumbnail" id="div_foto_ingresada">
-  </div>
+
+
         <button style="display:none; float:left; margin-left:1em;" class="btn btn-default " id="b-borrar_img"><i class="fa fa-trash" ></i> Imagen</button>
 
     <div class="col-lg-3 col-lg-offset 0">
@@ -324,6 +320,30 @@
     </div>
   </div>
 </div>
+
+<!--************************* modal foto ingresada en reclamo ************************-->
+
+
+<!-- Modal -->
+<div class="modal fade" id="M_Foto_Del_reclamo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Foto ingresada del reclamo.</h4>
+      </div>
+      <div class="modal-body text-center" id="div_modal_foto_ingresada" >
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--************************* fin de modal foto ingresada en reclamo ************************-->
+
+
 </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -346,7 +366,8 @@
 
     <script src="./js/AccionDeBotones.js"></script>
 
-  <script src="./js/inputfile.js"></script>
 
+
+ <script src="js/Acciones_reclamo_ingresado.js"></script>
 
     {include file="footer.tpl" }

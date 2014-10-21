@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-21 04:24:20
+<?php /* Smarty version 2.6.27, created on 2014-10-21 05:41:14
          compiled from Home.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -179,10 +179,18 @@ unset($_smarty_tpl_vars);
   
     <textarea class="form-control" rows="8" colums="10" name="reclamo_texto" id="reclamo_texto" ></textarea>
   
+ 
+<div style="display:none" id="div_f" class="item itemJQuery">
+            <div style="margin-top: 0px;" class="item-billboard" id="div_foto_ingresada">
+                  <img src="" alt="imagen ejemplo" title="Reaccion Estudio">   
+            </div>
+            <div class="item-detail" data-toggle="modal" data-target="#M_Foto_Del_reclamo">
+                  <H1>zoom</H1>
+                  <i class="fa fa-arrows-alt fa-5x"></i>
+            </div>
+</div>
 
-  
-  <div class="img-thumbnail" id="div_foto_ingresada">
-  </div>
+
         <button style="display:none; float:left; margin-left:1em;" class="btn btn-default " id="b-borrar_img"><i class="fa fa-trash" ></i> Imagen</button>
 
     <div class="col-lg-3 col-lg-offset 0">
@@ -322,6 +330,30 @@ unset($_smarty_tpl_vars);
     </div>
   </div>
 </div>
+
+<!--************************* modal foto ingresada en reclamo ************************-->
+
+
+<!-- Modal -->
+<div class="modal fade" id="M_Foto_Del_reclamo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Foto ingresada del reclamo.</h4>
+      </div>
+      <div class="modal-body text-center" id="div_modal_foto_ingresada" >
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--************************* fin de modal foto ingresada en reclamo ************************-->
+
+
 </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -344,8 +376,9 @@ unset($_smarty_tpl_vars);
 
     <script src="./js/AccionDeBotones.js"></script>
 
-  <script src="./js/inputfile.js"></script>
 
+
+ <script src="js/Acciones_reclamo_ingresado.js"></script>
 
     <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "footer.tpl", 'smarty_include_vars' => array()));
