@@ -20,6 +20,30 @@
   }
 */
 
+
+$(document).ready(function(){
+$("#b-submit").click(function() 
+{
+  $( "#reclamo_texto" ).animate({
+    opacity: 0.25,
+    height: "toggle"
+  }, 1000, function() {
+    // Animation complete.
+  }); $( "#reclamo_texto" ).animate({
+    opacity: 1,
+    height: "toggle"
+  }, 1000, function() {
+    // Animation complete.
+  });
+
+});
+});
+
+$( "#clickme" ).click(function() {
+
+});
+
+
 $("#crear_r").submit(function() 
 {
   $.ajax({

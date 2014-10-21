@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-20 04:50:16
+<?php /* Smarty version 2.6.27, created on 2014-10-21 04:24:20
          compiled from Home.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -36,7 +36,7 @@ unset($_smarty_tpl_vars);
             <li>
              <a  title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Modificar_perfil" ><i class="fa fa-cog"></i> Configurar perfil</a>
              </li>
-            <li><a ><i class="fa fa-picture-o"></i> Galería de fotos subidas</a></li>
+            <li><a ><i class="fa fa-picture-o"></i> Reclamos resueltos de la población</a></li>
             <li><a href="#">Mis Reclamos Pendientes</a></li>
             <li><a href="#"><i class="fa fa-tty"></i> Contactos con Secretaría</a></li>
             <li><a  title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Manejo_del_reclamo_por_cada_area"> <i class="fa fa-code-fork"></i> Manejo del reclamo para cada area</a></li>
@@ -176,12 +176,18 @@ unset($_smarty_tpl_vars);
         <option value="9">Basura                               </option>
      </select>
 
-    <textarea class="form-control" rows="8" colums="12" name="reclamo_texto" id="reclamo_texto" ></textarea>
+  
+    <textarea class="form-control" rows="8" colums="10" name="reclamo_texto" id="reclamo_texto" ></textarea>
+  
+
+  
+  <div class="img-thumbnail" id="div_foto_ingresada">
+  </div>
+        <button style="display:none; float:left; margin-left:1em;" class="btn btn-default " id="b-borrar_img"><i class="fa fa-trash" ></i> Imagen</button>
 
     <div class="col-lg-3 col-lg-offset 0">
-
         <p class="btn btn-default" id="b-borrar_txt"><i class="fa fa-trash" ></i> Borrar</p>
-       <button type="submit" class="btn button-Mi-Estilo"  ><i class="fa fa-arrow-circle-right"></i> Enviar</button>
+       <button type="submit" id="b-submit" class="btn button-Mi-Estilo"  ><i class="fa fa-arrow-circle-right"></i> Enviar</button>
 
    </div>
 
@@ -337,6 +343,8 @@ unset($_smarty_tpl_vars);
     <script src="./js/index.js"></script>
 
     <script src="./js/AccionDeBotones.js"></script>
+
+  <script src="./js/inputfile.js"></script>
 
 
     <?php $_smarty_tpl_vars = $this->_tpl_vars;

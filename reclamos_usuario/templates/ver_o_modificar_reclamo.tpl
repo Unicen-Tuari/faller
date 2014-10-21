@@ -45,7 +45,7 @@
 
          <div class="col-lg-12 col-md-6">
         -->
-          <h4 class="page-header">Paneles informativos.</h4>
+          <h4 class="page-header">Informacion del R/P.</h4>
          <!-- </div>
             <div class="col-lg-2 col-md-6  fixed-top">
             <p><i class="text-right fa fa-user fa-2x "></i> 
@@ -62,9 +62,7 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-file-powerpoint-o fa-5x"></i>
-                                    </div>
+                                
                                 
                                      <div class="col-xs-8">
                                             <div class="col-xs-11">
@@ -107,12 +105,12 @@
  <div class="col-lg-9 col-sm-1 placeholder offset3 cuadro_del_reclamo">   
      <div class="container col-lg-12">
         <ul class="nav nav-tabs" id="myTab">
-            <li class="active"><a href="#profile" data-toggle="tab">Mi Reclamo</a></li>
+            <li class="active"><a href="#profile" data-toggle="tab">                    <h4><i class="glyphicon glyphicon-user"></i></h4>
+</a></li>
        </ul>
         
         <div class="tab-content">
               <div class="tab-pane active" id="profile">
-                    <h4><i class="glyphicon glyphicon-user"></i></h4>
                     <p>{$dato_del_reclamo}</p>
               </div>
         </div>  
@@ -136,7 +134,7 @@
 <div class="row">
     <div class="container col-lg-12">
         <ul class="nav nav-tabs" id="myTab">
-          <li><a href="#messages" data-toggle="tab">Sector 1 Raiz</a></li>
+          <li><a href="#messages" data-toggle="tab">Sector 1 (Raiz)</a></li>
           <li><a href="#settings" data-toggle="tab">Sector 2</a></li>
           <li><a href="#settings" data-toggle="tab">Sector 3</a></li>
           <li><a href="#settings" data-toggle="tab">Sector 4</a></li>
