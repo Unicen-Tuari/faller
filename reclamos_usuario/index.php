@@ -82,7 +82,6 @@ else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='reclamoN
 		{
 		Include_once("./controller/ControllerUser.php");
 		$reclamo= new ControllerUser();
-		print_r($_FILES['reclamo_foto']);
 		$reclamo->crear_reclamo($_POST['reclamo_texto'],$_POST['reclamo_selector'],$_FILES['reclamo_foto']);
 
 		}

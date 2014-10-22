@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-20 23:02:44
+<?php /* Smarty version 2.6.27, created on 2014-10-22 21:51:16
          compiled from ver_o_modificar_reclamo.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -125,9 +125,11 @@ unset($_smarty_tpl_vars);
  </div>
 
 
-    <div class="col-lg-3 col-sm-1 placeholder offset3"  id="foto_reclamo">                        
+    <div  class="col-lg-3 col-sm-1 placeholder offset3" data-toggle="modal" data-target="#foto_reclamo_modal" id="foto_reclamo">  
             <img  class=" thumbnail col-lg-12" src='./imagenes/<?php echo $this->_tpl_vars['foto_reclamo']; ?>
 '>
+          <i class=" fa fa-search-plus fa-3x iconos"></i>                
+
     </div> 
 
     <div class="row">
@@ -287,6 +289,28 @@ unset($_smarty_tpl_vars);
   </div>
 </div>
 </div>
+
+                  <!-- Modal foto del reclamo -->
+
+<div class="modal fade" id="foto_reclamo_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Foto ingresada del reclamo</h4>
+      </div>
+      <div class="modal-body">
+           <img  class=" thumbnail col-lg-12" src='./imagenes/<?php echo $this->_tpl_vars['foto_reclamo']; ?>
+'>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- Modal configurar manejo del reclamo por cada area -->
 <div class="modal fade" id="Manejo_del_reclamo_por_cada_area" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

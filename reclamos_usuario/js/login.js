@@ -1,4 +1,4 @@
-alert(" login");
+//alert(" login");
 $(document).ready(function() {
 	
 	$('#iniciar').click(function(){
