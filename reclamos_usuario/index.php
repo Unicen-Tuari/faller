@@ -77,11 +77,13 @@ else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='home.tpl
 				print_r($id_usuario);
 				$ver_modificar_reclamo->ver_reclamo_espesifico($id_usuario);
 		}	
+
 else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='reclamoNuevo')
 		{
 		Include_once("./controller/ControllerUser.php");
 		$reclamo= new ControllerUser();
-		$reclamo->crear_reclamo($_POST['reclamo_texto'],$_POST['reclamo_selector']);
+		print_r($_FILES['reclamo_foto']);
+		$reclamo->crear_reclamo($_POST['reclamo_texto'],$_POST['reclamo_selector'],$_FILES['reclamo_foto']);
 
 		}
 

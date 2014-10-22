@@ -57,10 +57,13 @@ class ControllerUser
 				return $this->model_comprobar_existencia_usuario->verificar_usuario($email,$pass);
 			}
 						//le estoy pasando el id por referencia
-	public function Home($datos_home)//datos home es informacion de una consulta 
+	public function Home($usuario)//datos home es informacion de una consulta 
 			{
-				$reclamos_usuario=$this->controller_reclamos->mostrar_reclamos($datos_home);
-			    $this->view_home->Home($reclamos_usuario);
+				$reclamos_usuario=$this->controller_reclamos->mostrar_reclamos($usuario);
+				$r_p=$this->controller_reclamos->reclamos_pendientes($usuario);
+				$r_f=$this->controller_reclamos->reclamo_finalizados($usuario);
+
+			    $this->view_home->Home($reclamos_usuario,$r_p,$r_f);
 
 			}
 
@@ -89,12 +92,12 @@ class ControllerUser
 				 $this->view_registrado_exitoso->r_exitoso();
 			}
 
-	public function crear_reclamo($Rec,$Selec)
+	public function crear_reclamo($Rec,$Selec,$Fot)
 			{
-				$Fot="nada";
+				 $f=$Fot[name]; 
 				$id=$_SESSION['sesionUsuario'];
 			
-				$this->model_crear_reclamo->crear_reclamo($Rec,$Selec,$Fot,$id);
+				$this->model_crear_reclamo->crear_reclamo($Rec,$Selec,$f,$id);
 
 				$reclamos_usuario=$this->controller_reclamos->mostrar_reclamos($id);
 

@@ -11,7 +11,7 @@ class model_ver_reclamos extends modelodb
 
 						return $this->query("SELECT *
 						 					FROM RECLAMO 
-						 					where id_persona=1"
+						 					where id_persona='$id_usuario'"
 						 					 );
 
 
@@ -40,21 +40,22 @@ class model_ver_reclamos extends modelodb
 
 	public function reclamo_finalizados($id_usuario)
 			{
-				/*return $this->query("SELECT *
-									FROM RECLAMO_REL
-									WHERE id_persona=$id_usuario
+			$r_f= $this->query("SELECT count(id_reclamo)
+									FROM RECLAMO
+									WHERE id_persona='$id_usuario'
 								 	AND estado_reclamo='Finalizado'");
-			*/
+				return $r_f[0]["count(id_reclamo)"];
 			}
 
 
 	public function reclamo_pendientes($id_usuario)
 			{
-			/*	return $this->query("SELECT *
-									FROM RECLAMO_REL
-									WHERE id_persona=$id_usuario
-								 	AND estado_reclamo='Finalizado'");
-			*/
+				$r_p= $this->query("SELECT count(id_reclamo)
+									FROM RECLAMO
+									WHERE id_persona='$id_usuario'
+								 	AND estado_reclamo='No visto'");
+				return $r_p[0]["count(id_reclamo)"];
+			
 			}
 	
 	
@@ -204,14 +205,14 @@ class model_registrarse extends modelodb
 				*/
 
 			// El id_persona debe incrementarse solo
-			$sql = "INSERT INTO PERSONA(
+			$sql = "INSERT INTO USUARIO(
 					 nombre				,
 					 apellido			,
 					 dni_persona		,
 					 fecha_nacimiento	,
 					 direccion			,
 					 celular			,
-					 Telefono_fijo		, 
+					 telefono_fijo		, 
 					 email				, 
 					 password			,
 					 fecha_registro
@@ -223,7 +224,7 @@ class model_registrarse extends modelodb
 					:fecha_nacimiento	,
 			 		:direccion			, 
 			 		:celular			,
-			 		:Telefono_fijo		, 
+			 		:telefono_fijo		, 
 			 		:email				, 
 			 		:password			,
 			 		:fecha_registro
@@ -243,7 +244,7 @@ class model_registrarse extends modelodb
 										':fecha_nacimiento'		=>$fecha_nacimiento		,
 								 		':direccion'			=>$direccion			, 
 								 		':celular'				=>$Celular				,
-								 		':Telefono_fijo'		=>$Telefono_fijo		, 
+								 		':telefono_fijo'		=>$Telefono_fijo		, 
 								 		':email'				=>$email				, 
 								 		':password'				=>$pass					,
 								 		':fecha_registro'		=>$fecha_registro

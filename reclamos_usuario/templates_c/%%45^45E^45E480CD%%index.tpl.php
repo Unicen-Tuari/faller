@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-18 20:31:44
+<?php /* Smarty version 2.6.27, created on 2014-10-21 21:19:41
          compiled from index.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -143,7 +143,7 @@ unset($_smarty_tpl_vars);
               <div class="form-group">
                   <label for="inputFechaNacimiento" class="col-lg-2 control-label" >Fecha de Nacimientó</label>
                   <div class="col-lg-10">
-                    <input type="text" name="FechaNacimiento"  class="form-control" id="inputFechaNacimiento" placeholder="dia/mes/años" required>
+                    <input type="text" name="FechaNacimiento"  class="form-control" id="inputFechaNacimiento" placeholder="dia/mes/años" >
                   </div>
               </div>
               <div class="form-group">

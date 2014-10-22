@@ -19,8 +19,18 @@ modifique nombres
 -reclamo_rel por reclamo
 
 */
-
-
+					 id_persona 		,
+					 nombre				,
+					 apellido			,
+					 dni_persona		,
+					 fecha_nacimiento	,
+					 direccion			,
+					 celular			,
+					 telefono_fijo		, 
+					 email				, 
+					 password			,
+					 fecha_registro
+					 )
 
 CREATE TABLE   USUARIO(
 

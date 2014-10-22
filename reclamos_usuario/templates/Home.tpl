@@ -66,14 +66,14 @@
                                         <i class="fa fa-tasks fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">26</div>
-                                        <div>R.Modificados</div>
+                                        <div class="huge">1</div>
+                                        <div>R.Actual</div>
                                     </div>
                                 </div>
                             </div>
                             <a href="#">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Ver R.Mod.</span>
+                                    <span class="pull-left">Ver R.Actual</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -88,8 +88,8 @@
                                       <i class="fa fa-envelope fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">26</div>
-                                        <div>Mensajes</div>
+                                        <div class="huge">2</div>
+                                        <div>Mensajes Nuevos</div>
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@
                                        <i class="fa fa-gavel fa-5x"></i> 
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">19</div>
+                                        <div class="huge">{$r_f}</div>
                                         <div>Reclamos Finalizados</div>
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@
                                       <i class="fa fa-exclamation-triangle  fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">19</div>
+                                        <div class="huge">{$r_p}</div>
                                         <div>Reclam. Pendientes</div>
                                     </div>
                                 </div>

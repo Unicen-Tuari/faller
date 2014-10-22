@@ -63,17 +63,25 @@
 					}
 
 
-			public function reclamos_solucionados()
+	public function reclamo_finalizados($id_usuario)
 			{
+				return $this->model_ver_reclamos->reclamo_pendientes($id_usuario);
+			}
+	public function reclamos_pendientes($id_usuario)
+			{
+				return $this->model_ver_reclamos->reclamo_pendientes($id_usuario);
 
 			}
-			public function reclamos_pendientes()
+
+	public function reclamos_en_tramite()
 			{
 
 			}
 
 
 		}      
+
+
     
 
 

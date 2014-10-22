@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-21 05:41:14
+<?php /* Smarty version 2.6.27, created on 2014-10-22 16:26:31
          compiled from Home.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -72,14 +72,14 @@ unset($_smarty_tpl_vars);
                                         <i class="fa fa-tasks fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">26</div>
-                                        <div>R.Modificados</div>
+                                        <div class="huge">1</div>
+                                        <div>R.Actual</div>
                                     </div>
                                 </div>
                             </div>
                             <a href="#">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Ver R.Mod.</span>
+                                    <span class="pull-left">Ver R.Actual</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -94,8 +94,8 @@ unset($_smarty_tpl_vars);
                                       <i class="fa fa-envelope fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">26</div>
-                                        <div>Mensajes</div>
+                                        <div class="huge">2</div>
+                                        <div>Mensajes Nuevos</div>
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +116,8 @@ unset($_smarty_tpl_vars);
                                        <i class="fa fa-gavel fa-5x"></i> 
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">19</div>
+                                        <div class="huge"><?php echo $this->_tpl_vars['r_f']; ?>
+</div>
                                         <div>Reclamos Finalizados</div>
                                     </div>
                                 </div>
@@ -138,7 +139,8 @@ unset($_smarty_tpl_vars);
                                       <i class="fa fa-exclamation-triangle  fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">19</div>
+                                        <div class="huge"><?php echo $this->_tpl_vars['r_p']; ?>
+</div>
                                         <div>Reclam. Pendientes</div>
                                     </div>
                                 </div>

@@ -14,7 +14,7 @@ class View_Home_Admin extends View
 			$this->smarty->assign("usuario",$usuario);
 			$this->smarty->assign("reclamos",$datos_home);	
 		}
-		$this->smarty->display('Reclamo_espesifico.tpl');
+		$this->smarty->display('Home.tpl');
 	}
 
 }
