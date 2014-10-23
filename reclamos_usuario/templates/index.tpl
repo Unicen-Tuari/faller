@@ -227,10 +227,11 @@
                             <button type="submit" id="iniciar" class="btn btn-primary">Ingresar</button>
                       </div>
                     </div>
+                     </form>
                  </fieldset>
                            <!--Login-->
                     <script src="./js/login.js"></script>
-            </form>
+           
         </div>
    
     </div>

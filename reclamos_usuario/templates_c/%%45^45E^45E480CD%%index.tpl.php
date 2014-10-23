@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-21 21:19:41
+<?php /* Smarty version 2.6.27, created on 2014-10-23 03:25:45
          compiled from index.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -233,10 +233,11 @@ unset($_smarty_tpl_vars);
                             <button type="submit" id="iniciar" class="btn btn-primary">Ingresar</button>
                       </div>
                     </div>
+                     </form>
                  </fieldset>
                            <!--Login-->
                     <script src="./js/login.js"></script>
-            </form>
+           
         </div>
    
     </div>
