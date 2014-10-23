@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-23 15:51:08
+<?php /* Smarty version 2.6.27, created on 2014-10-23 17:30:07
          compiled from index.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -225,6 +225,13 @@ unset($_smarty_tpl_vars);
                       <label for="inputPassword"  class="col-lg-2 control-label" required>Contraseña</label>
                           <div class="col-lg-10">
                             <input type="password" name="pass_login" class="form-control" id="inputPassword" placeholder="Password"  placeholder="contraseña para esta aplicacion" required>
+                            <div id="error_login_div">
+                                            <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "error_login.tpl", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
+                            </div>
                           </div>
                     </div>
                     <div class="form-group">

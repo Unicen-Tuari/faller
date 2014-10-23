@@ -20,7 +20,11 @@ if (isset($_POST['pass_login'])){
 					$_SESSION['sesionUsuario'] =$usuario;
 					$l->login($usuario);
 				}else
-				     { $l->error404();}
+				   { 
+				   	include_once("./View/View_error_login.php");
+				    $error=new View_error_login();
+				    $error->error_login();
+				   }
 
 			}	
 
