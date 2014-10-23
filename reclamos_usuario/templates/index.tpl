@@ -206,7 +206,7 @@
 
       <div class="modal-body">
 
-            <form class="form-horizontal"  action="index.php" method="post" >
+            <form class="form-horizontal"  id="formLogin"  method="post">
               <fieldset>
                 <legend>Datos de usuario.</legend>
                     <div class="form-group">
@@ -228,9 +228,9 @@
                       </div>
                     </div>
                      </form>
+                     <script src="./js/Ajax_login.js"></script>
                  </fieldset>
-                           <!--Login-->
-                    <script src="./js/login.js"></script>
+
            
         </div>
    
@@ -253,8 +253,10 @@
     <!--index-->
     <script src="./js/index.js"></script>
 
-
+      <!--Ajax Login-->
  
+
+
 
 
     {include file="footer.tpl" }

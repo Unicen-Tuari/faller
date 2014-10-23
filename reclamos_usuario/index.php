@@ -7,14 +7,8 @@ ini_set("display_errors", 1);
 
 /********************RUTEADOR DE REQUERIMIENTOS*********************************/
 
-//include('./controller/Controller_inicio.php');
-//include("./controller/controller_reclamos.php");
- /* array_key_exists('acction', $a)  
-  isset($a[action])
-  $a(acction)==='index.php';
-*/
-if 	(isset($_POST['email_login']))
-	{
+
+if (isset($_POST['pass_login'])){
 			include_once("./controller/ControllerUser.php");
 			$email= $_POST['email_login'];
 			$pass=  $_POST['pass_login'];
@@ -27,7 +21,18 @@ if 	(isset($_POST['email_login']))
 					$l->login($usuario);
 				}else
 				     { $l->error404();}
+
+			}	
+
+
+
+else if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index.tpl')
+	{
+		include "./controller/IndexController.php";
+	 	$inicio= new controlador_index();
+		$inicio->visualizar_inicio();	
 	}
+
 else 	if (isset($_POST['nombre_registrarse']))
 	{
 		include_once("./controller/ControllerUser.php");
@@ -57,12 +62,7 @@ else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='cerrar_s
 		$inicio->visualizar_inicio();
 	}	
 
-else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index.tpl')
-	{
-		include "./controller/IndexController.php";
-	 	$inicio= new controlador_index();
-		$inicio->visualizar_inicio();	
-	}
+
 else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='home.tpl')
 	{
 			$id_usuario=$_SESSION['sesionUsuario'];

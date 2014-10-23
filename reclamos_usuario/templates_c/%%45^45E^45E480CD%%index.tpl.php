@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-23 03:25:45
+<?php /* Smarty version 2.6.27, created on 2014-10-23 15:51:08
          compiled from index.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -212,7 +212,7 @@ unset($_smarty_tpl_vars);
 
       <div class="modal-body">
 
-            <form class="form-horizontal"  action="index.php" method="post" >
+            <form class="form-horizontal"  id="formLogin"  method="post">
               <fieldset>
                 <legend>Datos de usuario.</legend>
                     <div class="form-group">
@@ -234,9 +234,9 @@ unset($_smarty_tpl_vars);
                       </div>
                     </div>
                      </form>
+                     <script src="./js/Ajax_login.js"></script>
                  </fieldset>
-                           <!--Login-->
-                    <script src="./js/login.js"></script>
+
            
         </div>
    
@@ -259,8 +259,10 @@ unset($_smarty_tpl_vars);
     <!--index-->
     <script src="./js/index.js"></script>
 
-
+      <!--Ajax Login-->
  
+
+
 
 
     <?php $_smarty_tpl_vars = $this->_tpl_vars;

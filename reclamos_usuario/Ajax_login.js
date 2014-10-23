@@ -1,5 +1,22 @@
 
 
+$("#formLogin").submit(function() 
+{
+  $.ajax({
+    url: 'index.php?action=login',
+    type: "POST",
+    data:$("#formLogin").serialize(), 
+success: function(data) {
+   // $("#inputEmail").val('');
+
+     $("#inputEmail").val('');
+    }
+
+  });
+  return false;
+});
+
+/*
 $('#crear_r').submit( function(e) {
   $.ajax( {
     url: "index.php?action=reclamoNuevo",
@@ -18,3 +35,5 @@ $('#crear_r').submit( function(e) {
   $(":text").val('');
   e.preventDefault(); 
 } );
+
+*/
