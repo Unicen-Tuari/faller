@@ -18,4 +18,4 @@ class view_tabla_peticiones extends View
 }
 
 
-?>a
+?>

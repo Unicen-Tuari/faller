@@ -6,32 +6,74 @@ class model_ver_reclamos extends modelodb
 { 
 	
 
-	public function ver_reclamo_sector($sector)
+	public function ver_reclamo_sector($sector,$filtro)
+		{
+
+			if ($filtro==null){
+							return $this->query("	SELECT *
+								FROM 		RECLAMO rm JOIN USUARIO us
+								ON 			(rm.id_persona=us.id_persona)
+								where  		id_sector='$sector'");
+			}
+			else
+			     if ($filtro=="fecha")
+					{
+								
+		  							  
+					return $this->query("	SELECT *
+									FROM 		RECLAMO rm JOIN USUARIO us
+									ON 			(rm.id_persona=us.id_persona)
+									where  		id_sector='$sector'
+									ORDER BY  fecha DESC");
+								
+					}
+			else 
+				if ($filtro=="sector_raiz")
+					{
+								
+		  							  
+					return $this->query("	SELECT *
+									FROM 		RECLAMO rm JOIN USUARIO us
+									ON 			(rm.id_persona=us.id_persona)
+									where  		id_sector='$sector'
+									ORDER BY  sector_raiz DESC");
+								
+					}
+			else 
+				if ($filtro=="dni_persona")
+					{
+								
+		  							  
+					return $this->query("	SELECT *
+									FROM 		RECLAMO rm JOIN USUARIO us
+									ON 			(rm.id_persona=us.id_persona)
+									where  		id_sector='$sector'
+									ORDER BY  dni_persona DESC");
+								
+					}
+
+
+				
+			
+
+		 
+
+		}
+	/*public function filtro_reclamo($sector,$filtro)
 			{
+
+				return $this->query("SELECT *
+									FROM RECLAMO r
+									JOIN SECTOR s  
+									ON(r.id_sector=s.id_sector)
+									WHERE s.id_sector=$sector
+									ORDER BY   s.'$filtro' DESC ");
+			
 						
-						return $this->query("SELECT *
-						 					FROM RECLAMO
-						 					WHERE id_sector='$sector'
-						 					" );
 
 
 			}
-	public function filtro_reclamo($filtro)
-			{
-						if($filtro==="sector_raiz")
-						{
-							return $this->query("SELECT *
-											FROM RECLAMO r
-											JOIN SECTOR s  
-											ON(r.id_sector=s.id_sector)
-											WHERE s.id_sector=2
-											ORDER BY   s.sector_raiz DESC ");
-						}
-						
-
-
-			}
-
+*/
 
 
 	public function reclamo_finalizados($id_usuario)

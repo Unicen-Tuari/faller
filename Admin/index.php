@@ -21,6 +21,14 @@ if 	(isset($_POST['Nombre_login']))
 			$ingresar = new controllerUser();
 			$ingresar->login();
 	}
+else
+	if (isset($_POST['filtro'])) //tine que haber un input oculto con este nombre
+	{
+		
+		include_once("./Controller/ControllerUser.php");
+		$reclamo= new controllerUser();
+		$reclamo->ver_reclamos();
+	}
 
 else if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index.tpl')
 	{
@@ -43,18 +51,8 @@ else
 
 		include_once("./Controller/ControllerUser.php");
 	 	$reclamo= new controllerUser();
-	 
 		$reclamo->ver_reclamos();
 	}	
-else
-	if (isset($_POST['fitro'])) //tine que haber un input oculto con este nombre
-	{
-		$filtro=$_POST["ordenar_por_sector_raiz"];
-		include_once("./Controller/Controlador_reclamos.php");
-	 	$reclamo= new controllerReclamos();
-	 	$reclamo->Filtrar_reclamo($filtro);
-		
-	}
 
 
 

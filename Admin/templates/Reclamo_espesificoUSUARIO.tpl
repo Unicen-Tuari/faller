@@ -63,21 +63,21 @@
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                       <i class="fa fa-user fa-5x"></i>
+                                        <i class="fa fa-file-powerpoint-o fa-5x"></i>
                                     </div>
                                 
                                      <div class="col-xs-8">
                                             <div class="col-xs-11">
-                                            Nombre:
+                                            Lista de recorrido default: 1
                                            </div>
                                      </div>
                                      <div class="col-xs-8">
                                             <div class="col-xs-11">
-                                             Apellido:
+                                              Estado del R/P: En Tramite
                                              </div>
                                     </div>                                     <div class="col-xs-8">
                                         <div class="col-xs-12">
-                                          Direccion:
+                                          Sectores pro los que ha pasado
                                          </div>
                                 </div>
 

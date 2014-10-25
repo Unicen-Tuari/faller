@@ -6,6 +6,7 @@ class controllerUser
 	/**********ATRIBUTOS******************/
 	private $vista_home;
 	private $vista_reclamos;
+	private $vista_tabla_r;
 	private $model_ver_reclamos;
 	private $model_comprobar_existencia_usuario;
 	private $controlador;
@@ -16,11 +17,14 @@ class controllerUser
 	{
 		include_once("./View/View_home_admin.php");
 		include_once("./View/Vista_reclamos_sector.php");
+		include_once("./View/Vista_tabla_reclamos.php");
+
 		include_once("./Model/Model_reclamos.php");
 		include_once("./Model/Model_comprobar_existencia_de_usuario.php");
 
 			 $this->vista_home			= new View_Home_Admin();
 			 $this->vista_reclamos		= new View_Reclamos_Sector();
+			 $this->vista_tabla_r 		= new View_tabla_reclamo();
 			 $this->model_ver_reclamos  = new model_ver_reclamos();
 			 $this->model_comprobar_existencia_usuario 	= new Model_comprobar_existencia_usuario();
 			//$model			= new ();
@@ -87,13 +91,30 @@ class controllerUser
 	public function ver_reclamos()
 			{
 				$usuario=$_SESSION['nombre'];
-				$reclamos= $this->obtener_reclamos($_SESSION['Sector']);
-				$this->vista_reclamos->Reclamos($reclamos,$usuario);
+				if ($_POST["fitro_reclamo"]==null)
+				{
+					$filtro=null;
+
+				}else
+				 {
+				 	$filtro=$_POST["fitro_reclamo"];
+
+				 }
+
+				$reclamos= $this->obtener_reclamos($_SESSION['Sector'],$filtro);
+			
+				if($filtro==null) {
+					$this->vista_reclamos->Reclamos($reclamos,$usuario);
+				}else
+					{
+						$this->vista_tabla_r->tabla($reclamos,$usuario);
+					}
+				
 			}	
 
-	public function obtener_reclamos($sector)
+	public function obtener_reclamos($sector,$filtro=0)
 				{
-					return $Query_reclamos_area= $this->model_ver_reclamos->ver_reclamo_sector($sector);
+					return $Query_reclamos_area= $this->model_ver_reclamos->ver_reclamo_sector($sector,$filtro);
 				}
 
 	public function cambiar_area()

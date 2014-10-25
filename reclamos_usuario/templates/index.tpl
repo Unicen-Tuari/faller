@@ -220,7 +220,7 @@
                           <div class="col-lg-10">
                             <input type="password" name="pass_login" class="form-control" id="inputPassword" placeholder="Password"  placeholder="contraseña para esta aplicacion" required>
                             <div id="error_login_div">
-                                            {include file="error_login.tpl" }
+                                {include file="error_login.tpl" }
                             </div>
                           </div>
                     </div>

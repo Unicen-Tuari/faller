@@ -15,12 +15,13 @@ if (isset($_POST['pass_login'])){
 			$l= new ControllerUser();
 			$usuario=$l->comprobar_existencia_usuario($email,$pass);
 
-			if ($usuario)
+			if ($usuario!="consulta_vacia")
 				{ 
 					$_SESSION['sesionUsuario'] =$usuario;
 					$l->login($usuario);
 				}else
 				   { 
+
 				   	include_once("./View/View_error_login.php");
 				    $error=new View_error_login();
 				    $error->error_login();

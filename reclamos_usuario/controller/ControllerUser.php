@@ -95,7 +95,7 @@ class ControllerUser
 	public function crear_reclamo($Rec,$Selec,$Fot)
 			{
 				 $f=$Fot[name]; 
-				$id=$_SESSION['sesionUsuario'];
+				 $id=$_SESSION['sesionUsuario'];
 			
 				$this->model_crear_reclamo->crear_reclamo($Rec,$Selec,$f,$id);
 
