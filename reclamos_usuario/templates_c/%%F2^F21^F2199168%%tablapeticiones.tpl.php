@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-17 20:28:26
+<?php /* Smarty version 2.6.27, created on 2014-10-26 21:28:23
          compiled from tablapeticiones.tpl */ ?>
           <div class="table-responsive">
             <table class="table table-striped table-hover">
@@ -29,7 +29,7 @@
                   <td><?php echo $this->_tpl_vars['i']['estado_reclamo']; ?>
 </td>
                   <td>
-                      <form  action="index.php?action=ver_o_modificar.tpl" method="post">
+                      <form  action="index.php?action=ver_o_modificar" method="post">
                       <input type="hidden" name="id_reclamo" value='<?php echo $this->_tpl_vars['i']['id_reclamo']; ?>
 '>
                       <button  type="submit"  data-toggle="tooltip" data-placement="left" title="Todos los detalles sobre este reclamo / modificar el reclamo" class="btn btn-primary col-lg button-Mi-Estilo"><i class="fa fa-eye"></i> Ver / Modificar  <i class="fa fa-pencil"></i></button ></td>

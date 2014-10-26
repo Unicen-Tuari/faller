@@ -1,11 +1,11 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-22 16:26:31
+<?php /* Smarty version 2.6.27, created on 2014-10-26 17:27:14
          compiled from Home.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-<body >
+<body ><!-- href="index.php?action=home" -->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -20,7 +20,7 @@ unset($_smarty_tpl_vars);
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="http://www.laprida.gob.ar/"><i class="fa fa-external-link-square"></i>  Enlace Pagina Municipal</a></li>
-            <li><a href="index.php?action=cerrar_sesion.tpl"><i class="fa fa-unlock-alt"></i>  Cerrar Sesion</a></li>
+            <li><a href="index.php?action=cerrar_sesion"><i class="fa fa-unlock-alt"></i>  Cerrar Sesion</a></li>
           </ul>
           <form class="navbar-form navbar-right">
           </form>

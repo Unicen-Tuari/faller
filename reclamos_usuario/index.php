@@ -19,19 +19,18 @@ if (isset($_POST['pass_login'])){
 				{ 
 					$_SESSION['sesionUsuario'] =$usuario;
 					$l->login($usuario);
-				}else
+				}/*else
 				   { 
-
 				   	include_once("./View/View_error_login.php");
 				    $error=new View_error_login();
 				    $error->error_login();
-				   }
+				   }*/
 
-			}	
+			}
 
 
 
-else if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index.tpl')
+else if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index')
 	{
 		include "./controller/IndexController.php";
 	 	$inicio= new controlador_index();
@@ -59,22 +58,22 @@ else 	if (isset($_POST['nombre_registrarse']))
 	}
 
 
-else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='cerrar_sesion.tpl')
+else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='cerrar_sesion')
 	{
 		session_destroy();
 		include "./controller/IndexController.php";
 	 	$inicio= new controlador_index();
 		$inicio->visualizar_inicio();
 	}	
-
-
-else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='home.tpl')
+/*else
+ 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='home')
 	{
 			$id_usuario=$_SESSION['sesionUsuario'];
 			$reclmo->Home($id_usuario);
 	}
-
-	else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='ver_o_modificar.tpl')
+*/
+else 
+	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='ver_o_modificar')
 		{			
 				Include_once("./controller/ControllerUser.php");
 				$ver_modificar_reclamo= new ControllerUser();
@@ -83,7 +82,8 @@ else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='home.tpl
 				$ver_modificar_reclamo->ver_reclamo_espesifico($id_usuario);
 		}	
 
-else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='reclamoNuevo')
+else 
+	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='reclamoNuevo')
 		{
 		Include_once("./controller/ControllerUser.php");
 		$reclamo= new ControllerUser();

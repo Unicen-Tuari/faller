@@ -20,7 +20,7 @@
                   <td>{$i.area_actual}</td>
                   <td>{$i.estado_reclamo}</td>
                   <td>
-                      <form  action="index.php?action=ver_o_modificar.tpl" method="post">
+                      <form  action="index.php?action=ver_o_modificar" method="post">
                       <input type="hidden" name="id_reclamo" value='{$i.id_reclamo}'>
                       <button  type="submit"  data-toggle="tooltip" data-placement="left" title="Todos los detalles sobre este reclamo / modificar el reclamo" class="btn btn-primary col-lg button-Mi-Estilo"><i class="fa fa-eye"></i> Ver / Modificar  <i class="fa fa-pencil"></i></button ></td>
                       </form>

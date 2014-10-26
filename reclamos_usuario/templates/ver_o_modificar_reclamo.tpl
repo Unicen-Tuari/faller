@@ -14,7 +14,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="http://www.laprida.gob.ar/"><i class="fa fa-external-link-square"></i>  Enlace Pagina Municipal</a></li>
-            <li><a href="index.php?action=cerrar_sesion.tpl"><i class="fa fa-unlock-alt"></i>  Cerrar Sesion</a></li>
+            <li><a href="index.php?action=cerrar_sesion"><i class="fa fa-unlock-alt"></i>  Cerrar Sesion</a></li>
           </ul>
           <form class="navbar-form navbar-right">
           </form>
@@ -119,8 +119,7 @@
 
 
     <div  class="col-lg-3 col-sm-1 placeholder offset3" data-toggle="modal" data-target="#foto_reclamo_modal" id="foto_reclamo">  
-            <img  class=" thumbnail col-lg-12" src='./imagenes/{$foto_reclamo}'>
-          <i class=" fa fa-search-plus fa-3x iconos"></i>                
+            <img  class=" thumbnail col-lg-12" src='{$foto_reclamo}'>
 
     </div> 
 

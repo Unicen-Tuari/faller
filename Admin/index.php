@@ -7,13 +7,6 @@ ini_set("display_errors", 1);
 
 /********************RUTEADOR DE REQUERIMIENTOS*********************************/
 
-//include('./controller/Controller_inicio.php');
-//include("./controller/controller_reclamos.php");
- /* array_key_exists('acction', $a)  
-  isset($a[action])
-  $a(acction)==='index.php';
-*/
- 
   
 if 	(isset($_POST['Nombre_login']))
 	{

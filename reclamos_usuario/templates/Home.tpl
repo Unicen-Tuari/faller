@@ -1,5 +1,5 @@
 {include file="head.tpl" }
-<body >
+<body ><!-- href="index.php?action=home" -->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -14,7 +14,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="http://www.laprida.gob.ar/"><i class="fa fa-external-link-square"></i>  Enlace Pagina Municipal</a></li>
-            <li><a href="index.php?action=cerrar_sesion.tpl"><i class="fa fa-unlock-alt"></i>  Cerrar Sesion</a></li>
+            <li><a href="index.php?action=cerrar_sesion"><i class="fa fa-unlock-alt"></i>  Cerrar Sesion</a></li>
           </ul>
           <form class="navbar-form navbar-right">
           </form>
