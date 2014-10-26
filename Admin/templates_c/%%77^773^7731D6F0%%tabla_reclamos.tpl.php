@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-25 01:05:57
+<?php /* Smarty version 2.6.27, created on 2014-10-26 16:12:16
          compiled from tabla_reclamos.tpl */ ?>
              
         <div class="table-responsive">
@@ -35,7 +35,7 @@
 </td>
                 <td><?php echo $this->_tpl_vars['i']['dni_persona']; ?>
 </td>
-                 <td><button type="submit" data-toggle="tooltip" data-placement="left" title="Todos los detalles sobre este reclamo / modificar el reclamo" class="btn btn-primary col-lg button-Mi-Estilo"><i class="fa fa-eye"></i> / <i class="fa fa-pencil"></i></button></td>
+                 <td><button type="submit" data-toggle="tooltip" data-placement="left" title="Todos los detalles sobre este reclamo / modificar el reclamo" class="btn btn-primary col-lg button-Mi-Estilo"><i class="fa fa-eye"></i> Ver/Modificar <i class="fa fa-pencil"></i></button></td>
                 </tr><?php endforeach; endif; unset($_from); ?>
 
               </tbody>

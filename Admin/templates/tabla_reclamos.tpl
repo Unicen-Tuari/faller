@@ -26,7 +26,7 @@
                 <td>{$i.estado_reclamo}</td>
                 <td>{$i.sector_raiz}</td>
                 <td>{$i.dni_persona}</td>
-                 <td><button type="submit" data-toggle="tooltip" data-placement="left" title="Todos los detalles sobre este reclamo / modificar el reclamo" class="btn btn-primary col-lg button-Mi-Estilo"><i class="fa fa-eye"></i> / <i class="fa fa-pencil"></i></button></td>
+                 <td><button type="submit" data-toggle="tooltip" data-placement="left" title="Todos los detalles sobre este reclamo / modificar el reclamo" class="btn btn-primary col-lg button-Mi-Estilo"><i class="fa fa-eye"></i> Ver/Modificar <i class="fa fa-pencil"></i></button></td>
                 </tr>{/foreach}
 
               </tbody>
