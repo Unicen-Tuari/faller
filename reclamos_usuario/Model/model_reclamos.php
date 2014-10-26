@@ -89,12 +89,7 @@ class model_crear_reclamo extends modelodb
 
 			$id_pers = $id;
 
-			if (!isset($Fot)) {
-				$foto_del_reclamo="./imagenes/bache.jpg";
-			}
-			else{
-				$foto_del_reclamo ="./imagenes/".$Fot;
-			}
+			$foto_del_reclamo ="./imagenes/".$Fot;
 
 			$fecha=date("y/m/d");
 

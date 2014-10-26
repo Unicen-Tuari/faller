@@ -291,7 +291,7 @@
         <h4 class="modal-title" id="myModalLabel">Foto ingresada del reclamo</h4>
       </div>
       <div class="modal-body">
-           <img  class=" thumbnail col-lg-12" src='./imagenes/{$foto_reclamo}'>
+           <img  class=" thumbnail col-lg-12" src='{$foto_reclamo}'>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

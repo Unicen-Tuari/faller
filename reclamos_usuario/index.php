@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
@@ -8,57 +7,33 @@ ini_set("display_errors", 1);
 /********************RUTEADOR DE REQUERIMIENTOS*********************************/
 
 
-if (isset($_POST['pass_login'])){
+if (isset($_POST['pass_login']))
+		{
 			include_once("./controller/ControllerUser.php");
-			$email= $_POST['email_login'];
-			$pass=  $_POST['pass_login'];
-			$l= new ControllerUser();
-			$usuario=$l->comprobar_existencia_usuario($email,$pass);
+			$log= new ControllerUser();
+			$log->login();
+		}
 
-			if ($usuario!="consulta_vacia")
-				{ 
-					$_SESSION['sesionUsuario'] =$usuario;
-					$l->login($usuario);
-				}/*else
-				   { 
-				   	include_once("./View/View_error_login.php");
-				    $error=new View_error_login();
-				    $error->error_login();
-				   }*/
-
-			}
-
-
-
-else if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index')
+else 
+	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index')
 	{
 		include "./controller/IndexController.php";
 	 	$inicio= new controlador_index();
 		$inicio->visualizar_inicio();	
 	}
 
-else 	if (isset($_POST['nombre_registrarse']))
+else 	
+	if (isset($_POST['nombre_registrarse']))
 	{
 		include_once("./controller/ControllerUser.php");
-		
-		$arr_registro=array();
-		$arr_registro['nombre']			= $_POST['nombre_registrarse'];
-		$arr_registro['apellido']		= $_POST['apellido_registrarse'];
-		$arr_registro['dni']			= $_POST['dni_registrarse'];
-		$arr_registro['FechaNacimiento']= $_POST['FechaNacimiento'];
-		$arr_registro['email']			= $_POST['email_registrarse'];
-		$arr_registro['Celular']		= $_POST['Celular_registrarse'];
-		$arr_registro['Telefono_fijo']	= $_POST['Telefono_fijo_registrarse'];
-		$arr_registro['pass']			= $_POST['pass_registrarse'];
-		$arr_registro['direccion']		= $_POST['Direccion_registrarse'];
-
-		$R= new ControllerUser();
-		$R->registrarse($arr_registro);
+		$Registrar= new ControllerUser();
+		$Registrar->registrarse();
 
 	}
 
 
-else 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='cerrar_sesion')
+else 
+	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='cerrar_sesion')
 	{
 		session_destroy();
 		include "./controller/IndexController.php";
@@ -77,9 +52,7 @@ else
 		{			
 				Include_once("./controller/ControllerUser.php");
 				$ver_modificar_reclamo= new ControllerUser();
-				$id_usuario=$_SESSION['sesionUsuario'];
-				print_r($id_usuario);
-				$ver_modificar_reclamo->ver_reclamo_espesifico($id_usuario);
+				$ver_modificar_reclamo->ver_reclamo_espesifico();
 		}	
 
 else 
@@ -87,7 +60,7 @@ else
 		{
 		Include_once("./controller/ControllerUser.php");
 		$reclamo= new ControllerUser();
-		$reclamo->crear_reclamo($_POST['reclamo_texto'],$_POST['reclamo_selector'],$_FILES['reclamo_foto']);
+		$reclamo->crear_reclamo();
 
 		}
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-26 21:28:29
+<?php /* Smarty version 2.6.27, created on 2014-10-26 22:02:56
          compiled from ver_o_modificar_reclamo.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -299,7 +299,7 @@ unset($_smarty_tpl_vars);
         <h4 class="modal-title" id="myModalLabel">Foto ingresada del reclamo</h4>
       </div>
       <div class="modal-body">
-           <img  class=" thumbnail col-lg-12" src='./imagenes/<?php echo $this->_tpl_vars['foto_reclamo']; ?>
+           <img  class=" thumbnail col-lg-12" src='<?php echo $this->_tpl_vars['foto_reclamo']; ?>
 '>
       </div>
       <div class="modal-footer">

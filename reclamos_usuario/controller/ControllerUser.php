@@ -51,10 +51,10 @@ class ControllerUser
 				$this->model_registrarse				= 	new model_registrarse();
 			}
 
-	public function comprobar_existencia_usuario($email,$pass)
+	public function comprobar_existencia_usuario($email,$contraseña)
 			{
 
-				return $this->model_comprobar_existencia_usuario->verificar_usuario($email,$pass);
+				return $this->model_comprobar_existencia_usuario->verificar_usuario($email,$contraseña);
 			}
 						//le estoy pasando el id por referencia
 	public function Home($usuario)//datos home es informacion de una consulta 
@@ -76,37 +76,69 @@ class ControllerUser
 			}
 
 
-	public function login($usuario)
+	public function login()
 			{
-		    	if($usuario)
-			    { 
-			    	
-			    	$this->Home($usuario);//le pasa los datos a la funcion home definida en este controlador
-			   	}
+				
+
+				/*datos del form login*/
+				$email= $_POST['email_login'];
+				$contraseña=  $_POST['pass_login'];
+				$usuario=$this->comprobar_existencia_usuario($email,$contraseña);/*choca los 2 capos contra la base*/
+				
+				if($usuario!="consulta_vacia")/*si el usuario y contraseña son correctas no devolveran el string consulta vacia*/
+				{ 
+					$_SESSION['sesionUsuario']=$usuario;
+			    	$this->Home($_SESSION['sesionUsuario'] );//le pasa los datos a la funcion home definida en este controlador
+			   	}/*else
+				   { 
+				   	include_once("./View/View_error_login.php");
+				    $error=new View_error_login();
+				    $error->error_login();
+				   }*/
 			}
 
 
 	public function registrarse($arr_datos_registrarse)
 			{
+				$arr_registro=array();
+
+				$arr_registro['nombre']			= $_POST['nombre_registrarse'];
+				$arr_registro['apellido']		= $_POST['apellido_registrarse'];
+				$arr_registro['dni']			= $_POST['dni_registrarse'];
+				$arr_registro['FechaNacimiento']= $_POST['FechaNacimiento'];
+				$arr_registro['email']			= $_POST['email_registrarse'];
+				$arr_registro['Celular']		= $_POST['Celular_registrarse'];
+				$arr_registro['Telefono_fijo']	= $_POST['Telefono_fijo_registrarse'];
+				$arr_registro['pass']			= $_POST['pass_registrarse'];
+				$arr_registro['direccion']		= $_POST['Direccion_registrarse'];
+			
 				 $this->model_registrarse->registrar($arr_datos_registrarse);
 				 $this->view_registrado_exitoso->r_exitoso();
 			}
 
-	public function crear_reclamo($Rec,$Selec,$Fot)
+	public function crear_reclamo()//creo el reclamo con Ajax
 			{
-				 $f=$Fot[name]; 
-				 $id=$_SESSION['sesionUsuario'];
+
+				/*Datos ingresados para crear el reclamo*/
+				$Rec=$_POST['reclamo_texto'];
+				$Selec=$_POST['reclamo_selector'];
+				$Fot=$_FILES['reclamo_foto'];
+				$f=$Fot[name]; //selecciono el nombre para obtener el path de la imagen
+				$id=$_SESSION['sesionUsuario'];
 			
-				$this->model_crear_reclamo->crear_reclamo($Rec,$Selec,$f,$id);
+				/*Acciones con los datos para crear el reclamo*/
+
+				$this->model_crear_reclamo->crear_reclamo($Rec,$Selec,$f,$id);//envia al modelo los datos para que los incruste en la base
 
 				$reclamos_usuario=$this->controller_reclamos->mostrar_reclamos($id);
 
-				$this->view_tabla_reclamos->tabla_peticiones($reclamos_usuario);
+				$this->view_tabla_reclamos->tabla_peticiones($reclamos_usuario);//actualiza la tabla de peticiones que esta en un tpl aparte
 			}
 
 
-	public  function ver_reclamo_espesifico($id_usuario)
+	public  function ver_reclamo_espesifico()
 				{
+					$id_usuario=$_SESSION['sesionUsuario'];
 					$id_reclamo=$_POST["id_reclamo"];
 					$datos_reclamo= $this->model_ver_reclamos->reclamo_espesifico($id_usuario,$id_reclamo);
 					//print_r($datos_reclamo);
