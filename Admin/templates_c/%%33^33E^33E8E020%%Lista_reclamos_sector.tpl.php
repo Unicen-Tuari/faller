@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-26 15:55:22
+<?php /* Smarty version 2.6.27, created on 2014-10-26 16:56:38
          compiled from Lista_reclamos_sector.tpl */ ?>
 
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
@@ -119,7 +119,7 @@ unset($_smarty_tpl_vars);
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="cerrar_sesion.tpl"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="index.php?action=cerrar_sesion"><i class="fa fa-fw fa-power-off"></i>Salir</a>
                         </li>
                     </ul>
                 </li>

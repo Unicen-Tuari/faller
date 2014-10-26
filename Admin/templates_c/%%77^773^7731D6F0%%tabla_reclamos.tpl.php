@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-26 16:12:16
+<?php /* Smarty version 2.6.27, created on 2014-10-26 16:54:46
          compiled from tabla_reclamos.tpl */ ?>
              
         <div class="table-responsive">

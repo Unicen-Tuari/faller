@@ -111,7 +111,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="index.php?action=cerrar_sesion.tpl"><i class="fa fa-fw fa-power-off"></i> Salir</a>
+                            <a href="index.php?action=cerrar_sesion"><i class="fa fa-fw fa-power-off"></i> Salir</a>
                         </li>
                     </ul>
                 </li>
@@ -318,7 +318,7 @@
                                 <div class="icon">
                                     <i class="ion ion-ios7-briefcase-outline"></i>
                                 </div>
-                                <a href="index.php?action=ver_reclamos.tpl" class="small-box-footer">
+                                <a href="index.php?action=ver_reclamos" class="small-box-footer">
                                     Ver Todos <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>

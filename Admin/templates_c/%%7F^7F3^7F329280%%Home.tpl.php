@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-13 20:06:06
+<?php /* Smarty version 2.6.27, created on 2014-10-26 16:59:12
          compiled from Home.tpl */ ?>
 
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
@@ -118,7 +118,7 @@ unset($_smarty_tpl_vars);
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="index.php?action=cerrar_sesion.tpl"><i class="fa fa-fw fa-power-off"></i> Salir</a>
+                            <a href="index.php?action=cerrar_sesion"><i class="fa fa-fw fa-power-off"></i> Salir</a>
                         </li>
                     </ul>
                 </li>
@@ -325,7 +325,7 @@ unset($_smarty_tpl_vars);
                                 <div class="icon">
                                     <i class="ion ion-ios7-briefcase-outline"></i>
                                 </div>
-                                <a href="index.php?action=ver_reclamos.tpl" class="small-box-footer">
+                                <a href="index.php?action=ver_reclamos" class="small-box-footer">
                                     Ver Todos <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>
