@@ -88,10 +88,11 @@ class controllerUser
 				
 
 			}
+			
 	public function ver_reclamos()
 			{
 				$usuario=$_SESSION['nombre'];
-				if ($_POST["fitro_reclamo"]==null)
+				if(!isset($_POST["fitro_reclamo"]))
 				{
 					$filtro=null;
 

@@ -288,12 +288,12 @@
 <form class="form-horizontal"  id="form_filtro_reclamos" method="POST">
 <input type="hidden" name="filtro" value="me_cargaron_un_filtro" >
  <select class="form-control" name="fitro_reclamo" id="selecFiltro">
-    <option value="nada">Filtrar Reclamos</option>
+    <option value="dni_persona">Filtrar Reclamos</option>
     <option value="dni_persona" > Dni</option>
     <option value="sector_raiz" >Sector Raiz</option>
     <option value="fecha" >Fecha</option>
 </select>
-<button class=" btn " type="submit">Filtrar</button>
+<!--<button class=" btn " type="submit">Filtrar</button>-->
 </form> 
 
 </div> 

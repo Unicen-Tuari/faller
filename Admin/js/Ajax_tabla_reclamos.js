@@ -1,5 +1,5 @@
 
-$("#form_filtro_reclamos").submit(function() 
+$("#form_filtro_reclamos").change(function() 
 {
 
   $.ajax({
