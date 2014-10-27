@@ -57,13 +57,12 @@ class ControllerUser
 				return $this->model_comprobar_existencia_usuario->verificar_usuario($email,$contraseña);
 			}
 						//le estoy pasando el id por referencia
-	public function Home($usuario)//datos home es informacion de una consulta 
+	public function Home($id_usuario,$email)//datos home es informacion de una consulta 
 			{
-				$reclamos_usuario=$this->controller_reclamos->mostrar_reclamos($usuario);
-				$r_p=$this->controller_reclamos->reclamos_pendientes($usuario);
-				$r_f=$this->controller_reclamos->reclamo_finalizados($usuario);
-
-			    $this->view_home->Home($reclamos_usuario,$r_p,$r_f);
+				$reclamos_usuario=$this->controller_reclamos->mostrar_reclamos($id_usuario);
+				$r_p=$this->controller_reclamos->reclamos_pendientes($id_usuario);
+				$r_f=$this->controller_reclamos->reclamo_finalizados($id_usuario);
+			    $this->view_home->Home($reclamos_usuario,$r_p,$r_f,$email);
 
 			}
 
@@ -83,12 +82,12 @@ class ControllerUser
 				/*datos del form login*/
 				$email= $_POST['email_login'];
 				$contraseña=  $_POST['pass_login'];
-				$usuario=$this->comprobar_existencia_usuario($email,$contraseña);/*choca los 2 capos contra la base*/
+				$id_usuario=$this->comprobar_existencia_usuario($email,$contraseña);/*choca los 2 capos contra la base*/
 				
-				if($usuario!="consulta_vacia")/*si el usuario y contraseña son correctas no devolveran el string consulta vacia*/
+				if($id_usuario!="consulta_vacia")/*si el id_usuario y contraseña son correctas no devolveran el string consulta vacia*/
 				{ 
-					$_SESSION['sesionUsuario']=$usuario;
-			    	$this->Home($_SESSION['sesionUsuario'] );//le pasa los datos a la funcion home definida en este controlador
+					$_SESSION['sesionUsuario']=$id_usuario;
+			    	$this->Home($_SESSION['sesionUsuario'],$email);//le pasa los datos a la funcion home definida en este controlador
 			   	}/*else
 				   { 
 				   	include_once("./View/View_error_login.php");
@@ -120,11 +119,14 @@ class ControllerUser
 			{
 
 				/*Datos ingresados para crear el reclamo*/
+				$id=$_SESSION['sesionUsuario'];
 				$Rec=$_POST['reclamo_texto'];
 				$Selec=$_POST['reclamo_selector'];
-				$Fot=$_FILES['reclamo_foto'];
-				$f=$Fot[name]; //selecciono el nombre para obtener el path de la imagen
-				$id=$_SESSION['sesionUsuario'];
+				if(array_key_exists('name', $_FILES['reclamo_foto']))//selecciono el nombre para obtener el path de la imagen
+					{
+						$f=$Fot['name'];
+					}
+				
 			
 				/*Acciones con los datos para crear el reclamo*/
 

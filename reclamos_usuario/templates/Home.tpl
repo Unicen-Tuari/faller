@@ -13,9 +13,23 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="http://www.laprida.gob.ar/"><i class="fa fa-external-link-square"></i>  Enlace Pagina Municipal</a></li>
-            <li><a href="index.php?action=cerrar_sesion"><i class="fa fa-unlock-alt"></i>  Cerrar Sesion</a></li>
+              <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {$email}<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="divider"></li>
+                        <li>
+                            <a href="index.php?action=cerrar_sesion"><i class="fa fa-fw fa-power-off"></i> Salir</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+          <ul class="nav navbar-nav navbar-right">
+               <li>
+                      <a href="http://www.laprida.gob.ar/"><i class="fa fa-external-link-square"></i>  Enlace Pagina Municipal</a>
+                </li>
           </ul>
+
+
           <form class="navbar-form navbar-right">
           </form>
         </div>
