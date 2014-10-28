@@ -140,7 +140,6 @@
 
 <!--*************************************************************************************-->
 <!--*************************************************************************************-->
-
                                           <!-- Modal Registrarse -->
 
 
@@ -157,39 +156,39 @@
         <fieldset>
             <legend>Ingrese todo los datos requeridos.</legend>
               <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Nombre</label>
+                  <label for="inputEmail" class="col-lg-2 control-label" required>Nombre</label>
                   <div class="col-lg-10">
-                    <input type="text" name="nombre_registrarse" class="form-control" id="inputEmail" placeholder="Nombre">
+                    <input type="text" name="nombre_registrarse" class="form-control" id="inputEmail" placeholder="Nombre" required>
                   </div>
               </div>
               <div class="form-group">
-                <label for="apellido" class="col-lg-2 control-label">Apellido</label>
+                <label for="apellido" class="col-lg-2 control-label" required>Apellido</label>
                 <div class="col-lg-10">
-                  <input type="text" name="apellido_registrarse" class="form-control" id="apellido" placeholder="Apellido">
+                  <input type="text" name="apellido_registrarse" class="form-control" id="apellido" placeholder="Apellido" required>
                 </div>
               </div>
               <div class="form-group">
                   <label for="inputDocumento" class="col-lg-2 control-label">Documento</label>
                   <div class="col-lg-10">
-                    <input type="text" name="dni_registrarse"  class="form-control" id="inputDocumento" placeholder="Dni">
+                    <input type="text" name="dni_registrarse"  class="form-control" id="inputDocumento" placeholder="Dni" required>
                   </div>
               </div>
               <div class="form-group">
-                  <label for="inputFechaNacimiento" class="col-lg-2 control-label">Fecha de Nacimientó</label>
+                  <label for="inputFechaNacimiento" class="col-lg-2 control-label" >Fecha de Nacimientó</label>
                   <div class="col-lg-10">
-                    <input type="text" name="FechaNacimiento"  class="form-control" id="inputFechaNacimiento" placeholder="dia/mes/años">
+                    <input type="text" name="FechaNacimiento"  class="form-control" id="inputFechaNacimiento" placeholder="dia/mes/años" >
                   </div>
               </div>
               <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                     <div class="col-lg-10">
-                      <input type="text" name="email_registrarse" class="form-control" id="inputEmail" placeholder="Email">
+                      <input type="email" name="email_registrarse" class="form-control" id="inputEmail"  placeholder="E.G: Minombre@gmail.com" required required>
                     </div>
               </div>
               <div class="form-group">
-                    <label for="inputCelular" class="col-lg-2 control-label">Celular</label>
+                    <label for="inputCelular" class="col-lg-2 control-label" >Celular</label>
                     <div class="col-lg-10">
-                      <input type="integer" name="Celular_registrarse" class="form-control" id="inputCelular" placeholder="Celular">
+                      <input type="integer" name="Celular_registrarse" class="form-control" id="inputCelular" placeholder="Celular" required>
                     </div>
                </div>
               <div class="form-group">
@@ -202,13 +201,13 @@
               <div class="form-group">
                 <label for="text" class="col-lg-2 control-label">Direccion</label>
                      <div class="col-lg-10">
-                         <input type="text" name="Direccion_registrarse"  class="form-control" id="inputEmail" placeholder="Direcion">
+                         <input type="text" name="Direccion_registrarse"  class="form-control" id="inputEmail" placeholder="Direcion" required>
                     </div>
               </div>
             <div class="form-group">
                   <label for="inputPassword" class="col-lg-2 control-label">Password nuevo</label>
                  <div class="col-lg-10">
-                        <input type="password" name="pass_registrarse" class="form-control" id="inputPassword" placeholder="Contraseña nueva, necesaria para esta aplicacion">
+                        <input type="password" name="pass_registrarse" class="form-control" id="inputPassword" placeholder="Contraseña nueva, necesaria para esta aplicacion" required >
          
                 </div>
             </div>

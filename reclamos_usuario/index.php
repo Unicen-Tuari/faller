@@ -2,7 +2,7 @@
 session_start();
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
-
+//para la demostracion de el error de sesion:debo comentar el index y el cerrar sesion
 
 /********************RUTEADOR DE REQUERIMIENTOS*********************************/
 
@@ -22,7 +22,6 @@ else
 		$Registrar->registrarse();
 
 	}	
-
 else 
 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index')
 	{
@@ -30,10 +29,6 @@ else
 	 	$inicio= new controlador_index();
 		$inicio->visualizar_inicio();	
 	}
-
-
-
-
 else 
 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='cerrar_sesion')
 	{
