@@ -125,23 +125,23 @@ class ControllerUser
 					return crypt($contraseña, $salt);
 				}
 				$comprobacion_de_su_existencia=$this->comprobar_existencia_usuario($_POST['email_registrarse']);
-				if ($comprobacion_de_su_existencia==='consulta_vacia')
+				if($comprobacion_de_su_existencia==='consulta_vacia')
 				{
-					$contraseña=crypt_blowfish_bydinvaders($_POST['pass_registrarse']);
+						$contraseña=crypt_blowfish_bydinvaders($_POST['pass_registrarse']);
+							
+							$arr_registro['nombre']			= $_POST['nombre_registrarse'];
+							$arr_registro['apellido']		= $_POST['apellido_registrarse'];
+							$arr_registro['dni']			= $_POST['dni_registrarse'];
+							$arr_registro['FechaNacimiento']= $_POST['FechaNacimiento'];
+							$arr_registro['email']			= $_POST['email_registrarse'];
+							$arr_registro['Celular']		= $_POST['Celular_registrarse'];
+							$arr_registro['Telefono_fijo']	= $_POST['Telefono_fijo_registrarse'];
+							$arr_registro['pass']			= $contraseña;
+							$arr_registro['direccion']		= $_POST['Direccion_registrarse'];
 						
-						$arr_registro['nombre']			= $_POST['nombre_registrarse'];
-						$arr_registro['apellido']		= $_POST['apellido_registrarse'];
-						$arr_registro['dni']			= $_POST['dni_registrarse'];
-						$arr_registro['FechaNacimiento']= $_POST['FechaNacimiento'];
-						$arr_registro['email']			= $_POST['email_registrarse'];
-						$arr_registro['Celular']		= $_POST['Celular_registrarse'];
-						$arr_registro['Telefono_fijo']	= $_POST['Telefono_fijo_registrarse'];
-						$arr_registro['pass']			= $contraseña;
-						$arr_registro['direccion']		= $_POST['Direccion_registrarse'];
-					
-						 $this->model_registrarse->registrar($arr_registro);
-						 $this->view_registrado_exitoso->r_exitoso();
-				}
+							 $this->model_registrarse->registrar($arr_registro);
+							 $this->view_registrado_exitoso->r_exitoso();
+					}
 				else
 				{
 					echo "Existe un usuario con el mail ingresado. la idea es devoler el error en el modal con ajax";
