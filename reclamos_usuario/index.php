@@ -13,6 +13,7 @@ if (isset($_POST['pass_login']))
 			$log= new ControllerUser();
 			$log->login();
 		}
+		
 
 else 
 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index')
