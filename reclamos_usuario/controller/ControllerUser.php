@@ -51,10 +51,10 @@ class ControllerUser
 				$this->model_registrarse				= 	new model_registrarse();
 			}
 
-	public function comprobar_existencia_usuario($email,$contraseña)
+	public function comprobar_existencia_usuario($email)
 			{
 
-				return $this->model_comprobar_existencia_usuario->verificar_usuario($email,$contraseña);
+				return $this->model_comprobar_existencia_usuario->verificar_usuario($email);
 			}
 						//le estoy pasando el id por referencia
 	public function Home($id_usuario,$email)//datos home es informacion de una consulta 
@@ -79,16 +79,29 @@ class ControllerUser
 			{
 				
 
-				/*datos del form login*/
-				$email= $_POST['email_login'];
-				$contraseña=  $_POST['pass_login'];
-				$id_usuario=$this->comprobar_existencia_usuario($email,$contraseña);/*choca los 2 capos contra la base*/
+			function crypt_blowfish_bydinvaders($contraseña, $digito = 7)
+				{
+					$set_salt = './1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+					$salt = sprintf('$2a$%02d$', $digito);
+					for($i = 0; $i < 22; $i++)
+						{
+							$salt .= $set_salt[mt_rand(0, 22)];
+						}
+					return crypt($contraseña, $salt);
+				}
+								/*datos del form login*/
 				
-				if($id_usuario!="consulta_vacia")/*si el id_usuario y contraseña son correctas no devolveran el string consulta vacia*/
-				{ 
-					$_SESSION['sesionUsuario']=$id_usuario;
-			    	$this->Home($_SESSION['sesionUsuario'],$email);//le pasa los datos a la funcion home definida en este controlador
-			   	}/*else
+				$email= $_POST['email_login'];	 
+				$contraseña=$_POST['pass_login'];
+				$ar_datos_usuario=$this->comprobar_existencia_usuario($email);/*choca los 2 capos contra la base*/
+
+				if( crypt($contraseña, $ar_datos_usuario['pass']) == $ar_datos_usuario['pass'])
+					{
+
+						$_SESSION['sesionUsuario']=$ar_datos_usuario['id'];
+				    	$this->Home($_SESSION['sesionUsuario'],$email);//le pasa los datos a la funcion home definida en este controlador
+					}
+				/*else
 				   { 
 				   	include_once("./View/View_error_login.php");
 				    $error=new View_error_login();
@@ -101,18 +114,31 @@ class ControllerUser
 			{
 				$arr_registro=array();
 
-				$arr_registro['nombre']			= $_POST['nombre_registrarse'];
-				$arr_registro['apellido']		= $_POST['apellido_registrarse'];
-				$arr_registro['dni']			= $_POST['dni_registrarse'];
-				$arr_registro['FechaNacimiento']= $_POST['FechaNacimiento'];
-				$arr_registro['email']			= $_POST['email_registrarse'];
-				$arr_registro['Celular']		= $_POST['Celular_registrarse'];
-				$arr_registro['Telefono_fijo']	= $_POST['Telefono_fijo_registrarse'];
-				$arr_registro['pass']			= $_POST['pass_registrarse'];
-				$arr_registro['direccion']		= $_POST['Direccion_registrarse'];
-			
-				 $this->model_registrarse->registrar($arr_datos_registrarse);
-				 $this->view_registrado_exitoso->r_exitoso();
+				function crypt_blowfish_bydinvaders($password, $digito = 7)
+				{
+					$set_salt = './1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+					$salt = sprintf('$2a$%02d$', $digito);
+					for($i = 0; $i < 22; $i++)
+						{
+							$salt .= $set_salt[mt_rand(0, 22)];
+						}
+					return crypt($password, $salt);
+				}
+
+				$contraseña=crypt_blowfish_bydinvaders($_POST['pass_registrarse']);
+				
+					$arr_registro['nombre']			= $_POST['nombre_registrarse'];
+					$arr_registro['apellido']		= $_POST['apellido_registrarse'];
+					$arr_registro['dni']			= $_POST['dni_registrarse'];
+					$arr_registro['FechaNacimiento']= $_POST['FechaNacimiento'];
+					$arr_registro['email']			= $_POST['email_registrarse'];
+					$arr_registro['Celular']		= $_POST['Celular_registrarse'];
+					$arr_registro['Telefono_fijo']	= $_POST['Telefono_fijo_registrarse'];
+					$arr_registro['pass']			= $contraseña;
+					$arr_registro['direccion']		= $_POST['Direccion_registrarse'];
+				
+					 $this->model_registrarse->registrar($arr_datos_registrarse);
+					 $this->view_registrado_exitoso->r_exitoso();
 			}
 
 	public function crear_reclamo()//creo el reclamo con Ajax

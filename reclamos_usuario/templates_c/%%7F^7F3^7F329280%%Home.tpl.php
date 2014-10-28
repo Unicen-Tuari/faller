@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-27 01:26:42
+<?php /* Smarty version 2.6.27, created on 2014-10-28 04:54:26
          compiled from Home.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -35,6 +35,7 @@ unset($_smarty_tpl_vars);
                       <a href="http://www.laprida.gob.ar/"><i class="fa fa-external-link-square"></i>  Enlace Pagina Municipal</a>
                 </li>
           </ul>
+
 
 
           <form class="navbar-form navbar-right">
