@@ -35,7 +35,10 @@ class ControllerUser
 			  	include_once("./controller/controller_reclamos.php");
 
 			  	include_once("./Model/model_reclamos.php");
-			  	include_once("./Model/Model_comprobar_existencia_de_usuario.php");	
+			  	include_once("./Model/Model_comprobar_existencia_de_usuario.php");
+			  	include_once("./Model/Modelo_registrarse.php");
+
+			  	
 		        
 		        /*************Inicializo las variables con clases***********************/
 
