@@ -203,6 +203,7 @@ class model_registrarse extends modelodb
 	
 				*/
 
+
 			// El id_persona debe incrementarse solo
 			$sql = "INSERT INTO USUARIO(
 					 nombre				,

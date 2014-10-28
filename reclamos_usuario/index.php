@@ -12,8 +12,16 @@ if (isset($_POST['pass_login']))
 			include_once("./controller/ControllerUser.php");
 			$log= new ControllerUser();
 			$log->login();
+
 		}
-		
+else 	
+	if (isset($_POST['pass_registrarse']))
+	{
+		include_once("./controller/ControllerUser.php");
+		$Registrar= new ControllerUser();
+		$Registrar->registrarse();
+
+	}	
 
 else 
 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index')
@@ -23,14 +31,7 @@ else
 		$inicio->visualizar_inicio();	
 	}
 
-else 	
-	if (isset($_POST['nombre_registrarse']))
-	{
-		include_once("./controller/ControllerUser.php");
-		$Registrar= new ControllerUser();
-		$Registrar->registrarse();
 
-	}
 
 
 else 

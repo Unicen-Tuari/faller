@@ -110,11 +110,11 @@ class ControllerUser
 			}
 
 
-	public function registrarse($arr_datos_registrarse)
+	public function registrarse()
 			{
 				$arr_registro=array();
 
-				function crypt_blowfish_bydinvaders($password, $digito = 7)
+				function crypt_blowfish_bydinvaders($contraseña, $digito = 7)
 				{
 					$set_salt = './1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 					$salt = sprintf('$2a$%02d$', $digito);
@@ -122,7 +122,7 @@ class ControllerUser
 						{
 							$salt .= $set_salt[mt_rand(0, 22)];
 						}
-					return crypt($password, $salt);
+					return crypt($contraseña, $salt);
 				}
 
 				$contraseña=crypt_blowfish_bydinvaders($_POST['pass_registrarse']);
@@ -137,7 +137,7 @@ class ControllerUser
 					$arr_registro['pass']			= $contraseña;
 					$arr_registro['direccion']		= $_POST['Direccion_registrarse'];
 				
-					 $this->model_registrarse->registrar($arr_datos_registrarse);
+					 $this->model_registrarse->registrar($arr_registro);
 					 $this->view_registrado_exitoso->r_exitoso();
 			}
 
