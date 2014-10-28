@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-28 04:54:26
+<?php /* Smarty version 2.6.27, created on 2014-10-28 19:06:08
          compiled from Home.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -52,12 +52,11 @@ unset($_smarty_tpl_vars);
             <li>
              <a  title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Modificar_perfil" ><i class="fa fa-cog"></i> Configurar perfil</a>
              </li>
-            <li><a ><i class="fa fa-picture-o"></i> Reclamos resueltos de la población</a></li>
-            <li><a href="#">Mis Reclamos Pendientes</a></li>
+            <li><a ><i class="fa fa-picture-o"></i> Reclamos que ya se han resuelto de la población</a></li>
             <li><a href="#"><i class="fa fa-tty"></i> Contactos con Secretaría</a></li>
             <li><a  title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Manejo_del_reclamo_por_cada_area"> <i class="fa fa-code-fork"></i> Manejo del reclamo para cada area</a></li>
            <li><a href="#"><i class="fa fa-info-circle"></i> Información sobre la aplicación</a></li>
-          </ul>
+        
          
         </div>
         <div class="panel panel-danger">
