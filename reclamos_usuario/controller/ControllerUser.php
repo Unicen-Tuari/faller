@@ -104,12 +104,12 @@ class ControllerUser
 						$_SESSION['sesionUsuario']=$ar_datos_usuario['id'];
 				    	$this->Home($_SESSION['sesionUsuario'],$email);//le pasa los datos a la funcion home definida en este controlador
 					}
-				/*else
+				else
 				   { 
 				   	include_once("./View/View_error_login.php");
 				    $error=new View_error_login();
 				    $error->error_login();
-				   }*/
+				   }
 			}
 
 

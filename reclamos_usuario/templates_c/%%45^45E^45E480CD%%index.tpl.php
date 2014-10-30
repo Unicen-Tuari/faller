@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-28 06:31:06
+<?php /* Smarty version 2.6.27, created on 2014-10-30 03:41:23
          compiled from index.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -39,7 +39,7 @@ unset($_smarty_tpl_vars);
                  </div>
 
             <div class="col-lg-4">
-                    <img class="img-responsive" src="imagenes/trabajador.png" alt="">
+                    <img id="imagen_index" class="img-responsive" src="imagenes/trabajador.png" alt="">
             </div>
   
                     <div class="intro-text"   id="portfolio">

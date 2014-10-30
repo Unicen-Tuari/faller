@@ -33,7 +33,7 @@
                  </div>
 
             <div class="col-lg-4">
-                    <img class="img-responsive" src="imagenes/trabajador.png" alt="">
+                    <img id="imagen_index" class="img-responsive" src="imagenes/trabajador.png" alt="">
             </div>
   
                     <div class="intro-text"   id="portfolio">
