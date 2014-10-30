@@ -23,12 +23,20 @@ else
 
 	}	
 else 
-	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index')
+	if(!array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index')
 	{
 		include "./controller/IndexController.php";
 	 	$inicio= new controlador_index();
 		$inicio->visualizar_inicio();	
 	}
+
+else
+ 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='home')
+	{
+			include_once("./controller/ControllerUser.php");
+			$home= new ControllerUser();
+			$home->Home();
+	}	
 else 
 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='cerrar_sesion')
 	{
@@ -37,12 +45,7 @@ else
 	 	$inicio= new controlador_index();
 		$inicio->visualizar_inicio();
 	}	
-/*else
- 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='home')
-	{
-			$id_usuario=$_SESSION['sesionUsuario'];
-			$reclmo->Home($id_usuario);
-	}
+/*
 */
 else 
 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='ver_o_modificar')

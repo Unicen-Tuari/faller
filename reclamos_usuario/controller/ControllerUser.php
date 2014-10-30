@@ -60,8 +60,10 @@ class ControllerUser
 				return $this->model_comprobar_existencia_usuario->verificar_usuario($email);
 			}
 						//le estoy pasando el id por referencia
-	public function Home($id_usuario,$email)//datos home es informacion de una consulta 
+	public function Home()//datos home es informacion de una consulta 
 			{
+				$id_usuario=$_SESSION['sesionUsuario'];
+				$email=$_SESSION['emailUsuario'];
 				$reclamos_usuario=$this->controller_reclamos->mostrar_reclamos($id_usuario);
 				$r_p=$this->controller_reclamos->reclamos_pendientes($id_usuario);
 				$r_f=$this->controller_reclamos->reclamo_finalizados($id_usuario);
@@ -102,7 +104,8 @@ class ControllerUser
 					{
 
 						$_SESSION['sesionUsuario']=$ar_datos_usuario['id'];
-				    	$this->Home($_SESSION['sesionUsuario'],$email);//le pasa los datos a la funcion home definida en este controlador
+						$_SESSION['emailUsuario']=$_POST['email_login'];	
+				    	$this->Home();//le pasa los datos a la funcion home definida en este controlador
 					}
 				else
 				   { 
@@ -145,10 +148,7 @@ class ControllerUser
 							 $this->model_registrarse->registrar($arr_registro);
 							 $this->view_registrado_exitoso->r_exitoso();
 					}
-				else
-				{
-					echo "Existe un usuario con el mail ingresado. la idea es devoler el error en el modal con ajax";
-				}
+
 
 			}
 
