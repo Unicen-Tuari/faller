@@ -9,15 +9,16 @@ class ControllerUser
 {			
 
 	/*******Atributos***********/
-
+private $model;
 	private $model_registrarse;
 	private $model_comprobar_existencia_usuario;
+	private $model_ver_reclamos	;
+	
 	private $view_home;
 	private $view_registrado_exitoso;
 	private $view_tabla_reclamos;
 	private $ver_modificar ;
-	private $model;
-	private $model_ver_reclamos	;
+	
 	private $controller_reclamos;
 
 
@@ -28,7 +29,6 @@ class ControllerUser
 	         	/*************Archivos incluidos***********************/
 	         	include_once("./View/view_registrado_exitoso.php");				
 				include_once("./View/Home_view.php");
-				include_once("./View/View_ver_modificar.php");
 				include_once("./View/View_tabla_peticiones.php");
 
 
@@ -44,7 +44,6 @@ class ControllerUser
 
 				$this->model_comprobar_existencia_usuario= 	new Model_comprobar_existencia_usuario();
 				$this->view_home 						= 	new View_Home();
-				$this->ver_modificar 					= 	new view_ver_modificar();
 				$this->view_registrado_exitoso			= 	new view_registrado_exitoso();
 				$this->view_tabla_reclamos				= 	new view_tabla_peticiones();
 
@@ -152,39 +151,9 @@ class ControllerUser
 
 			}
 
-	public function crear_reclamo()//creo el reclamo con Ajax
-			{
-
-				/*Datos ingresados para crear el reclamo*/
-				$id=$_SESSION['sesionUsuario'];
-				$Rec=$_POST['reclamo_texto'];
-				$Selec=$_POST['reclamo_selector'];
-				if(array_key_exists('name', $_FILES['reclamo_foto']))//selecciono el nombre para obtener el path de la imagen
-					{
-						$f=$Fot['name'];
-					}
-				
-			
-				/*Acciones con los datos para crear el reclamo*/
-
-				$this->model_crear_reclamo->crear_reclamo($Rec,$Selec,$f,$id);//envia al modelo los datos para que los incruste en la base
-
-				$reclamos_usuario=$this->controller_reclamos->mostrar_reclamos($id);
-
-				$this->view_tabla_reclamos->tabla_peticiones($reclamos_usuario);//actualiza la tabla de peticiones que esta en un tpl aparte
-			}
 
 
-	public  function ver_reclamo_espesifico()
-				{
-					$id_usuario=$_SESSION['sesionUsuario'];
-					$id_reclamo=$_POST["id_reclamo"];
-					$datos_reclamo= $this->model_ver_reclamos->reclamo_espesifico($id_usuario,$id_reclamo);
-					//print_r($datos_reclamo);
-					$r=$datos_reclamo[0]["reclamo"];
-					$foto=$datos_reclamo[0]["foto_reclamo"];
-					$this->ver_modificar->ver_modificar($r,$foto);
-				}
+
 }
 
 

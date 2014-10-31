@@ -77,9 +77,9 @@
             </div>
   
                     <div class="intro-text text-left"   id="portfolio2">
-                        <span class="name">Error 404 "Not Found" </span>
+                        <span class="name">Error 404 "Not Found " </span>
                         <hr class="star-light">
-                        <span class="skills">Los datos ingresados no son correctos</span>
+                        <span class="skills">La dirección que solisito no existe!!.</span>
                     </div>
                      <div class="col-lg-12">
                  </div>

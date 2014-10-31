@@ -30,13 +30,23 @@ else
 		$inicio->visualizar_inicio();	
 	}
 
-else
+else 
  	if((array_key_exists('action', $_REQUEST)&&$_REQUEST['action']=='home')&&(isset($_SESSION['sesionUsuario'])))
 	{
 			include_once("./controller/ControllerUser.php");
 			$home= new ControllerUser();
 			$home->Home();
 	}	
+			/*Visualiza error si se intenta ingresar a la aplicacion via url sin loguearse primero */
+else 							
+ 	if((array_key_exists('action', $_REQUEST)&&$_REQUEST['action']=='home')&&(!isset($_SESSION['sesionUsuario'])))
+	{
+				Include_once("./controller/ControllerUser.php");
+				$error_no_puede_ingresar= new ControllerUser();
+				$error_no_puede_ingresar->error404();
+	}	
+
+
 else 
 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='cerrar_sesion')
 	{
@@ -48,18 +58,27 @@ else
 /*
 */
 else 
-	if((! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='ver_o_modificar')&&(isset($_SESSION['sesionUsuario'])))
+	if(( array_key_exists('action', $_REQUEST)&&$_REQUEST['action']=='ver_o_modificar')&&(isset($_SESSION['sesionUsuario'])))
+		{			
+				Include_once("./controller/controller_reclamos.php");
+				$ver_modificar_reclamo= new Controller_reclamos();
+				$ver_modificar_reclamo->ver_reclamo_espesifico();
+		}
+
+		/*Visualiza error si se intenta ingresar a la aplicacion via url sin loguearse primero */
+else 
+	if((array_key_exists('action', $_REQUEST)&&$_REQUEST['action']=='ver_o_modificar')&&(!isset($_SESSION['sesionUsuario'])))
 		{			
 				Include_once("./controller/ControllerUser.php");
-				$ver_modificar_reclamo= new ControllerUser();
-				$ver_modificar_reclamo->ver_reclamo_espesifico();
-		}	
+				$error_no_puede_ingresar= new ControllerUser();
+				$error_no_puede_ingresar->error404();
+		}
 
 else 
 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='reclamoNuevo')
 		{
-		Include_once("./controller/ControllerUser.php");
-		$reclamo= new ControllerUser();
+		Include_once("./controller/controller_reclamos.php");
+		$reclamo= new Controller_reclamos();
 		$reclamo->crear_reclamo();
 
 		}
