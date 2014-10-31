@@ -22,15 +22,9 @@ else
 		$reclamo= new controllerUser();
 		$reclamo->ver_reclamos();
 	}
+	
 else
-	 if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index')
-	{
-		include_once("./Controller/ControllerIndex.php");
-	 	$inicio= new controlador_index();
-		$inicio->visualizar_inicio();
-	}	
-else
-	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='cerrar_sesion')
+	if(array_key_exists('action', $_REQUEST)&&$_REQUEST['action']=='cerrar_sesion')
 	{
 		session_destroy();
 		include "./Controller/ControllerIndex.php";
@@ -40,14 +34,20 @@ else
 
 
 else
-	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='ver_reclamos')
+	if( array_key_exists('action', $_REQUEST)&&$_REQUEST['action']=='ver_reclamos')
 	{
 		include_once("./Controller/ControllerUser.php");
 	 	$reclamo= new controllerUser();
 		$reclamo->ver_reclamos();
 	}	
 
-
+else
+	 if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='index')
+	{
+		include_once("./Controller/ControllerIndex.php");
+	 	$inicio= new controlador_index();
+		$inicio->visualizar_inicio();
+	}
 
 
 	

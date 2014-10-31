@@ -146,7 +146,13 @@ private $model;
 						
 							 $this->model_registrarse->registrar($arr_registro);
 							 $this->view_registrado_exitoso->r_exitoso();
-					}
+					}else
+					   { 
+						   	include_once("./View/View_error_login.php");
+						    $error=new View_error_login();
+						    $mail_existente="El email ya fue usado para otra cuenta, ingrese otro o precione el  boton ingresar";
+						    $error->error_login($mail_existente);
+					   }
 
 
 			}
