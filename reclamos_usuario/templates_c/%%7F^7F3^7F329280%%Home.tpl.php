@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-28 04:54:26
+<?php /* Smarty version 2.6.27, created on 2014-10-31 02:44:26
          compiled from Home.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -52,7 +52,7 @@ unset($_smarty_tpl_vars);
             <li>
              <a  title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Modificar_perfil" ><i class="fa fa-cog"></i> Configurar perfil</a>
              </li>
-            <li><a ><i class="fa fa-picture-o"></i> Reclamos resueltos de la población</a></li>
+            <li><a ><i class="fa fa-picture-o"></i> Reclamos que ya se han resuelto de la población</a></li>
             <li><a href="#">Mis Reclamos Pendientes</a></li>
             <li><a href="#"><i class="fa fa-tty"></i> Contactos con Secretaría</a></li>
             <li><a  title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Manejo_del_reclamo_por_cada_area"> <i class="fa fa-code-fork"></i> Manejo del reclamo para cada area</a></li>
@@ -80,96 +80,15 @@ unset($_smarty_tpl_vars);
   
 
   <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">1</div>
-                                        <div>R.Actual</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">Ver R.Actual</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                        <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                      <i class="fa fa-envelope fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">2</div>
-                                        <div>Mensajes Nuevos</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">Ver Mensajes</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                       <i class="fa fa-gavel fa-5x"></i> 
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge"><?php echo $this->_tpl_vars['r_f']; ?>
-</div>
-                                        <div>Reclamos Finalizados</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">Ver R.Finalizados</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                                       <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                      <i class="fa fa-exclamation-triangle  fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge"><?php echo $this->_tpl_vars['r_p']; ?>
-</div>
-                                        <div>Reclam. Pendientes</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">Ver Pendientes</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+        <!--******************PANELES INFORMATIVOS*********************************** -->
+          <div id="div_paneles_informativos">
+              <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "Paneles_informativos.tpl", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
+          </div> 
+    <!--***********************FIN PANELES INFORMATIVOS ******************************-->               
   <div class="row">
                     <div class="col-lg-12 col-md-6">
                  <h4 class="page-header text-left"> <i class="fa fa-pencil fa-1x"></i>  Crear Nuevo R/P</h4>

@@ -31,7 +31,7 @@ else
 	}
 
 else
- 	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='home')
+ 	if((array_key_exists('action', $_REQUEST)&&$_REQUEST['action']=='home')&&(isset($_SESSION['sesionUsuario'])))
 	{
 			include_once("./controller/ControllerUser.php");
 			$home= new ControllerUser();
@@ -48,7 +48,7 @@ else
 /*
 */
 else 
-	if(! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='ver_o_modificar')
+	if((! array_key_exists('action', $_REQUEST)||$_REQUEST['action']=='ver_o_modificar')&&(isset($_SESSION['sesionUsuario'])))
 		{			
 				Include_once("./controller/ControllerUser.php");
 				$ver_modificar_reclamo= new ControllerUser();
@@ -63,6 +63,13 @@ else
 		$reclamo->crear_reclamo();
 
 		}
-
+else 
+	if(array_key_exists('action', $_REQUEST)&&$_REQUEST['action']=='actualizar_paneles')
+	{
+		include "./controller/controller_reclamos.php";
+	 	$home_Panel_reclamos= new Controller_reclamos();
+	 	$home_Panel_reclamos->Panel_reclamos();
+		
+	}
 
 ?>

@@ -57,19 +57,10 @@ $("#formLogin").submit(function()
  if(data == '<p id="error_login_p">Error,verifique que la contraseña y el email ingresados sean los correctos. </p>')
       $('#error_login_div').html(data);
    else{
-    
-  $(location).attr('href','index.php?action=home');  
+   $(location).attr('href','index.php?action=home');  
          // $('#Ingresar').modal('hide');
    
    }
-  //  $('#error_lo
-
-
-
-
-
-
-
    }
  })
   //  $('#error_login_div').text("Error,verifique que la contraseña y el email ingresados sean los correctos.");

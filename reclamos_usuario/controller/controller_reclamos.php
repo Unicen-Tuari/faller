@@ -10,6 +10,7 @@
 		     private $model_ver_reclamos;
 		     private $vista_home;
 		     private $vista_consulta;
+		     private $Vista_panel_reclamos;
 		     private $usuario;
 
 	    public function __construct()
@@ -17,11 +18,16 @@
          	/*************Archivos incluidos***********************/
          	//include("./Model/model_reclamos.php");
          	include_once("./View/Home_view.php");
+         	include_once("./View/Vista_panel_reclamos.php");
+
+
          	include_once("./Model/model_reclamos.php");
 
 
          	//$this->model_agregar_reclamo= new model_crear_reclamo();
          	$this->vista_home 			=	new View_Home();
+         	$this->Vista_panel_reclamos = 	new Vista_panel_reclamos();
+
          	$this->model_ver_reclamos	=	new model_ver_reclamos();
          	$this->vista_consulta		=	null;
          }
@@ -56,6 +62,7 @@
 				return $datos_reclamos;
 			}
 
+ 
 
 	public function reclamo_espesifico($usuario,$id_reclamo)
 					{
@@ -65,6 +72,7 @@
 
 	public function reclamo_finalizados($id_usuario)
 			{
+				
 				return $this->model_ver_reclamos->reclamo_pendientes($id_usuario);
 			}
 	public function reclamos_pendientes($id_usuario)
@@ -77,6 +85,16 @@
 			{
 
 			}
+
+	public 	function Panel_reclamos()
+		 	{
+		 		$arr_panel=array();
+		 		$id_usuario=$_SESSION['sesionUsuario'];
+		 		$arr_panel['finalizados']=$this->reclamo_finalizados($id_usuario);
+		 		$arr_panel['pendientes']=$this->reclamos_pendientes($id_usuario);
+		 		$this->Vista_panel_reclamos->visualizar_datos_panel($arr_panel);
+
+		 	}			
 
 
 		}      
