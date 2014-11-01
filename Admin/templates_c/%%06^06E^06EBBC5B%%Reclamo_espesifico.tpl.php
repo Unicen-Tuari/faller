@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-20 00:33:12
+<?php /* Smarty version 2.6.27, created on 2014-10-31 23:55:31
          compiled from Reclamo_espesifico.tpl */ ?>
 
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
@@ -104,7 +104,7 @@ unset($_smarty_tpl_vars);
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $this->_tpl_vars['usuario']; ?>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $this->_tpl_vars['user']; ?>
 <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
@@ -194,23 +194,28 @@ unset($_smarty_tpl_vars);
 
                                              </div>
                                     </div>
+                             <?php $_from = $this->_tpl_vars['data_reclaimer']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['reclaimer']):
+?> 
                                      <div class="col-lg-5 col-xs-8">
                                             <div class="col-xs-11">
-                                            Nombre y Apellido:
+                                            Nombre:<?php echo $this->_tpl_vars['reclaimer']['nombre']; ?>
+
                                            </div>
                                      </div>
                                      <div class="col-lg-5 col-xs-8">
                                             <div class="col-xs-11">
-                                              Direccion:
+                                             Apellido:<?php echo $this->_tpl_vars['reclaimer']['apellido']; ?>
+
+                                           </div>
+                                     </div>                                     
+                                     <div class="col-lg-5 col-xs-8">
+                                            <div class="col-xs-11">
+                                              Direccion:<?php echo $this->_tpl_vars['reclaimer']['direccion']; ?>
+
                                              </div>
-                                    </div>                            
-                                       <div class="col-lg-5 col-xs-8">
-                                        <div class="col-xs-12">
-                                          Estado del R/P: En Tramite
-                                         </div>
-                                </div>
-
-
+                                    </div>                           
+                            <?php endforeach; endif; unset($_from); ?>
                                  </div>   
 
                             </div>
@@ -241,18 +246,17 @@ unset($_smarty_tpl_vars);
             <li class="active"><a href="#profile" data-toggle="tab"><i class="glyphicon glyphicon-user "></i> </a></li>
        </ul>
         
+
+         <?php $_from = $this->_tpl_vars['data_claim']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['data_claim']):
+?>
         <div class="tab-content">
               <div class="tab-pane active" id="profile">
-                   
-                    <p><?php echo $this->_tpl_vars['dato_del_reclamo']; ?>
- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p><?php echo $this->_tpl_vars['data_claim']['reclamo']; ?>
+</p>
               </div>
         </div>  
+           <?php endforeach; endif; unset($_from); ?>
    </div>
  </div>
     <div class="col-lg-3 col-sm-1 placeholder offset3"  id="foto_reclamo">                        

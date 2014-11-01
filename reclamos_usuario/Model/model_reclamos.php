@@ -29,15 +29,6 @@ class model_ver_reclamos extends modelodb
 			}
 
 
-/*
-"SELECT *
-						 					FROM RECLAMO_REL rl JOIN SECTOR s 
-						 					ON(rl.id_sector=s.id_sector)
-						 					where rl.id_persona='$usuario'" );
-
-
-*/
-
 	public function reclamo_finalizados($id_usuario)
 			{
 			$r_f= $this->query("SELECT count(id_reclamo)
@@ -60,6 +51,8 @@ class model_ver_reclamos extends modelodb
 	
 	
 }
+
+
 
 class model_crear_reclamo extends modelodb
    {

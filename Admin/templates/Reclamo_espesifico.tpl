@@ -98,7 +98,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {$usuario}<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {$user}<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -186,23 +186,23 @@
 
                                              </div>
                                     </div>
+                             {foreach from=$data_reclaimer item=reclaimer} 
                                      <div class="col-lg-5 col-xs-8">
                                             <div class="col-xs-11">
-                                            Nombre y Apellido:
+                                            Nombre:{$reclaimer.nombre}
                                            </div>
                                      </div>
                                      <div class="col-lg-5 col-xs-8">
                                             <div class="col-xs-11">
-                                              Direccion:
+                                             Apellido:{$reclaimer.apellido}
+                                           </div>
+                                     </div>                                     
+                                     <div class="col-lg-5 col-xs-8">
+                                            <div class="col-xs-11">
+                                              Direccion:{$reclaimer.direccion}
                                              </div>
-                                    </div>                            
-                                       <div class="col-lg-5 col-xs-8">
-                                        <div class="col-xs-12">
-                                          Estado del R/P: En Tramite
-                                         </div>
-                                </div>
-
-
+                                    </div>                           
+                            {/foreach}
                                  </div>   
 
                             </div>
@@ -233,17 +233,14 @@
             <li class="active"><a href="#profile" data-toggle="tab"><i class="glyphicon glyphicon-user "></i> </a></li>
        </ul>
         
+
+         {foreach from=$data_claim item=data_claim}
         <div class="tab-content">
               <div class="tab-pane active" id="profile">
-                   
-                    <p>{$dato_del_reclamo} Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>{$data_claim.reclamo}</p>
               </div>
         </div>  
+           {/foreach}
    </div>
  </div>
     <div class="col-lg-3 col-sm-1 placeholder offset3"  id="foto_reclamo">                        
