@@ -27,7 +27,7 @@
               <tbody>
                 <tr>
                 {foreach from=$claims_sector item=info_sector}
-	                <td>{$info_sector.id_sector}</td>
+	                <td>{$info_sector.nombre_sector}</td>
 	                <td>{$info_sector.id_empleado}</td>	                
 	                <td>{$info_sector.estado_reclamo}</td>               
 	                <td>{$info_sector.fecha}</td>

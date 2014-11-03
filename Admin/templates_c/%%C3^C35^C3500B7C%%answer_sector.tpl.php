@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-11-03 04:00:36
+<?php /* Smarty version 2.6.27, created on 2014-11-03 15:54:54
          compiled from answer_sector.tpl */ ?>
              
         <div class="table-responsive">
@@ -31,7 +31,7 @@
                 <?php $_from = $this->_tpl_vars['claims_sector']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['info_sector']):
 ?>
-	                <td><?php echo $this->_tpl_vars['info_sector']['id_sector']; ?>
+	                <td><?php echo $this->_tpl_vars['info_sector']['nombre_sector']; ?>
 </td>
 	                <td><?php echo $this->_tpl_vars['info_sector']['id_empleado']; ?>
 </td>	                

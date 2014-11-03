@@ -319,6 +319,7 @@
                  <select class="form-control col-lg-6"  name="claim_selector_sector" id="reclamo_selector">
                     <option value="0"> Seleccione el área correspondiente</option>
                     <option value="1">Obras Públicas                     </option>
+                    <option value="2">Infraestructura                     </option>
                     <option value="3">Asfalto                              </option>
                     <option value="4">Intendente                           </option>
                     <option value="5">Luminaria                            </option>

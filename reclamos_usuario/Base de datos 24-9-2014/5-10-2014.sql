@@ -97,18 +97,6 @@ PRIMARY KEY         (id_accion,id_reclamo,id_empleado)
 
 
 
-CREATE TABLE GESTION_RECLAMO
-(
-id_gestion           	 integer 		not null auto_increment,	
-id_reclamo     			 integer		not null,
-id_empleado				 integer		not null,
-respuesta_al_reclamo     varchar(1000)  null,
-fecha_respuesta			 date        	null,
-ultima_vez_visto		 date      		null,
-CONSTRAINT			pk_ACCIONES_RECLAMO
-PRIMARY KEY         (id_accion,id_reclamo,id_empleado)     	
-)
-
 */
 
 CREATE TABLE SECTOR(
@@ -141,6 +129,7 @@ PRIMARY KEY         (id_empleado,id_sector)
 
 
 
+
 ALTER TABLE RECLAMO
 	ADD CONSTRAINT Fk_RECLAMO_REL_SECTOR
 	  FOREIGN KEY (id_sector)
@@ -156,10 +145,26 @@ ADD CONSTRAINT Fk_EMPLEADO_SECTOR
 	    REFERENCES SECTOR(id_sector)
 
 ;
+/*
+CREATE TABLE GESTION_RECLAMO
+(
+id_gestion           	 integer 		not null auto_increment,	
+id_reclamo     		 integer		not null,
+id_empleado		 integer		not null,
+respuesta_al_reclamo     varchar(1000)          null,
+fecha_respuesta			 date        	null,
+ultima_vez_visto		 date           null,
+CONSTRAINT			pk_GESTION_RECLAMO
+PRIMARY KEY         (id_gestion,id_reclamo,id_empleado)     	
+)
+
+ALTER TABLE GESTION_RECLAMO
+	ADD CONSTRAINT Fk_GESTION_R_Y_RECLAMO
+	  FOREIGN KEY (id_reclamo,id_empleado)
+	    REFERENCES RECLAMO(id_reclamo,id_empleado);
 
 
-
-
+*/
 /************************************************fin insertar persona******************************************************/
 INSERT INTO USUARIO( nombre,
 					 apellido,dni_persona,fecha_nacimiento,direccion, celular,Telefono_fijo, email, password,fecha_registro)
@@ -186,14 +191,14 @@ INSERT INTO SECTOR ( nombre_sector, jefe_s,lista_predefinida,sector_raiz,clave) 
 /*INSERT INTO RECLAMO_REL (id_reclamo, id_persona, id_sector, fecha, resumen_sector, area_actual, area_ya_paso, estado_reclamo, reclamo,foto_reclamo) VALUES(2,2,2,'12/12/2009','SDSD',2,2,'en tramite','hola pololla',"lala");/*
 /*INSERT INTO RECLAMO_REL (id_reclamo, id_persona, id_sector, fecha, resumen_sector, area_actual, area_ya_paso, estado_reclamo, reclamo)
  				  VALUES(:id_reclamo, :id_persona, :id_sector, :fecha, :resumen_sector, :area_actual, :area_ya_paso, :estado_reclamo, reclamo);
-*/
+*/_person_to_respond',$id_sector, '$id_e
 
 
 /************************************************insertar Empleado******************************************************/
 
 INSERT INTO EMPLEADO(id_sector, dni_empleado, jefe_s, nombre,
  apellido, email, puesto_espesifico, clave )
-VALUES(1,3888888,'','empleadoobras', 'peralta', 'carlos@gmail.com', 'arquitecto', '123');
+VALUES(1,3888888,'','fran', 'peralta', 'carlos@gmail.com', 'arquitecto', '123');
 
 INSERT INTO EMPLEADO(id_sector, dni_empleado, jefe_s, nombre,
  apellido, email, puesto_espesifico, clave )

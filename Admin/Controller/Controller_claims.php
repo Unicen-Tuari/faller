@@ -58,7 +58,6 @@ class Controller_claims
 				$claims= $this->get_claims($_SESSION['Sector'],$filter);
 
 				if($filter==null) {
-
 					$this->View_claims->claims($claims,$user);
 				}else
 					{ 
