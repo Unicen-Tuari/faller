@@ -130,44 +130,11 @@
     </div>
 
 
-
+<!--TABLE ANSWER SECTOR-->
 <div class="col-lg-12 col-sm-1 placeholder offset3 cuadro_del_reclamo" id="cuadro_respuesta_sector">   
-<div class="row">
-    <div class="container col-lg-12">
-        <ul class="nav nav-tabs" id="myTab">
-          <li><a href="#messages" data-toggle="tab">Sector 1 (Raiz)</a></li>
-          <li><a href="#settings" data-toggle="tab">Sector 2</a></li>
-          <li><a href="#settings" data-toggle="tab">Sector 3</a></li>
-          <li><a href="#settings" data-toggle="tab">Sector 4</a></li>
-
-        </ul>
-        
-       <div class="tab-content">
-              <div class="tab-pane active" id="profile">
-                <h4><i class="glyphicon glyphicon-user"></i></h4>
-                Lorem profile dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-                <p>Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-                  Aliquam in felis sit amet augue.</p>
-              </div>
-              <div class="tab-pane" id="messages">
-                <h4><i class="glyphicon glyphicon-comment"></i></h4>
-                Message ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-                <p>Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-                  Aliquam in felis sit amet augue.</p>
-              </div>
-              <div class="tab-pane" id="settings">
-                <h4><i class="glyphicon glyphicon-cog"></i></h4>
-                Lorem settings dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-                <p>Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-                  Aliquam in felis sit amet augue.</p>
-              </div>
-       </div>
-  </div>
+    {include file="answer_sector.tpl" }
 </div>
-</div>
+<!--END TABLE ANSWER SECTOR-->
 
 <div class="col-lg-11">
   <hr>

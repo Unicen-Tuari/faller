@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-26 21:28:23
+<?php /* Smarty version 2.6.27, created on 2014-11-03 05:44:20
          compiled from tablapeticiones.tpl */ ?>
           <div class="table-responsive">
             <table class="table table-striped table-hover">
@@ -24,7 +24,7 @@
 </td>
                   <td><?php echo $this->_tpl_vars['i']['sector_raiz']; ?>
 </td>
-                  <td><?php echo $this->_tpl_vars['i']['area_actual']; ?>
+                  <td><?php echo $this->_tpl_vars['i']['delegacion']; ?>
 </td>
                   <td><?php echo $this->_tpl_vars['i']['estado_reclamo']; ?>
 </td>

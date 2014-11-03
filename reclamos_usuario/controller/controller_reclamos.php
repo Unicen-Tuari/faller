@@ -8,6 +8,8 @@
 
 		     private $model_crear_reclamo;
 		     private $model_ver_reclamos;
+		     private $Model_get_answer_claims_setors;
+
 
 		     private $ver_modificar;
 			 private $view_tabla_reclamos;
@@ -23,14 +25,15 @@
 			include_once("./View/View_tabla_peticiones.php");
 			include_once("./View/View_ver_modificar.php");
 
-
+		include_once("./Model/Model_get_answer_claims_setors.php");
          	include_once("./Model/model_reclamos.php");
 			
 			$this->ver_modificar 		= 	new view_ver_modificar();
 			$this->view_tabla_reclamos	= 	new view_tabla_peticiones();
          	$this->vista_home 			=	new View_Home();
          	$this->Vista_panel_reclamos = 	new Vista_panel_reclamos();
-
+		
+			$this->Model_get_answer_claims_setors= new Model_get_answer_claims_setors();
          	$this->model_crear_reclamo= new model_crear_reclamo();
          	$this->model_ver_reclamos	=	new model_ver_reclamos();
          	
@@ -70,22 +73,14 @@
 			{
 				$arr_datos_reclamos=array();
 				$datos_reclamos=$this->model_ver_reclamos->ver_reclamo($usuario);
-				//$arr_datos_reclamos['datos'][]		=$datos_del_reclamo		=$this	->model_ver_reclamos	->ver_reclamo($usuario);
-				/*$arr_datos_reclamos['finalizados'][]	=$reclamos_finalizados	=$this	->model_ver_reclamos	->reclamo_finalizados($usuario);
-				$arr_datos_reclamos['pendientes'][]	=$reclamos_pendientes	=$this	->model_ver_reclamos	->reclamo_pendientes($usuario);
-
-				if(!$arr_datos_reclamos['finalizados'])
-						{
-							$arr_datos_reclamos['finalizados']=0;
-						}
-				if(!$arr_datos_reclamos['pendientes'])
-						{
-							$arr_datos_reclamos['pendientes']=0;
-						}
-				*/
 				return $datos_reclamos;
 			}
 
+
+	public function get_respond_claims_setors($id_claim)
+			{
+					return $this->Model_get_answer_claims_setors->get_answer_setors($id_claim);
+			}		
 
 	public  function ver_reclamo_espesifico()
 				{
@@ -95,7 +90,8 @@
 					//print_r($datos_reclamo);
 					$r=$datos_reclamo[0]["reclamo"];
 					$foto=$datos_reclamo[0]["foto_reclamo"];
-					$this->ver_modificar->ver_modificar($r,$foto);
+					$answer_sectores=$this->get_respond_claims_setors($id_reclamo);
+					$this->ver_modificar->ver_modificar($r,$foto,$answer_sectores);
 				}
  
 

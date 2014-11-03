@@ -11,7 +11,8 @@ class model_ver_reclamos extends modelodb
 
 						return $this->query("SELECT *
 						 					FROM RECLAMO 
-						 					where id_persona='$id_usuario'"
+						 					where id_persona='$id_usuario'
+						 					AND sector_raiz is not null"
 						 					 );
 
 

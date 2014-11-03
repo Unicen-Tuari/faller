@@ -17,7 +17,7 @@
                   <td>{$i.id_reclamo}</td>
                   <td>{$i.fecha}</td>
                   <td>{$i.sector_raiz}</td>
-                  <td>{$i.area_actual}</td>
+                  <td>{$i.delegacion}</td>
                   <td>{$i.estado_reclamo}</td>
                   <td>
                       <form  action="index.php?action=ver_o_modificar" method="post">
