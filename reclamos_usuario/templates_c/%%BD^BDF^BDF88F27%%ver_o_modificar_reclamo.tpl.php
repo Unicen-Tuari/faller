@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-26 22:02:56
+<?php /* Smarty version 2.6.27, created on 2014-11-01 02:11:27
          compiled from ver_o_modificar_reclamo.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -303,8 +303,7 @@ unset($_smarty_tpl_vars);
 '>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>

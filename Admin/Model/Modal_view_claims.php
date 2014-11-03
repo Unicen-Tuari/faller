@@ -67,7 +67,8 @@ class Modal_view_claims extends modelodb
 
 				return $this->query("SELECT *
 									FROM RECLAMO
-									WHERE id_reclamo='$id_claim'
+									WHERE id_reclamo='$id_claim' 
+									AND sector_raiz IS NOT NULL
 								 	");
 			
 			}

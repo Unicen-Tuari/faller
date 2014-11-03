@@ -87,60 +87,12 @@ class model_crear_reclamo extends modelodb
 			$fecha=date("y/m/d");
 
 			$reclamo=$Rec;
-			//Consulta - Parametros Posicionales
-			/*
-			INSERT INTO RECLAMO_REL (id_reclamo, id_persona, id_sector, id_empleado, sector_raiz, fecha, resumen_sector, area_actual, area_ya_paso, estado_reclamo, reclamo,foto_reclamo) 
-			VALUES(2, 37198, 2, 37198533, '','2009/12/12-','SDSD',2,2,'en tramite','hola pololla','lala');
-			*/
+
+			$this->query(
+					"INSERT INTO RECLAMO( id_persona, id_sector, id_empleado, sector_raiz, fecha, areas_que_ya_ha_pasado, estado_reclamo, reclamo,foto_reclamo) 
+					VALUES( '$id_pers', $sector_seleccionado, null, '$sector_seleccionado','$fecha',2,'No visto','$reclamo','$foto_del_reclamo')");
 
 
-			$sql = "INSERT INTO RECLAMO 
-						(	 id_persona				,
-							 id_sector 				,
-							 id_empleado			,
-							 sector_raiz			,
-							 fecha					, 
-							 resumen_sector			,
-							 area_actual			,
-							 areas_que_ya_ha_pasado	,
-							 estado_reclamo			,
-							 reclamo				,				 
-							 foto_reclamo
-						)
-				VALUES(
-							 :id_persona			,				
-			 				 :id_sector				,
-			 				 :id_empleado			,
-			 				 :sector_raiz			,
-			 				 :fecha					, 
-			 				 :resumen_sector		,
-			 				 :area_actual			,
-			 				 :areas_que_ya_ha_pasado, 
-			 				 :estado_reclamo		, 
-			 				 :reclamo				, 
-			 				 :foto_reclamo
-			 			)";
-
-
-			$q=$this->connection(); 
-			$preparado=$q->prepare($sql);
-
-			$preparado->execute(
-								array
-									(
-									 ':id_persona'				=>$id_pers			,				
-					 				 ':id_sector'				=>$sector_seleccionado,
-					 				 ':id_empleado'				=>null				,
-					 				 ':sector_raiz'				=>$sector_raiz		,
-					 				 ':fecha'					=>$fecha		    , 
-					 				 ':resumen_sector'			=>"ss"				,
-					 				 ':area_actual'				=>2					,
-					 				 ':areas_que_ya_ha_pasado'	=>2					, 
-					 			   	 ':estado_reclamo'			=>"No visto"		, 
-					 				 ':reclamo'					=>$reclamo      	, 
-					 				 ':foto_reclamo'			=>$foto_del_reclamo
-					 				 )
-								);
 
 		}
 }

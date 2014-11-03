@@ -32,6 +32,7 @@ email          		varchar(100) not null,
 celular        		integer      not null,
 telefono_fijo  		integer          null,
 direccion      		varchar(100) not null,
+/*foto_perfil      	varchar(100) not null,*/
 password       		varchar(100) not null,
 fecha_registro 		date 		not null,
 CONSTRAINT     		PK_persona
@@ -50,16 +51,16 @@ VALUES(2, 37198, 2, 37198533, '','2009/12/12-','SDSD',2,2,'en tramite','hola pol
 CREATE TABLE RECLAMO(
 id_reclamo     		integer			not null auto_increment,/*clave principal que se tiene que autoincrementar*/
 id_persona			integer 		not null,
-id_sector			 integer	not null,/*es integer*/
-id_empleado			integer 		    null,  /*no se tiene en cuenta en el sitema actua*/
-sector_raiz         varchar(50)         null,
-fecha				date 			 null,
-resumen_sector      varchar(1000)	not null,
-area_actual         integer			not null,
-areas_que_ya_ha_pasado	integer 		not null,
+id_sector			 integer		null,/*es integer*/
+id_empleado			integer 		null,  /*no se tiene en cuenta en el sitema actua*/
+sector_raiz         varchar(50)     null,
+fecha				date 			null,
+respuesta_sector      varchar(1000)	null,
+delegacion         	integer			null,
+areas_que_ya_ha_pasado	integer 	not null,
 estado_reclamo      varchar(20) 	not null,
 reclamo             varchar(1000)	not null,
-foto_reclamo        varchar(500)	not null,
+foto_reclamo        varchar(500)	null,
 CONSTRAINT			pk_RECLAMO_REL
 PRIMARY KEY         (id_reclamo,id_persona,id_sector)
 );
@@ -94,10 +95,21 @@ PRIMARY KEY         (id_accion,id_reclamo,id_empleado)
 
 
 
+
+
+CREATE TABLE GESTION_RECLAMO
+(
+id_gestion           	 integer 		not null auto_increment,	
+id_reclamo     			 integer		not null,
+id_empleado				 integer		not null,
+respuesta_al_reclamo     varchar(1000)  null,
+fecha_respuesta			 date        	null,
+ultima_vez_visto		 date      		null,
+CONSTRAINT			pk_ACCIONES_RECLAMO
+PRIMARY KEY         (id_accion,id_reclamo,id_empleado)     	
+)
+
 */
-
-
-
 
 CREATE TABLE SECTOR(
 id_sector			integer  not null auto_increment,/*clave principal que se tiene que autoincrementar*/
@@ -151,7 +163,7 @@ ADD CONSTRAINT Fk_EMPLEADO_SECTOR
 /************************************************fin insertar persona******************************************************/
 INSERT INTO USUARIO( nombre,
 					 apellido,dni_persona,fecha_nacimiento,direccion, celular,Telefono_fijo, email, password,fecha_registro)
-					VALUES( 'Franco', 'Aller', 37198,'2001/07/22',
+					VALUES( 'Franco', 'Aller', $2a$07$/A14AB3A8CFA.5202CGC8.BAVu25DdkjFn3NPYuXhkvcKwxdGaCp2,'2001/07/22',
 			 				 '4 de Abril', 2284588180,'', 'franco.e.aller@gmail.com','fran','2020/07/22');
 	
 
@@ -192,7 +204,7 @@ VALUES(2,3888888,'','empleadoinfraestructura', 'peralta', 'carlos@gmail.com', 'a
 
 /************************************************fin insertar reclamo******************************************************/
 INSERT INTO RECLAMO( id_persona, id_sector, id_empleado, sector_raiz, fecha, resumen_sector, area_actual, areas_que_ya_ha_pasado, estado_reclamo, reclamo,foto_reclamo) 
-VALUES( 1, 2, null, '38888888','2009/07/03','SDSD',2,2,'en tramite','hola pololla',"lala");
+VALUES( 1, 2, null, '38888888','2009/07/03','SDSD',2,2,'en tramite','hola pololla','lala');
 
 /*
 INSERT INTO EMPLEADO(id_sector, dni_empleado, jefe_s, nombre, apellido, email, puesto_espesifico, clave )

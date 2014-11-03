@@ -18,10 +18,20 @@ if 	(isset($_POST['Nombre_login']))
 else
 	if (isset($_POST['filtro'])) //tine que haber un input oculto con este nombre
 	{
+
 		include_once("./Controller/Controller_claims.php");
 	 	$claims= new Controller_claims();
 		$claims->view_claims();
 	}
+else
+	if 	(isset($_POST['id_claim_to_respond']))
+	{
+		include_once("./Controller/Controller_claims.php");
+	 	$claims= new Controller_claims();
+		$claims->respond_claims();
+	}
+
+	
 	
 else
 	if(array_key_exists('action', $_REQUEST)&&$_REQUEST['action']=='cerrar_sesion')
@@ -47,6 +57,7 @@ else
 	 	$claims= new Controller_claims();
 		$claims->view_claims_especific();
 	}
+
 
 			/*ULTIMA ACCION */
 else

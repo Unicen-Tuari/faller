@@ -7,7 +7,7 @@
 	private $user = 'root';
 	private $pass = "";
 	private $host = 'localhost';
-	private $db = 'MIGRACION';
+	private $db = 'Reclamos';
 	protected $conn = null;
 	
 	

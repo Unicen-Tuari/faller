@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-31 23:55:31
+<?php /* Smarty version 2.6.27, created on 2014-11-03 03:58:03
          compiled from Reclamo_espesifico.tpl */ ?>
 
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
@@ -176,46 +176,62 @@ unset($_smarty_tpl_vars);
                 <!-- /.row en blanco-->
                 <!-- /.row -->
 
-<h4 class="page-header">Informacion de Usuario.</h4>
+<h4 class="page-header">Informacion del Reclamador.</h4>
                 <!-- /.row -->
 
                 <div class="row">
-                    <div class="col-lg-7 col-md-6">
+                    <div class="col-lg-12 col-md-6">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                               
 
                                 <div class="row">
-                               
-                                     <div class="col-xs-7">
-                                            <div class="col-xs-8">
-                                                            <img  class=" thumbnail col-lg-12" src='./imagenes/<?php echo $this->_tpl_vars['foto_reclamo']; ?>
+                               <?php $_from = $this->_tpl_vars['data_reclaimer']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['reclaimer']):
+?> 
+                                     <div class="col-lg-3  col-xs-7">
+                                            <div class=" col-lg-12 col-xs-8 ">
+                                               <img data-toggle="modal" data-target="#foto_perfil_modal"  class=" thumbnail  col-lg-12" src='./imagenes/<?php echo $this->_tpl_vars['reclaimer']['foto_perfil']; ?>
 '>
 
                                              </div>
                                     </div>
-                             <?php $_from = $this->_tpl_vars['data_reclaimer']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
-    foreach ($_from as $this->_tpl_vars['reclaimer']):
-?> 
-                                     <div class="col-lg-5 col-xs-8">
-                                            <div class="col-xs-11">
-                                            Nombre:<?php echo $this->_tpl_vars['reclaimer']['nombre']; ?>
+                             
+                                     <div class="col-lg-6 col-xs-8">
+                                            <div class="col-xs-11"  style="margin-top:3em;">
+                                            Nombre: <?php echo $this->_tpl_vars['reclaimer']['nombre']; ?>
 
                                            </div>
                                      </div>
-                                     <div class="col-lg-5 col-xs-8">
+                                     <div class="col-lg-6 col-xs-8">
                                             <div class="col-xs-11">
-                                             Apellido:<?php echo $this->_tpl_vars['reclaimer']['apellido']; ?>
+                                             Apellido: <?php echo $this->_tpl_vars['reclaimer']['apellido']; ?>
 
                                            </div>
                                      </div>                                     
-                                     <div class="col-lg-5 col-xs-8">
+                                     <div class="col-lg-6 col-xs-8">
                                             <div class="col-xs-11">
-                                              Direccion:<?php echo $this->_tpl_vars['reclaimer']['direccion']; ?>
+                                              Direccion: <?php echo $this->_tpl_vars['reclaimer']['direccion']; ?>
 
                                              </div>
-                                    </div>                           
-                            <?php endforeach; endif; unset($_from); ?>
+                                    </div>
+                                     <div class="col-lg-6 col-xs-8">
+                                            <div class="col-xs-11">
+                                              Celular: <?php echo $this->_tpl_vars['reclaimer']['celular']; ?>
+
+                                             </div>
+                                    </div>  
+
+                                     <div class="col-lg-9 col-xs-8">
+                                        <button class="btn btn-default col-lg-12" style="margin-top:3.8em;">
+                                            Ver mas detalles del reclamador.
+                                        </button>
+                                    </div> 
+
+
+  <?php endforeach; endif; unset($_from); ?>
+
+                        
                                  </div>   
 
                             </div>
@@ -248,32 +264,159 @@ unset($_smarty_tpl_vars);
         
 
          <?php $_from = $this->_tpl_vars['data_claim']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
-    foreach ($_from as $this->_tpl_vars['data_claim']):
+    foreach ($_from as $this->_tpl_vars['claim']):
 ?>
         <div class="tab-content">
               <div class="tab-pane active" id="profile">
-                    <p><?php echo $this->_tpl_vars['data_claim']['reclamo']; ?>
+                    <p><?php echo $this->_tpl_vars['claim']['reclamo']; ?>
 </p>
               </div>
         </div>  
-           <?php endforeach; endif; unset($_from); ?>
+          
    </div>
  </div>
-    <div class="col-lg-3 col-sm-1 placeholder offset3"  id="foto_reclamo">                        
-            <img  class=" thumbnail col-lg-12" src='./imagenes/<?php echo $this->_tpl_vars['foto_reclamo']; ?>
+    <div class="col-lg-3 col-sm-1 placeholder offset3"  data-toggle="modal" data-target="#foto_reclamo_modal" id="foto_reclamo">                        
+            <img  class=" thumbnail col-lg-12" src='<?php echo $this->_tpl_vars['claim']['foto_reclamo']; ?>
 '>
     </div> 
 
- </div>
+ </div>   
 
     </div>
-  
+
+     <div class="row">
+         <div class="container-fluid col-lg-12 col-md-6"  >
+            <div class="col-lg-12 col-md-6">
+                 <h4 class="page-header text-left"> <i class="fa fa-angle-double-right fa-1x"></i>  Respuesta de los sectores:</h4>
+            </div>
+        <div class="col-lg-12 col-md-6">
+
+
+        <!--*********TABLA RESPOND_SECTOR.TPL****************-->
+         <div class="col-lg-12" id="respond_of_the_sector">
+           <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "answer_sector.tpl", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>          
+        
+        </div>  
+          <!--*********FIN TABLA RESPOND_SECTOR.TPL****************-->
+
+        </div>  
+
+        <form class="form-horizontal "   method="POST" id="" action="index.php" >
+          <!--input oculto para enviar el id del reclamo-->
+        <input type="hidden" name="id_claim_to_respond"     value="<?php echo $this->_tpl_vars['claim']['id_reclamo']; ?>
+">
+        <input type="hidden" name="id_person_to_respond"    value="<?php echo $this->_tpl_vars['claim']['id_persona']; ?>
+">
+
+        
+    <?php endforeach; endif; unset($_from); ?>
+         <div class="col-lg-12 col-md-6">
+                 <h4 class="page-header text-left"> <i class="fa fa-angle-double-right fa-1x"></i>  Mi Respuesta al reclamo:</h4>
+         </div>
+         <div class="col-xs-9 col-lg-4">
+              <select class="form-control " name="selector_state" id="" >
+                        <option >ELIJA UN ESTADO</option>
+                        <option value="Aceptado"    > Aceptado</option>
+                        <option value="Aplazado"    >Aplazado</option>
+                        <option value="Rechazado"   >Rechazado</option>
+                        <option value="Sujeto a inspeccion" >Sujeto a inspeccion</option>
+                        <option value="Verificado"  >Verificado</option>
+                        <option value="dp"  >Verificando.exist.partida presupuest.</option>
+                        <option value="Finalizado"  >Finalizado</option>
+
+             </select>
+        </div>
+         <div class="col-xs-9 col-lg-3">
+                  <input type="file" class="btn " name="documento_pre_hecho" id="document" data-buttonName="btn-primary" >
+        </div>
+         <textarea class="form-control" rows="8" colums="10" name="respond_claim_text" id="reclamo_texto" ></textarea>
+
+        <div class="col-lg-12 col-md-6">
+                 <h4 class="page-header text-left"> <i class="fa fa-angle-double-right fa-1x"></i> Redirigir al siguiente sector:</h4>
+         </div>
+
+
+                 <select class="form-control col-lg-6"  name="claim_selector_sector" id="reclamo_selector">
+                    <option value="0"> Seleccione el área correspondiente</option>
+                    <option value="1">Obras Públicas                     </option>
+                    <option value="3">Asfalto                              </option>
+                    <option value="4">Intendente                           </option>
+                    <option value="5">Luminaria                            </option>
+                    <option value="6">Arboleda                             </option>
+                    <option value="7">Cloacas                              </option>
+                    <option value="8">Gas                                  </option>
+                    <option value="9">Basura                               </option>
+                 </select>
+                
+
+              
+                <textarea class="form-control" rows="8" colums="10" name="sector_text" id="reclamo_texto" ></textarea>
+    
+                <div class="col-lg-3 col-lg-offset 0">
+                    <p class="btn btn-default" id="b-borrar_txt"><i class="fa fa-trash" ></i> Borrar</p>
+                   <button type="submit" id="b-submit" class="btn button-Mi-Estilo"  ><i class="fa fa-arrow-circle-right"></i> Enviar</button>
+
+               </div>
+
+ 
+            </form>
+         </div>
+      </div>
                     </div>
                 </div>
                 <!-- /.row -->
 
             </div>
             <!-- /.container-fluid -->
+
+
+             <!-- Modal foto del reclamo -->
+
+<div class="modal fade" id="foto_reclamo_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Foto ingresada del reclamo</h4>
+      </div>
+      <?php $_from = $this->_tpl_vars['data_claim']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['data_claim']):
+?>
+      <div class="modal-body">
+           <img  class=" thumbnail col-lg-12" src='<?php echo $this->_tpl_vars['data_claim']['foto_reclamo']; ?>
+'>
+      </div>
+       <?php endforeach; endif; unset($_from); ?>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+             <!-- Modal foto de perfil del reclamante -->
+
+<div class="modal fade" id="foto_perfil_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Foto ingresada del reclamo</h4>
+      </div>
+      <div class="modal-body">
+           <img  class=" thumbnail col-lg-12" src=''>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   
 
