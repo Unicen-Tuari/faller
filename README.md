@@ -26,8 +26,7 @@ Comentar reclamo
 Cambiar estado al reclamo
 Cada cambio de estado envía un mail al usuario que creó el reclamo. Con link al reclamo.
 
-Usuario
-Administrar perfil.
+Gestionar empleados .
 
 Registrasción
 Login
