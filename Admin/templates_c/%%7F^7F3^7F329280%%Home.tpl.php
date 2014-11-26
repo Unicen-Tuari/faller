@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-26 16:59:12
+<?php /* Smarty version 2.6.27, created on 2014-11-15 18:24:08
          compiled from Home.tpl */ ?>
 
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
@@ -353,16 +353,16 @@ unset($_smarty_tpl_vars);
                             <div class="small-box bg-maroon">
                                 <div class="inner">
                                     <h3>
-                                        160
+                                        1
                                     </h3>
                                     <p>
-                                        nada por ahora
+                                       Nuevos Empleados
                                     </p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-ios7-pricetag-outline"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">
+                                <a href="index.php?action=View_employers" class="small-box-footer">
                                     More info <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>

@@ -61,6 +61,7 @@ private $model;
 						//le estoy pasando el id por referencia
 	public function Home()//datos home es informacion de una consulta 
 			{
+				$_SESSION['view_reclaim_espesific']="dont already";
 				$id_usuario=$_SESSION['sesionUsuario'];
 				$email=$_SESSION['emailUsuario'];
 				$reclamos_usuario=$this->controller_reclamos->mostrar_reclamos($id_usuario);
@@ -77,13 +78,7 @@ private $model;
 				$error= new error_404();
 				$error->pagina_error();
 			}
-
-
-	public function login()
-			{
-				
-
-			function crypt_blowfish_bydinvaders($contraseña, $digito = 7)
+	public function crypt_blowfish_bydinvaders($contraseña, $digito = 7)
 				{
 					$set_salt = './1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 					$salt = sprintf('$2a$%02d$', $digito);
@@ -93,27 +88,99 @@ private $model;
 						}
 					return crypt($contraseña, $salt);
 				}
+	public function login()
+			{
+				
 								/*datos del form login*/
 				
-				$email= $_POST['email_login'];	 
-				$contraseña=$_POST['pass_login'];
+				$email= $_REQUEST['email_login'];	 
+				$contraseña=$_REQUEST['pass_login'];
 				$ar_datos_usuario=$this->comprobar_existencia_usuario($email);/*choca los 2 capos contra la base*/
-
+			
+				$html="";
 				if( crypt($contraseña, $ar_datos_usuario['pass']) == $ar_datos_usuario['pass'])
 					{
 
 						$_SESSION['sesionUsuario']=$ar_datos_usuario['id'];
-						$_SESSION['emailUsuario']=$_POST['email_login'];	
-				    	$this->Home();//le pasa los datos a la funcion home definida en este controlador
+						$_SESSION['emailUsuario']=$_REQUEST['email_login'];	
+
+				    	//$this->Home();//le pasa los datos a la funcion home definida en este controlador
+						$respuesta_ajax = TRUE;
 					}
 				else
 				   { 
 				   	include_once("./View/View_error_login.php");
 				    $error=new View_error_login();
-				    $error->error_login();
+
+				    $html = $error->error_login();
+
+				    $respuesta_ajax = FALSE;
+
 				   }
+
+				    echo json_encode(
+				    	array(
+				    		'respuesta_ajax'=>$respuesta_ajax,
+				    		'html'=>$html,
+				    	)
+				   	);
+
+				   	exit();
+
 			}
 
+public function login_reclaim_email()
+			{
+				
+								/*datos del form login*/
+				$person_of_reclaim=$_REQUEST['id_person_of_reclaim'];	 
+				$email= $_REQUEST['email_login'];	 
+				$contraseña=$_REQUEST['pass_login'];
+				$ar_datos_usuario=$this->comprobar_existencia_usuario($email);/*choca los 2 capos contra la base*/
+			$html="";
+			$retorna_home=false;
+			$retorna_reclamo=false;
+				if( crypt($contraseña, $ar_datos_usuario['pass']) == $ar_datos_usuario['pass'])
+					{
+
+						$_SESSION['sesionUsuario']=$ar_datos_usuario['id'];
+						$_SESSION['emailUsuario']=$_REQUEST['email_login'];	
+						if ($person_of_reclaim==$_SESSION['emailUsuario'])
+							{
+
+								$retorna_reclamo= TRUE;
+
+							}
+							else
+								{			
+									$retorna_home=TRUE;
+								}
+				    	//$this->Home();//le pasa los datos a la funcion home definida en este controlador
+					}
+				else
+				   { 
+				   	include_once("./View/View_error_login.php");
+				    $error=new View_error_login();
+
+				    $html = $error->error_login();
+
+				    $retorna_reclamo = FALSE;
+				    $retorna_home=FALSE;
+
+				   }
+
+				    echo json_encode(
+				    	array(
+				    		'retorna_home'=>$retorna_home,
+				    		'html'=>$html,
+				    		'retorna_reclamo'=>$retorna_reclamo,
+				    		
+				    	)
+				   	);
+
+				   	exit();
+
+			}
 
 	public function registrarse()
 			{

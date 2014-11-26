@@ -11,7 +11,7 @@ Class Model_comprobar_existencia_usuario extends modelodb
 	{
 
 		return $this->query(
-							"SELECT dni_empleado
+							"SELECT id_empleado,jefe_s,activo
 							 FROM 	EMPLEADO
 							 WHERE 	id_sector	= '$sector' 
 							 AND 	clave 		='$clave' 

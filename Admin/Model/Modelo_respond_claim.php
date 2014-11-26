@@ -25,8 +25,7 @@ class Modelo_respond_claim extends modelodb
 
 					$id_sector=$data_respond['id_sector'];		
 
-					$id_employ=$data_respond['id_employ']; 		
-					
+					$id_emp=$data_respond['id_employ']; 
 
 
 					$state=$data_respond['state'];
@@ -41,18 +40,16 @@ class Modelo_respond_claim extends modelodb
 
 
 					$fecha=date("y/m/d");
-			$this->query("INSERT INTO RECLAMO(id_reclamo,id_persona, id_sector, id_empleado, fecha, respuesta_sector, areas_que_ya_ha_pasado, estado_reclamo, reclamo,foto_reclamo) 
-						VALUES('$id_claim','$id_person_to_respond',$sector, '$id_employ','$fecha','Aun no ha sido visto por este sector',2,'No Visto','el original','Sin foto')");
+
+			$this->query("INSERT INTO GESTION_RECLAMO(id_reclamo,id_empleado,id_sector,estado_reclamo,respuesta_al_reclamo) 
+						VALUES('$id_claim','$id_emp','$id_sector','$state','$respond')");
 
 
 					$this->query("UPDATE  RECLAMO
 								SET      estado_reclamo='$state' , delegacion='$sector'
-								WHERE    id_reclamo='$id_claim' AND  sector_raiz is not null");
+								WHERE    id_reclamo='$id_claim'");
 
-					
-					$this->query("UPDATE  RECLAMO
-								SET      respuesta_sector='$respond', estado_reclamo='$state'
-								WHERE    id_reclamo='$id_claim' AND  id_sector='$id_sector'");
+				
 
 
 				}

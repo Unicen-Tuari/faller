@@ -15,13 +15,9 @@
           <link href="css/font-awesome.css" rel="stylesheet">
           <link href="css/font-awesome.min.css" rel="stylesheet">
                     <!--FIN CSS ICONOS-->
+         <link href="css/Cuadro_texto_reclacmo.css" rel="stylesheet">
+        <link href="css/foto_portada_index.css" rel="stylesheet">
 
-   <link href="css/Cuadro_texto_reclacmo.css" rel="stylesheet">
-
-<link href="css/foto_portada_index.css" rel="stylesheet">
-
-
-    
         <!--FIN clase del registrar y loguear del index-->
 
 

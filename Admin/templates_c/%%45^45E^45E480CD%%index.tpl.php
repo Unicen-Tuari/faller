@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-13 20:03:57
+<?php /* Smarty version 2.6.27, created on 2014-11-25 16:23:44
          compiled from index.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -109,6 +109,103 @@ unset($_smarty_tpl_vars);
 <!--*************************************************************************************-->
 <!--*************************************************************************************-->
 
+
+                                          <!-- Modal Registrarse -->
+
+
+
+<div class="modal fade" id="Registratse" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title text-center" id="myModalLabel">Registratse</h4>
+      </div>
+      <div class="modal-body">
+       <form class="form-horizontal"  action="index.php" method="post">
+        <fieldset>
+            <legend>Ingrese todo los datos requeridos.</legend>
+              <div class="form-group">
+              <label for="inputSelector" class="col-lg-2 control-label">Sector</label>
+                    <div class="col-lg-10">
+                         <select class="form-control" id="inputSelector" name="sector_registrarse" >
+                                  <option value="0"> Seleccione el área correspondiente</option>
+                                  <option value="1"   > Obras Públicas</option>
+                                  <option value="2"   >Infraestructura</option>
+                                  <option value="3" >Asfalto</option>
+                                  <option value="4"  >Intendente</option>
+                                  <option value="5"   >Luminaria</option>
+                                  <option value="6"  >Arboleda</option>
+                                  <option value="7" >Cloacas</option>
+                                  <option value="8" >Gas</option>
+                                  <option value="9" >Basura</option>
+             
+                         </select>
+                   </div>
+            </div>
+              <div class="form-group">
+                  <label for="inputEmail" class="col-lg-2 control-label" required>Nombre</label>
+                  <div class="col-lg-10">
+                    <input type="text" name="nombre_registrarse" class="form-control" id="inputEmail" placeholder="Nombre" required>
+                  </div>
+              </div>
+              <div class="form-group">
+                <label for="apellido" class="col-lg-2 control-label" required>Apellido</label>
+                <div class="col-lg-10">
+                  <input type="text" name="apellido_registrarse" class="form-control" id="apellido" placeholder="Apellido" required>
+                </div>
+              </div>
+              <div class="form-group">
+                  <label for="inputDocumento" class="col-lg-2 control-label">Documento</label>
+                  <div class="col-lg-10">
+                    <input type="text" name="dni_registrarse"  class="form-control" id="inputDocumento" placeholder="Dni" required>
+                  </div>
+              </div>>
+              <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                    <div class="col-lg-10">
+                      <input type="email" name="email_registrarse" class="form-control" id="inputEmail"  placeholder="E.G: Minombre@gmail.com" required required>
+                    </div>
+              </div>
+              <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Puesto Espesifico</label>
+                    <div class="col-lg-10">
+                      <input type="text" name="puesto_registrarse" class="form-control" id="inputEmail"  placeholder="Puesto espesifico como empleado" required required>
+                    </div>
+              </div>
+            <div class="form-group">
+                  <label for="inputPassword" class="col-lg-2 control-label">Password nuevo</label>
+                 <div class="col-lg-10">
+                        <input type="password" name="pass_registrarse" class="form-control" id="inputPassword" placeholder="Contraseña nueva, necesaria para esta aplicacion" required >
+         
+                </div>
+            </div>
+
+
+              <div class="form-group">
+                  <div class="col-lg-10 col-lg-offset-2">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Registrarse</button>
+                  </div>
+              </div>
+         </fieldset>  
+      </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
                                           <!-- Modal login -->
 
 
@@ -121,7 +218,7 @@ unset($_smarty_tpl_vars);
             </div>
 
       <div class="modal-body">
-            <form class="form-horizontal" method="post" acction="index.php?action=index.php">
+            <form class="form-horizontal" id="formLogin2" method="POST">
               <fieldset>
                 <legend>Datos de usuario</legend>
               <div class="form-group">
@@ -152,6 +249,8 @@ unset($_smarty_tpl_vars);
                       <label for="inputPassword"  class="col-lg-2 control-label" required>Contraseña</label>
                           <div class="col-lg-10">
                             <input type="password" name="pass_login" class="form-control" id="inputPassword" placeholder="Contraseña" required>
+                           <div id="error_login_div">
+                            </div>
                           </div>
                     </div>
                     <div class="form-group">
@@ -161,6 +260,8 @@ unset($_smarty_tpl_vars);
                       </div>
                     </div>
                  </fieldset>
+                     <script type="text/javascript" src="./js/Ajax_login.js"></script>
+
             </form>
         </div>
 
@@ -181,7 +282,7 @@ unset($_smarty_tpl_vars);
     <script src="./js/ie10-viewport-bug-workaround.js"></script>
     
     <!-- Carrusel-->
-    <script src="./js/Carrusel.js"></script>
+    <script src="./js/Ajax_login.js"></script>
     <!--index-->
     <script src="./js/index.js"></script>
 

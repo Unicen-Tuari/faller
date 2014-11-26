@@ -18,7 +18,6 @@
                    </th>
                   <th data-toggle="tooltip" data-placement="left" title="Fecha en que se realizo el reclamo"><i class="fa fa-calendar"></i> Fecha
                   </th>   
-
                   <th  data-toggle="tooltip" data-placement="left" title="Respuesta del sector">
                   <i class="fa fa-users"></i>Respuesta
                   </th>
@@ -27,12 +26,11 @@
               <tbody>
                 <tr>
                 {foreach from=$answer_sectores item=answer_sectores}
-                  <td>{$answer_sectores.id_sector}</td>
+                  <td>{$answer_sectores.nombre_sector}</td>
                   <td>{$answer_sectores.id_empleado}</td>                 
                   <td>{$answer_sectores.estado_reclamo}</td>               
                   <td>{$answer_sectores.fecha}</td>
-                  <td>{$answer_sectores.respuesta_sector}</td>
-
+                  <td>{$answer_sectores.respuesta_al_reclamo}</td>
                 </tr>
               {/foreach}
               </tbody>

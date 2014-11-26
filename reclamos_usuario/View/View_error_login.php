@@ -18,7 +18,7 @@ class View_error_login extends View
 		}
 
 		$this->smarty->assign("error_login",$mensaje_error);	
-		$this->smarty->display('error_login.tpl');
+		return $this->smarty->fetch('error_login.tpl');
 
 	}
 

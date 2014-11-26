@@ -15,10 +15,12 @@ class Modal_view_claims extends modelodb
 							{
 								
 							return $this->query("	SELECT *
-											FROM 		RECLAMO rm JOIN USUARIO us
-											ON 			(rm.id_persona=us.id_persona)
-											where  		id_sector='$area'
-											ORDER BY  fecha DESC");
+									FROM 		RECLAMO rm JOIN USUARIO us
+									ON 			(rm.id_persona=us.id_persona)
+									where  		sector_raiz='$area' or delegacion='$area'
+									ORDER BY  fecha DESC");
+
+											
 										
 							}
 					else 
@@ -26,10 +28,10 @@ class Modal_view_claims extends modelodb
 							{
 
 							return $this->query("	SELECT *
-											FROM 		RECLAMO rm JOIN USUARIO us
-											ON 			(rm.id_persona=us.id_persona)
-											where  		id_sector='$area'
-											ORDER BY  sector_raiz DESC");
+									FROM 		RECLAMO rm JOIN USUARIO us
+									ON 			(rm.id_persona=us.id_persona)
+									where  		sector_raiz='$area' or delegacion='$area'
+									ORDER BY  sector_raiz DESC");
 										
 							}
 					else 
@@ -37,9 +39,9 @@ class Modal_view_claims extends modelodb
 							{
 								
 							return $this->query("	SELECT *
-											FROM 		RECLAMO rm JOIN USUARIO us
-											ON 			(rm.id_persona=us.id_persona)
-											where  		id_sector='$area'
+									FROM 		RECLAMO rm JOIN USUARIO us
+									ON 			(rm.id_persona=us.id_persona)
+									where  		sector_raiz='$area' or delegacion='$area'
 											ORDER BY  dni_persona DESC");
 										
 							}
@@ -53,7 +55,7 @@ class Modal_view_claims extends modelodb
 								return $this->query("	SELECT *
 									FROM 		RECLAMO rm JOIN USUARIO us
 									ON 			(rm.id_persona=us.id_persona)
-									where  		id_sector='$area'");
+									where  		sector_raiz='$area' or delegacion='$area'");
 				}else
 					{
 							

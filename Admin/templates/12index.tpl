@@ -12,7 +12,7 @@
               <a class="navbar-brand" href="#SOBRE_ESTA_APLICACION"><i class="fa fa-info-circle "></i> Sobre esta aplicacion</a>
                <a class="navbar-brand" href="http://www.laprida.gob.ar/" > <i class="fa fa-external-link"></i>  Enlace Pagina Municipal</a>
 
-
+<a href="http://localhost/entregaFinal/faller/Admin/index.php?action=view_claims_especific"></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">

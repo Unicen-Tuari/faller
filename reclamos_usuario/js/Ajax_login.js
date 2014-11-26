@@ -51,16 +51,21 @@ $("#formLogin").submit(function()
   $.ajax({
     url: "index.php",
     type: "POST",
+    dataType: 'JSON',
     data:$("#formLogin").serialize(),
    success: function(data) {
-
- if(data == '<p id="error_login_p">Error,verifique que la contraseña y el email ingresados sean los correctos. </p>')
+      if(data.respuesta_ajax == false){
+        $('#error_login_div').html(data.html);
+      }
+      else{
+        $(location).attr('href','index.php?action=home');
+ /*if(data == '<p id="error_login_p">Error,verifique que la contraseña y el email ingresados sean los correctos. </p>')
       $('#error_login_div').html(data);
    else{
    $(location).attr('href','index.php?action=home');  
          // $('#Ingresar').modal('hide');
-   
-   }
+   */
+      }
    }
  })
   //  $('#error_login_div').text("Error,verifique que la contraseña y el email ingresados sean los correctos.");

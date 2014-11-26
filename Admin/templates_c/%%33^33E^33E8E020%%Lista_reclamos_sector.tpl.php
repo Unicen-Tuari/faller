@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-26 16:56:38
+<?php /* Smarty version 2.6.27, created on 2014-11-25 15:26:05
          compiled from Lista_reclamos_sector.tpl */ ?>
 
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
@@ -291,8 +291,13 @@ unset($_smarty_tpl_vars);
                 </div>
 
                     <div class="col-xs-12 col-lg-6 placeholder">
+
+          <!--form filtro-->
                     <!--index.php?action=reclamoNuevo-->
-<form class="form-horizontal"  id="form_filtro_reclamos" method="POST">
+                <div class="row">
+<div class="col-lg-12">
+<div class="col-lg-8">
+<form class="form-horizontal"  id="form_filtro_reclamos" method="POST"  >
 <input type="hidden" name="filtro" value="me_cargaron_un_filtro" >
  <select class="form-control" name="fitro_reclamo" id="selecFiltro">
     <option value="dni_persona">Filtrar Reclamos</option>
@@ -302,6 +307,21 @@ unset($_smarty_tpl_vars);
 </select>
 <!--<button class=" btn " type="submit">Filtrar</button>-->
 </form> 
+ </div>
+             <!--FIN form filtro-->
+<div class="col-lg-4">
+
+                <!--form busqueda-->
+<form class="form-horizontal"  id="form_filtro_reclamos" method="POST" >
+<input type="hidden" name="filtro" value="me_cargaron_un_filtro" >
+<input type="text" name="search_claim" placeholder="Busqueda por Dni">
+<!--<button class=" btn " type="submit">Filtrar</button>-->
+</form>
+                <!--fin form busqueda-->
+
+                    </div>
+                </div>
+                </div>
 
 </div> 
           <!--************Tabla reclamos ***********-->

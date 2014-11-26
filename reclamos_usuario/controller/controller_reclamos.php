@@ -58,8 +58,7 @@
 					{
 						$f="no ingreso imagen";
 					}
-				
-			
+
 				/*Acciones con los datos para crear el reclamo*/
 
 				$this->model_crear_reclamo->crear_reclamo($Rec,$Selec,$f,$id);//envia al modelo los datos para que los incruste en la base
@@ -93,7 +92,19 @@
 					$answer_sectores=$this->get_respond_claims_setors($id_reclamo);
 					$this->ver_modificar->ver_modificar($r,$foto,$answer_sectores);
 				}
+ 	public  function ver_reclamo_espesifico_by_email()
+				{
+					$_SESSION['view_reclaim_espesific']="dont already";
+					$id_usuario=$_SESSION['sesionUsuario'];
+					$id_reclamo=$_GET["claims_by_email"];
+					$datos_reclamo= $this->model_ver_reclamos->reclamo_espesifico($id_usuario,$id_reclamo);
+					$r=$datos_reclamo[0]["reclamo"];
+					$foto=$datos_reclamo[0]["foto_reclamo"];
+					$answer_sectores=$this->get_respond_claims_setors($id_reclamo);
+					$this->ver_modificar->ver_modificar($r,$foto,$answer_sectores);
+				}
  
+
 
 	public function reclamo_espesifico($usuario,$id_reclamo)
 			{

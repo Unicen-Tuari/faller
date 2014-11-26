@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-19 21:32:48
+<?php /* Smarty version 2.6.27, created on 2014-11-25 05:49:14
          compiled from head.tpl */ ?>
 
 <!DOCTYPE html>
@@ -43,7 +43,7 @@
 
 
 
-    
+    <script type="text/javascript" src="./js/Ajax_login.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

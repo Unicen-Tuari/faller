@@ -31,7 +31,7 @@
 	                <td>{$info_sector.id_empleado}</td>	                
 	                <td>{$info_sector.estado_reclamo}</td>               
 	                <td>{$info_sector.fecha}</td>
-	                <td>{$info_sector.respuesta_sector}</td>
+	                <td>{$info_sector.respuesta_al_reclamo}</td>
 
                 </tr>
               {/foreach}

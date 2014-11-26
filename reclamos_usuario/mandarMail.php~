@@ -1,0 +1,35 @@
+
+<?php
+
+include("./PHPMailer_5.2.4/class.phpmailer.php";
+ include("./PHPMailer_5.2.4/class.smtp.php";
+ $mail = new PHPMailer();
+ $mail->IsSMTP();
+ $mail->SMTPAuth = true;
+ $mail->SMTPSecure = "ssl";
+ $mail->Host = "smtp.gmail.com";
+ $mail->Port = 465;
+ $mail->Username = "username@gmail.com";
+ $mail->Password = "userpass";
+
+
+
+
+
+$mail->From = "franco.e.aller@dominio.com";
+ $mail->FromName = "Fran";
+ $mail->Subject = "Asunto del Email";
+ $mail->AltBody = "Este es un mensaje de prueba.";
+ $mail->MsgHTML("<b>Este es un mensaje de prueba</b>.";
+ $mail->AddAttachment("files/files.zip";
+ $mail->AddAttachment("files/img03.jpg";
+ $mail->AddAddress("franco.e.aller@gmail.com", "Destinatario";
+ $mail->IsHTML(true);
+ if(!$mail->Send()) {
+ echo "Error: " . $mail->ErrorInfo;
+ } else {
+echo "Mensaje enviado correctamente";
+ }
+
+
+?>

@@ -121,6 +121,8 @@
     <div  class="col-lg-3 col-sm-1 placeholder offset3" data-toggle="modal" data-target="#foto_reclamo_modal" id="foto_reclamo">  
             <img  class=" thumbnail col-lg-12" src='{$foto_reclamo}'>
 
+
+
     </div> 
 
     <div class="row">
@@ -134,6 +136,7 @@
 <div class="col-lg-12 col-sm-1 placeholder offset3 cuadro_del_reclamo" id="cuadro_respuesta_sector">   
     {include file="answer_sector.tpl" }
 </div>
+
 <!--END TABLE ANSWER SECTOR-->
 
 <div class="col-lg-11">

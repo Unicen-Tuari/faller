@@ -14,7 +14,13 @@ if 	(isset($_POST['Nombre_login']))
 			$ingresar = new controller_user();
 			$ingresar->login();
 	}
-
+else
+	if((array_key_exists('action', $_REQUEST)&&$_REQUEST['action']=='home')&&(isset($_SESSION['id'] )))
+	 {
+			include_once("./Controller/controller_user.php");
+			$ingresar = new controller_user();
+			$ingresar->home();
+	}
 else
 	if (isset($_POST['filtro'])) //tine que haber un input oculto con este nombre
 	{
@@ -30,9 +36,14 @@ else
 	 	$claims= new Controller_claims();
 		$claims->respond_claims();
 	}
+else 	
+	if (isset($_POST['pass_registrarse']))
+	{
+			include_once("./Controller/controller_user.php");
+			$sign_in = new controller_user();
+			$sign_in->sign_in();
 
-	
-	
+	}
 else
 	if(array_key_exists('action', $_REQUEST)&&$_REQUEST['action']=='cerrar_sesion')
 	{
@@ -40,9 +51,22 @@ else
 		include "./Controller/ControllerIndex.php";
 	 	$index= new controlador_index();
 		$index->visualizar_inicio();
-	}	
-
-
+	}
+	
+else
+	if(array_key_exists('action', $_REQUEST)&&$_REQUEST['action']=='View_employers')
+	{
+			include_once("./Controller/controller_user.php");
+			$new_employers = new controller_user();
+			$new_employers->employers();
+	}
+else		
+if 	(isset($_POST['id_empleado']))
+	{
+			include_once("./Controller/controller_user.php");
+			$employes = new controller_user();
+			$employes->employers_managment();
+	}
 else
 	if( array_key_exists('action', $_REQUEST)&&$_REQUEST['action']=='ver_reclamos')
 	{

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-11-03 15:54:54
+<?php /* Smarty version 2.6.27, created on 2014-11-03 20:23:17
          compiled from answer_sector.tpl */ ?>
              
         <div class="table-responsive">
@@ -39,7 +39,7 @@
 </td>               
 	                <td><?php echo $this->_tpl_vars['info_sector']['fecha']; ?>
 </td>
-	                <td><?php echo $this->_tpl_vars['info_sector']['respuesta_sector']; ?>
+	                <td><?php echo $this->_tpl_vars['info_sector']['respuesta_al_reclamo']; ?>
 </td>
 
                 </tr>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-10-30 03:41:23
+<?php /* Smarty version 2.6.27, created on 2014-11-15 04:59:46
          compiled from index.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -22,7 +22,7 @@ unset($_smarty_tpl_vars);
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-           <li> <a href="#" title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Registratse"><i class="fa fa-sign-in fa-1x"></i>  Registratse</a></li>
+           <li> <a href="#" title="Click para registrarse y comenzar a utilizar la aplicacion" data-toggle="modal" data-target="#Registratse"><i class="fa fa-sign-in fa-1x"></i>  Registrarse</a></li>
             <li><a href="#"   data-toggle="modal" data-target="#Ingresar" title="Click para ingresar.Debe haberse registrado previamente"><i class="fa fa-user"></i>  Ingresar</a></li>
           </ul>
           <form class="navbar-form navbar-right">
@@ -218,7 +218,7 @@ unset($_smarty_tpl_vars);
                     <div class="form-group">
                       <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                           <div class="col-lg-10">
-                            <input type="email"  name="email_login"  class="form-control" id="inputEmail"  placeholder="E.G: Minombre@gmail.com tu email" required >
+                            <input type="email"  name="email_login"  class="form-control" id="inputEmail"  placeholder="E.J: TuNombre@gmail.com " required >
                           </div>
                     </div>
                     <div class="form-group">

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-11-03 05:25:13
+<?php /* Smarty version 2.6.27, created on 2014-11-25 04:15:36
          compiled from ver_o_modificar_reclamo.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "head.tpl", 'smarty_include_vars' => array()));
@@ -129,6 +129,8 @@ unset($_smarty_tpl_vars);
             <img  class=" thumbnail col-lg-12" src='<?php echo $this->_tpl_vars['foto_reclamo']; ?>
 '>
 
+
+
     </div> 
 
     <div class="row">
@@ -146,6 +148,7 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
 </div>
+
 <!--END TABLE ANSWER SECTOR-->
 
 <div class="col-lg-11">

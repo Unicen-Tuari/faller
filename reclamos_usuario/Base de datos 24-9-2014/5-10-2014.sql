@@ -130,6 +130,8 @@ PRIMARY KEY         (id_empleado,id_sector)
 
 
 
+
+
 ALTER TABLE RECLAMO
 	ADD CONSTRAINT Fk_RECLAMO_REL_SECTOR
 	  FOREIGN KEY (id_sector)
@@ -145,31 +147,35 @@ ADD CONSTRAINT Fk_EMPLEADO_SECTOR
 	    REFERENCES SECTOR(id_sector)
 
 ;
-/*
+
 CREATE TABLE GESTION_RECLAMO
 (
-id_gestion           	 integer 		not null auto_increment,	
+id_gestion         	 integer 		not null auto_increment,	
 id_reclamo     		 integer		not null,
-id_empleado		 integer		not null,
-respuesta_al_reclamo     varchar(1000)          null,
+id_sector 			 integer		not null,
+id_empleado			 integer		not null,
+estado_reclamo       varchar(50)    not null,
+respuesta_al_reclamo  varchar(1000)     null,
 fecha_respuesta			 date        	null,
 ultima_vez_visto		 date           null,
 CONSTRAINT			pk_GESTION_RECLAMO
-PRIMARY KEY         (id_gestion,id_reclamo,id_empleado)     	
+PRIMARY KEY         (id_gestion,id_reclamo,id_sector)     	
 )
 
 ALTER TABLE GESTION_RECLAMO
-	ADD CONSTRAINT Fk_GESTION_R_Y_RECLAMO
-	  FOREIGN KEY (id_reclamo,id_empleado)
-	    REFERENCES RECLAMO(id_reclamo,id_empleado);
+ADD CONSTRAINT  Fk_GESTION_R_Y_RECLAMO
+	  FOREIGN KEY (id_reclamo)
+	    REFERENCES RECLAMO(id_reclamo) ,
+	ADD CONSTRAINT Fk_RECLAMO_REL_USUARIO_2
+	  FOREIGN KEY (id_sector)
+	    REFERENCES RECLAMO (id_sector)	
+	    ;
 
-
-*/
 /************************************************fin insertar persona******************************************************/
 INSERT INTO USUARIO( nombre,
 					 apellido,dni_persona,fecha_nacimiento,direccion, celular,Telefono_fijo, email, password,fecha_registro)
-					VALUES( 'Franco', 'Aller', $2a$07$/A14AB3A8CFA.5202CGC8.BAVu25DdkjFn3NPYuXhkvcKwxdGaCp2,'2001/07/22',
-			 				 '4 de Abril', 2284588180,'', 'franco.e.aller@gmail.com','fran','2020/07/22');
+					VALUES( 'Franco', 'Aller',33333 ,'2001/07/22',
+			 				 '4 de Abril', 2284588180,'', 'franco.e.aller@gmail.com',$2a$07$/A14AB3A8CFA.5202CGC8.BAVu25DdkjFn3NPYuXhkvcKwxdGaCp2,'2020/07/22');
 	
 
 /************************************************insertar sector******************************************************/
@@ -191,7 +197,7 @@ INSERT INTO SECTOR ( nombre_sector, jefe_s,lista_predefinida,sector_raiz,clave) 
 /*INSERT INTO RECLAMO_REL (id_reclamo, id_persona, id_sector, fecha, resumen_sector, area_actual, area_ya_paso, estado_reclamo, reclamo,foto_reclamo) VALUES(2,2,2,'12/12/2009','SDSD',2,2,'en tramite','hola pololla',"lala");/*
 /*INSERT INTO RECLAMO_REL (id_reclamo, id_persona, id_sector, fecha, resumen_sector, area_actual, area_ya_paso, estado_reclamo, reclamo)
  				  VALUES(:id_reclamo, :id_persona, :id_sector, :fecha, :resumen_sector, :area_actual, :area_ya_paso, :estado_reclamo, reclamo);
-*/_person_to_respond',$id_sector, '$id_e
+*/
 
 
 /************************************************insertar Empleado******************************************************/

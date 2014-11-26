@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2014-11-03 05:25:13
+<?php /* Smarty version 2.6.27, created on 2014-11-03 21:02:48
          compiled from answer_sector.tpl */ ?>
  
         <div class="table-responsive">
@@ -20,7 +20,6 @@
                    </th>
                   <th data-toggle="tooltip" data-placement="left" title="Fecha en que se realizo el reclamo"><i class="fa fa-calendar"></i> Fecha
                   </th>   
-
                   <th  data-toggle="tooltip" data-placement="left" title="Respuesta del sector">
                   <i class="fa fa-users"></i>Respuesta
                   </th>
@@ -31,7 +30,7 @@
                 <?php $_from = $this->_tpl_vars['answer_sectores']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['answer_sectores']):
 ?>
-                  <td><?php echo $this->_tpl_vars['answer_sectores']['id_sector']; ?>
+                  <td><?php echo $this->_tpl_vars['answer_sectores']['nombre_sector']; ?>
 </td>
                   <td><?php echo $this->_tpl_vars['answer_sectores']['id_empleado']; ?>
 </td>                 
@@ -39,9 +38,8 @@
 </td>               
                   <td><?php echo $this->_tpl_vars['answer_sectores']['fecha']; ?>
 </td>
-                  <td><?php echo $this->_tpl_vars['answer_sectores']['respuesta_sector']; ?>
+                  <td><?php echo $this->_tpl_vars['answer_sectores']['respuesta_al_reclamo']; ?>
 </td>
-
                 </tr>
               <?php endforeach; endif; unset($_from); ?>
               </tbody>

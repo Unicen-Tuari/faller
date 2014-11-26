@@ -346,16 +346,16 @@
                             <div class="small-box bg-maroon">
                                 <div class="inner">
                                     <h3>
-                                        160
+                                        1
                                     </h3>
                                     <p>
-                                        nada por ahora
+                                       Nuevos Empleados
                                     </p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-ios7-pricetag-outline"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">
+                                <a href="index.php?action=View_employers" class="small-box-footer">
                                     More info <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>
